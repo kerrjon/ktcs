@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/backups
+/packages
+/Ktcs.Tests/obj/Debug
+/Ktcs/bin
+/Ktcs/obj/Debug
