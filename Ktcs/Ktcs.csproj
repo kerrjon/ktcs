@@ -172,15 +172,17 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Login\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Login\Controllers\ManageController.cs" />
+    <Compile Include="Areas\Login\LoginAreaRegistration.cs" />
+    <Compile Include="Areas\Login\Models\AccountViewModels.cs" />
+    <Compile Include="Areas\Login\Models\IdentityModels.cs" />
+    <Compile Include="Areas\Login\Models\ManageViewModels.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -975,6 +977,32 @@
     <Content Include="assets\widgets\ckeditor\plugins\wsc\LICENSE.md" />
     <Content Include="assets\widgets\ckeditor\plugins\wsc\README.md" />
     <Content Include="assets\widgets\ckeditor\skins\bootstrapck\readme.md" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Login\Views\web.config" />
+    <Content Include="Areas\Login\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Login\Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\Login\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Login\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Login\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas\Login\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\Login\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\Login\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas\Login\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas\Login\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Areas\Login\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Login\Views\Account\Register.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Areas\Login\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\Login\Views\Account\SendCode.cshtml" />
+    <Content Include="Areas\Login\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\Login\Views\Account\_ExternalLoginsListPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -1024,10 +1052,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

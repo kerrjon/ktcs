@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Ktcs.Models;
+using Ktcs.Areas.Login.Models;
 
 namespace Ktcs
 {
@@ -88,8 +88,23 @@ namespace Ktcs
         }
     }
 
-    // Configure the application sign-in manager which is used in this application.
-    public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
+
+  // Configure the RoleManager used in the application. RoleManager is defined in the ASP.NET Identity core assembly
+  public class ApplicationRoleManager : RoleManager<IdentityRole>
+  {
+    public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+        : base(roleStore)
+    {
+    }
+
+    public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+    {
+      return new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
+    }
+  }
+
+  // Configure the application sign-in manager which is used in this application.
+  public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
         public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
@@ -106,4 +121,57 @@ namespace Ktcs
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
+
+  // This is useful if you do not want to tear down the database each time you run the application.
+  // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+  // This example shows you how to create a new database if the Model changes
+  public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+  {
+    protected override void Seed(ApplicationDbContext context)
+    {
+      InitializeIdentityForEf(context);
+      base.Seed(context);
+    }
+
+    //Create User=Admin@Admin.com with password=Admin@123456 in the Admin role        
+    public static void InitializeIdentityForEf(ApplicationDbContext db)
+    {
+      try
+      {
+        var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+        var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
+        const string name = "kerrjon@yahoo.com";
+        const string password = "admin";
+        const string roleName = "Admin";
+
+        //Create Role Admin if it does not exist
+        var role = roleManager.FindByName(roleName);
+        if (role == null)
+        {
+          role = new IdentityRole(roleName);
+          var roleresult = roleManager.Create(role);
+        }
+
+        var user = userManager.FindByName(name);
+        if (user == null)
+        {
+          user = new ApplicationUser { UserName = name, Email = name };
+          var result = userManager.Create(user, password);
+          result = userManager.SetLockoutEnabled(user.Id, false);
+        }
+
+        // Add user admin to Role Admin if not already added
+        var rolesForUser = userManager.GetRoles(user.Id);
+        if (!rolesForUser.Contains(role.Name))
+        {
+          var result = userManager.AddToRole(user.Id, role.Name);
+        }
+      }
+      catch (Exception exception)
+      {
+       // Log.Error("error trying to seed database", exception);
+      }
+    }
+
+  }
 }
