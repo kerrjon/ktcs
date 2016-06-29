@@ -173,12 +173,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DemoController.cs" />
     <Compile Include="Areas\Login\Controllers\AccountController.cs" />
     <Compile Include="Areas\Login\Controllers\ManageController.cs" />
     <Compile Include="Areas\Login\LoginAreaRegistration.cs" />
     <Compile Include="Areas\Login\Models\AccountViewModels.cs" />
     <Compile Include="Areas\Login\Models\IdentityModels.cs" />
     <Compile Include="Areas\Login\Models\ManageViewModels.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -935,6 +937,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\bootstrap\css\bootstrap-theme.css.map" />
@@ -978,7 +987,6 @@
     <Content Include="assets\widgets\ckeditor\plugins\wsc\README.md" />
     <Content Include="assets\widgets\ckeditor\skins\bootstrapck\readme.md" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Login\Views\web.config" />
     <Content Include="Areas\Login\Views\_ViewStart.cshtml" />
@@ -1002,6 +1010,16 @@
     <Content Include="Areas\Login\Views\Account\VerifyCode.cshtml" />
     <Content Include="Areas\Login\Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Areas\Login\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Areas\Admin\Views\Shared\_Slidebars.cshml" />
+    <Content Include="Areas\Admin\Views\Shared\_Header.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\index-alt.chtml" />
+    <Content Include="Areas\Admin\Views\Demo\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -1034,7 +1052,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
