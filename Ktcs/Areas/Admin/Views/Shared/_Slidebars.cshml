@@ -5,7 +5,7 @@
       <ul class="chat-box">
         <li>
           <div class="status-badge">
-            <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial1.jpg" alt=""/>
+            <img class="img-circle" width="40" src="/assets/image-resources/people/testimonial1.jpg" alt=""/>
             <div class="small-badge bg-green"></div>
           </div>
           <b>
@@ -18,7 +18,7 @@
         </li>
         <li>
           <div class="status-badge">
-            <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial2.jpg" alt=""/>
+            <img class="img-circle" width="40" src="/assets/image-resources/people/testimonial2.jpg" alt=""/>
             <div class="small-badge bg-green"></div>
           </div>
           <b>
@@ -31,7 +31,7 @@
         </li>
         <li>
           <div class="status-badge">
-            <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial3.jpg" alt=""/>
+            <img class="img-circle" width="40" src="/assets/image-resources/people/testimonial3.jpg" alt=""/>
             <div class="small-badge bg-green"></div>
           </div>
           <b>
@@ -44,7 +44,7 @@
         </li>
         <li>
           <div class="status-badge">
-            <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial4.jpg" alt="">
+            <img class="img-circle" width="40" src="/assets/image-resources/people/testimonial4.jpg" alt="">
               <div class="small-badge bg-green"></div>
             </div>
           <b>
@@ -57,7 +57,7 @@
         </li>
         <li>
           <div class="status-badge">
-            <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial5.jpg" alt=""/>
+            <img class="img-circle" width="40" src="/assets/image-resources/people/testimonial5.jpg" alt=""/>
             <div class="small-badge bg-green"></div>
           </div>
           <b>

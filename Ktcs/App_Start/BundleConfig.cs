@@ -83,6 +83,10 @@ namespace Ktcs
         "~/assets/widgets/calendar/calendar.js",
         "~/assets/widgets/calendar/calendar-demo.js"));
 
+      // skycons
+      bundles.Add(new ScriptBundle("~/bundles/skycons").Include(
+        "~/assets/widgets/skycons/skycons.js"));
+
       // PieGauge charts
       bundles.Add(new ScriptBundle("~/bundles/pieGaugeCharts").Include(
         "~/assets/widgets/charts/piegage/piegage.js",
