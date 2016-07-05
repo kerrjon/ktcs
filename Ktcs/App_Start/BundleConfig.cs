@@ -28,20 +28,19 @@ namespace Ktcs
 
       // scripts required in the head
       bundles.Add(new ScriptBundle("~/bundles/adminHeader").Include(
-              "~/Scripts/jquery.validate.unobtrusive.js",
+              //"~/Scripts/jquery.validate.unobtrusive.js",
               "~/Scripts/jquery.unobtrusive-ajax.js",
               "~/assets/js-core/jquery-core.js",
-              "~/assets/js-core/jquery-ui-core.js", 
-              "~/assets/js-core/jquery-ui-widget.js", 
-              "~/assets/js-core/jquery-ui-mouse.js", 
+              "~/assets/js-core/jquery-ui-core.js",
+              "~/assets/js-core/jquery-ui-widget.js",
+              "~/assets/js-core/jquery-ui-mouse.js",
               "~/assets/js-core/jquery-ui-position.js",
-              "~/assets/js-core/modernizr.js",
-              "~/assets/js-core/jquery-cookie.js",
-              "~/assets/angular/app.js"));
+              "~/assets/js-core/jquery-cookie.js"
+       ));
 
       // scripts required at the bottom of the page
       bundles.Add(new ScriptBundle("~/bundles/admin").Include(
-        "~/assets/bootstrap/js/bootstrap.js",
+
         "~/assets/widgets/progressbar/progressbar.js",
         "~/assets/widgets/superclick/superclick.js",
         "~/assets/widgets/input-switch/inputswitch-alt.js",
