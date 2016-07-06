@@ -12,6 +12,7 @@
         @Html.AntiForgeryToken()
         <div class="content-box-wrapper pad20A">
           <img class="mrg25B center-margin radius-all-100 display-block" src="/assets/image-resources/gravatar.jpg" alt="">
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
           <div class="form-group">
             <div class="input-group">
               @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })

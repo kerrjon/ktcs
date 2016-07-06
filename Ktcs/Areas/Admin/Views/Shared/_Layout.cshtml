@@ -150,6 +150,13 @@
 
   @Scripts.Render("~/bundles/bootstrap")
   @RenderSection("scripts", required: false)
+  <script type="text/javascript">
+    $(window).load(function () {
+      setTimeout(function () {
+        $('#loading').fadeOut(400, "linear");
+      }, 300);
+    });
+  </script>
   @Scripts.Render("~/bundles/admin")
 </body>
 </html>
