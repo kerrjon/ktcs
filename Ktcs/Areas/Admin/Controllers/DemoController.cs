@@ -5,8 +5,8 @@ namespace Ktcs.Areas.Admin.Controllers
 {
   public class DemoController : Controller
   {
-    public ActionResult AdminBlog(){return View();}
-    public ActionResult AdminPricing(){return View();}
+    public ActionResult AdminBlog() { return View(); }
+    public ActionResult AdminPricing() { return View(); }
     public ActionResult AdvancedDataTables() { return View(); }
     public ActionResult Animations() { return View(); }
     public ActionResult AutoMenu() { return View(); }
@@ -34,7 +34,7 @@ namespace Ktcs.Areas.Admin.Controllers
     public ActionResult Icons() { return View(); }
     public ActionResult ImageCrop() { return View(); }
     public ActionResult Images() { return View(); }
-    public ActionResult Index(){return View();}
+    public ActionResult Index() { return View(); }
     public ActionResult IndexAlt() { return View(); }
     public ActionResult InlineEditor() { return View(); }
     public ActionResult InputKnobs() { return View(); }
@@ -61,8 +61,11 @@ namespace Ktcs.Areas.Admin.Controllers
     public ActionResult PortfolioGallery() { return View(); }
     public ActionResult PortfolioMasonry() { return View(); }
     public ActionResult ProgressBars() { return View(); }
+    public ActionResult ResponsiveTables() { return View(); }
     public ActionResult ResponsiveDataTables() { return View(); }
+    public ActionResult ResponsiveMessages() { return View(); }
     public ActionResult Scrollbars() { return View(); }
+    public ActionResult Sliders() { return View(); }
     public ActionResult SlideBars() { return View(); }
     public ActionResult SocialBoxes() { return View(); }
     public ActionResult SortableElements() { return View(); }

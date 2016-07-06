@@ -6,7 +6,7 @@
   <title>@ViewBag.Title</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <base href="/">
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/icons/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/icons/apple-touch-icon-114-precomposed.png">
@@ -17,13 +17,11 @@
   
   @Scripts.Render("~/bundles/modernizr")
   @Scripts.Render("~/bundles/jquery")
-  @Scripts.Render("~/bundles/angular")
-  @Scripts.Render("~/bundles/angular-route")
-  @Scripts.Render("~/bundles/angular-animate")
 
-  @Scripts.Render("~/bundles/adminHeader")
+
+    @Scripts.Render("~/bundles/adminHeader")
 </head>
-<body ng-controller="indexController">
+<body>
 <div id="page-wrapper">
   @Html.Partial("_Header")
   @Html.Partial("_SideBar")

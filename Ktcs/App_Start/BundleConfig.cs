@@ -26,8 +26,11 @@ namespace Ktcs
       bundles.Add(new ScriptBundle("~/bundles/angular-animate", angularAnimateCdn).Include(
                   "~/Scripts/angular-animate.js"));
 
-      // scripts required in the head
-      bundles.Add(new ScriptBundle("~/bundles/adminHeader").Include(
+            bundles.Add(new ScriptBundle("~/bundles/angular-app-config").Include(
+                  "~/assets/angular/app.js"));
+
+            // scripts required in the head
+            bundles.Add(new ScriptBundle("~/bundles/adminHeader").Include(
               //"~/Scripts/jquery.validate.unobtrusive.js",
               "~/Scripts/jquery.unobtrusive-ajax.js",
               "~/assets/js-core/jquery-core.js",

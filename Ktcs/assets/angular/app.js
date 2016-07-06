@@ -1,382 +1,311 @@
 var monarchApp = angular.module('monarchApp', ['ngRoute', 'ngAnimate']);
 
 // configure our routes
-monarchApp.config(function($routeProvider) {
+monarchApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-
-    .when('/', {
-        templateUrl : 'pages/index.hbs',
-        controller  : 'indexController'
-    })
-    .when('/index', {
-        templateUrl : 'pages/index.hbs',
-        controller  : 'indexController'
-    })
-        .when ('/advanced-datatables', {
-        templateUrl : 'pages/advanced-datatables.hbs',
-        controller  : 'advanced-datatablesController'
-    })
-
-        .when ('/animations', {
-        templateUrl : 'pages/animations.hbs',
-        controller  : 'animationsController'
-    })
-
-        .when ('/bs-carousel', {
-        templateUrl : 'pages/bs-carousel.hbs',
-        controller  : 'bs-carouselController'
-    })
-
-        .when ('/buttons', {
-        templateUrl : 'pages/buttons.hbs',
-        controller  : 'buttonsController'
-    })
-
-        .when ('/calendar', {
-        templateUrl : 'pages/calendar.hbs',
-        controller  : 'calendarController'
-    })
-
-        .when ('/chart-boxes', {
-        templateUrl : 'pages/chart-boxes.hbs',
-        controller  : 'chart-boxesController'
-    })
-
-        .when ('/chart-js', {
-        templateUrl : 'pages/chart-js.hbs',
-        controller  : 'chart-jsController'
-    })
-
-        .when ('/chat', {
-        templateUrl : 'pages/chat.hbs',
-        controller  : 'chatController'
-    })
-
-        .when ('/checklist', {
-        templateUrl : 'pages/checklist.hbs',
-        controller  : 'checklistController'
-    })
-
-        .when ('/ckeditor', {
-        templateUrl : 'pages/ckeditor.hbs',
-        controller  : 'ckeditorController'
-    })
-
-        .when ('/collapsable', {
-        templateUrl : 'pages/collapsable.hbs',
-        controller  : 'collapsableController'
-    })
-
-        .when ('/content-boxes', {
-        templateUrl : 'pages/content-boxes.hbs',
-        controller  : 'content-boxesController'
-    })
-
-        .when ('/data-tables', {
-        templateUrl : 'pages/data-tables.hbs',
-        controller  : 'data-tablesController'
-    })
-
-        .when ('/dropzone-uploader', {
-        templateUrl : 'pages/dropzone-uploader.hbs',
-        controller  : 'dropzone-uploaderController'
-    })
-
-        .when ('/fixed-datatables', {
-        templateUrl : 'pages/fixed-datatables.hbs',
-        controller  : 'fixed-datatablesController'
-    })
-
-        .when ('/flot-charts', {
-        templateUrl : 'pages/flot-charts.hbs',
-        controller  : 'flot-chartsController'
-    })
-
-        .when ('/forms-elements', {
-        templateUrl : 'pages/forms-elements.hbs',
-        controller  : 'forms-elementsController'
-    })
-
-        .when ('/forms-masks', {
-        templateUrl : 'pages/forms-masks.hbs',
-        controller  : 'forms-masksController'
-    })
-
-        .when ('/forms-validation', {
-        templateUrl : 'pages/forms-validation.hbs',
-        controller  : 'forms-validationController'
-    })
-
-        .when ('/forms-wizard', {
-        templateUrl : 'pages/forms-wizard.hbs',
-        controller  : 'forms-wizardController'
-    })
-
-        .when ('/gmaps', {
-        templateUrl : 'pages/gmaps.hbs',
-        controller  : 'gmapsController'
-    })
-
-        .when ('/helper-classes', {
-        templateUrl : 'pages/helper-classes.hbs',
-        controller  : 'helper-classesController'
-    })
-
-        .when ('/icons', {
-        templateUrl : 'pages/icons.hbs',
-        controller  : 'iconsController'
-    })
-
-        .when ('/image-crop', {
-        templateUrl : 'pages/image-crop.hbs',
-        controller  : 'image-cropController'
-    })
-
-        .when ('/images', {
-        templateUrl : 'pages/images.hbs',
-        controller  : 'imagesController'
-    })
-
-        .when ('/index-alt', {
-        templateUrl : 'pages/index-alt.hbs',
-        controller  : 'index-altController'
-    })
-
-        .when ('/inline-editor', {
-        templateUrl : 'pages/inline-editor.hbs',
-        controller  : 'inline-editorController'
-    })
-
-        .when ('/input-knobs', {
-        templateUrl : 'pages/input-knobs.hbs',
-        controller  : 'input-knobsController'
-    })
-
-        .when ('/just-gage', {
-        templateUrl : 'pages/just-gage.hbs',
-        controller  : 'just-gageController'
-    })
-
-        .when ('/labels-badges', {
-        templateUrl : 'pages/labels-badges.hbs',
-        controller  : 'labels-badgesController'
-    })
-
-        .when ('/lazyload', {
-        templateUrl : 'pages/lazyload.hbs',
-        controller  : 'lazyloadController'
-    })
-
-        .when ('/loading-feedback', {
-        templateUrl : 'pages/loading-feedback.hbs',
-        controller  : 'loading-feedbackController'
-    })
-
-        .when ('/mailbox-compose', {
-        templateUrl : 'pages/mailbox-compose.hbs',
-        controller  : 'mailbox-composeController'
-    })
-
-        .when ('/mailbox-inbox', {
-        templateUrl : 'pages/mailbox-inbox.hbs',
-        controller  : 'mailbox-inboxController'
-    })
-
-        .when ('/mailbox-single', {
-        templateUrl : 'pages/mailbox-single.hbs',
-        controller  : 'mailbox-singleController'
-    })
-
-        .when ('/mapael', {
-        templateUrl : 'pages/mapael.hbs',
-        controller  : 'mapaelController'
-    })
-
-        .when ('/markdown', {
-        templateUrl : 'pages/markdown.hbs',
-        controller  : 'markdownController'
-    })
-
-        .when ('/modals', {
-        templateUrl : 'pages/modals.hbs',
-        controller  : 'modalsController'
-    })
-
-        .when ('/morris-charts', {
-        templateUrl : 'pages/morris-charts.hbs',
-        controller  : 'morris-chartsController'
-    })
-
-        .when ('/multi-uploader', {
-        templateUrl : 'pages/multi-uploader.hbs',
-        controller  : 'multi-uploaderController'
-    })
-
-        .when ('/nav-menus', {
-        templateUrl : 'pages/nav-menus.hbs',
-        controller  : 'nav-menusController'
-    })
-
-        .when ('/notifications', {
-        templateUrl : 'pages/notifications.hbs',
-        controller  : 'notificationsController'
-    })
-
-        .when ('/page-transitions', {
-        templateUrl : 'pages/page-transitions.hbs',
-        controller  : 'page-transitionsController'
-    })
-
-        .when ('/panel-boxes', {
-        templateUrl : 'pages/panel-boxes.hbs',
-        controller  : 'panel-boxesController'
-    })
-
-        .when ('/pickers', {
-        templateUrl : 'pages/pickers.hbs',
-        controller  : 'pickersController'
-    })
-
-        .when ('/pie-gages', {
-        templateUrl : 'pages/pie-gages.hbs',
-        controller  : 'pie-gagesController'
-    })
-
-        .when ('/popovers-tooltips', {
-        templateUrl : 'pages/popovers-tooltips.hbs',
-        controller  : 'popovers-tooltipsController'
-    })
-
-        .when ('/progress-bars', {
-        templateUrl : 'pages/progress-bars.hbs',
-        controller  : 'progress-barsController'
-    })
-
-        .when ('/response-messages', {
-        templateUrl : 'pages/response-messages.hbs',
-        controller  : 'response-messagesController'
-    })
-
-        .when ('/responsive-datatables', {
-        templateUrl : 'pages/responsive-datatables.hbs',
-        controller  : 'responsive-datatablesController'
-    })
-
-        .when ('/responsive-tables', {
-        templateUrl : 'pages/responsive-tables.hbs',
-        controller  : 'responsive-tablesController'
-    })
-
-        .when ('/scrollbars', {
-        templateUrl : 'pages/scrollbars.hbs',
-        controller  : 'scrollbarsController'
-    })
-
-        .when ('/sliders', {
-        templateUrl : 'pages/sliders.hbs',
-        controller  : 'slidersController'
-    })
-
-        .when ('/social-boxes', {
-        templateUrl : 'pages/social-boxes.hbs',
-        controller  : 'social-boxesController'
-    })
-
-        .when ('/sortable-elements', {
-        templateUrl : 'pages/sortable-elements.hbs',
-        controller  : 'sortable-elementsController'
-    })
-
-        .when ('/sparklines', {
-        templateUrl : 'pages/sparklines.hbs',
-        controller  : 'sparklinesController'
-    })
-
-        .when ('/summernote', {
-        templateUrl : 'pages/summernote.hbs',
-        controller  : 'summernoteController'
-    })
-
-        .when ('/tables', {
-        templateUrl : 'pages/tables.hbs',
-        controller  : 'tablesController'
-    })
-
-        .when ('/tabs', {
-        templateUrl : 'pages/tabs.hbs',
-        controller  : 'tabsController'
-    })
-
-        .when ('/tile-boxes', {
-        templateUrl : 'pages/tile-boxes.hbs',
-        controller  : 'tile-boxesController'
-    })
-
-        .when ('/timeline', {
-        templateUrl : 'pages/timeline.hbs',
-        controller  : 'timelineController'
-    })
-
-        .when ('/vector-maps', {
-        templateUrl : 'pages/vector-maps.hbs',
-        controller  : 'vector-mapsController'
-    })
-
-        .when ('/xcharts', {
-        templateUrl : 'pages/xcharts.hbs',
-        controller  : 'xchartsController'
-    })
-
-    .when('/admin-blog', {
-        templateUrl : 'pages/admin-blog.hbs',
-        controller  : 'admin-blogController'
-    })
-
-    .when('/admin-pricing', {
-        templateUrl : 'pages/admin-pricing.hbs',
-        controller  : 'admin-pricingController'
-    })
-
-    .when('/auto-menu', {
-        templateUrl : 'pages/auto-menu.hbs',
-            controller  : 'auto-menuController'
-    })
-
-    .when('/faq-section', {
-        templateUrl : 'pages/faq-section.hbs',
-            controller  : 'faq-sectionController'
-    })
-
-    .when('/invoice', {
-        templateUrl : 'pages/invoice.hbs',
-        controller  : 'invoiceController'
-    })
-
-    .when('/portfolio-gallery', {
-        templateUrl : 'pages/portfolio-gallery.hbs',
-        controller  : 'portfolio-galleryController'
-    })
-
-    .when('/portfolio-masonry', {
-        templateUrl : 'pages/portfolio-masonry.hbs',
-        controller  : 'portfolio-masonryController'
-    })
-
-    .when('/slidebars', {
-        templateUrl : 'pages/slidebars.hbs',
-        controller  : 'slidebarsController'
-    })
-
-    .when('/view-profile', {
-        templateUrl : 'pages/view-profile.hbs',
-        controller  : 'view-profileController'
-    })
-
+        .when('/admin/demo/', {
+            templateUrl: 'admin/demo',
+            controller: 'indexController'
+        })
+        .when('/admin/demo/index', {
+            templateUrl: 'admin/demo',
+            controller: 'indexController'
+        })
+        .when('/advanced-datatables', {
+            templateUrl: 'admin/demo/advanced-datatables',
+            controller: 'advanced-datatablesController'
+        })
+        .when('/animations', {
+            templateUrl: 'admin/demo/animations',
+            controller: 'animationsController'
+        })
+        .when('/bs-carousel', {
+            templateUrl: 'admin/demo/bs-carousel',
+            controller: 'bs-carouselController'
+        })
+        .when('/buttons', {
+            templateUrl: 'admin/demo/buttons',
+            controller: 'buttonsController'
+        })
+        .when('/calendar', {
+            templateUrl: 'admin/demo/calendar',
+            controller: 'calendarController'
+        })
+        .when('/chart-boxes', {
+            templateUrl: 'admin/demo/chart-boxes',
+            controller: 'chart-boxesController'
+        })
+        .when('/chart-js', {
+            templateUrl: 'admin/demo/chart-js',
+            controller: 'chart-jsController'
+        })
+        .when('/chat', {
+            templateUrl: 'admin/demo/chat',
+            controller: 'chatController'
+        })
+        .when('/checklist', {
+            templateUrl: 'admin/demo/checklist',
+            controller: 'checklistController'
+        })
+        .when('/ckeditor', {
+            templateUrl: 'admin/demo/ckeditor',
+            controller: 'ckeditorController'
+        })
+        .when('/collapsable', {
+            templateUrl: 'admin/demo/collapsable',
+            controller: 'collapsableController'
+        })
+        .when('/content-boxes', {
+            templateUrl: 'admin/demo/content-boxes',
+            controller: 'content-boxesController'
+        })
+        .when('/data-tables', {
+            templateUrl: 'admin/demo/data-tables',
+            controller: 'data-tablesController'
+        })
+        .when('/dropzone-uploader', {
+            templateUrl: 'admin/demo/dropzone-uploader',
+            controller: 'dropzone-uploaderController'
+        })
+        .when('/fixed-datatables', {
+            templateUrl: 'admin/demo/fixed-datatables',
+            controller: 'fixed-datatablesController'
+        })
+        .when('/flot-charts', {
+            templateUrl: 'admin/demo/flot-charts',
+            controller: 'flot-chartsController'
+        })
+        .when('/forms-elements', {
+            templateUrl: 'admin/demo/forms-elements',
+            controller: 'forms-elementsController'
+        })
+        .when('/forms-masks', {
+            templateUrl: 'admin/demo/forms-masks',
+            controller: 'forms-masksController'
+        })
+        .when('/forms-validation', {
+            templateUrl: 'admin/demo/forms-validation',
+            controller: 'forms-validationController'
+        })
+        .when('/forms-wizard', {
+            templateUrl: 'admin/demo/forms-wizard',
+            controller: 'forms-wizardController'
+        })
+        .when('/gmaps', {
+            templateUrl: 'admin/demo/gmaps',
+            controller: 'gmapsController'
+        })
+        .when('/helper-classes', {
+            templateUrl: 'admin/demo/helper-classes',
+            controller: 'helper-classesController'
+        })
+        .when('/icons', {
+            templateUrl: 'admin/demo/icons',
+            controller: 'iconsController'
+        })
+        .when('/image-crop', {
+            templateUrl: 'admin/demo/image-crop',
+            controller: 'image-cropController'
+        })
+        .when('/images', {
+            templateUrl: 'admin/demo/images',
+            controller: 'imagesController'
+        })
+        .when('/index-alt', {
+            templateUrl: 'admin/demo/index-alt',
+            controller: 'index-altController'
+        })
+        .when('/inline-editor', {
+            templateUrl: 'admin/demo/inline-editor',
+            controller: 'inline-editorController'
+        })
+        .when('/input-knobs', {
+            templateUrl: 'admin/demo/input-knobs',
+            controller: 'input-knobsController'
+        })
+        .when('/just-gage', {
+            templateUrl: 'admin/demo/just-gage',
+            controller: 'just-gageController'
+        })
+        .when('/labels-badges', {
+            templateUrl: 'admin/demo/labels-badges',
+            controller: 'labels-badgesController'
+        })
+        .when('/lazyload', {
+            templateUrl: 'admin/demo/lazyload',
+            controller: 'lazyloadController'
+        })
+        .when('/loading-feedback', {
+            templateUrl: 'admin/demo/loading-feedback',
+            controller: 'loading-feedbackController'
+        })
+        .when('/mailbox-compose', {
+            templateUrl: 'admin/demo/mailbox-compose',
+            controller: 'mailbox-composeController'
+        })
+        .when('/mailbox-inbox', {
+            templateUrl: 'admin/demo/mailbox-inbox',
+            controller: 'mailbox-inboxController'
+        })
+        .when('/mailbox-single', {
+            templateUrl: 'admin/demo/mailbox-single',
+            controller: 'mailbox-singleController'
+        })
+        .when('/mapael', {
+            templateUrl: 'admin/demo/mapael',
+            controller: 'mapaelController'
+        })
+        .when('/markdown', {
+            templateUrl: 'admin/demo/markdown',
+            controller: 'markdownController'
+        })
+        .when('/modals', {
+            templateUrl: 'admin/demo/modals',
+            controller: 'modalsController'
+        })
+        .when('/morris-charts', {
+            templateUrl: 'admin/demo/morris-charts',
+            controller: 'morris-chartsController'
+        })
+        .when('/multi-uploader', {
+            templateUrl: 'admin/demo/multi-uploader',
+            controller: 'multi-uploaderController'
+        })
+        .when('/nav-menus', {
+            templateUrl: 'admin/demo/nav-menus',
+            controller: 'nav-menusController'
+        })
+        .when('/notifications', {
+            templateUrl: 'admin/demo/notifications',
+            controller: 'notificationsController'
+        })
+        .when('/page-transitions', {
+            templateUrl: 'admin/demo/page-transitions',
+            controller: 'page-transitionsController'
+        })
+        .when('/panel-boxes', {
+            templateUrl: 'admin/demo/panel-boxes',
+            controller: 'panel-boxesController'
+        })
+        .when('/pickers', {
+            templateUrl: 'admin/demo/pickers',
+            controller: 'pickersController'
+        })
+        .when('/pie-gages', {
+            templateUrl: 'admin/demo/pie-gages',
+            controller: 'pie-gagesController'
+        })
+        .when('/popovers-tooltips', {
+            templateUrl: 'admin/demo/popovers-tooltips',
+            controller: 'popovers-tooltipsController'
+        })
+        .when('/progress-bars', {
+            templateUrl: 'admin/demo/progress-bars',
+            controller: 'progress-barsController'
+        })
+        .when('/response-messages', {
+            templateUrl: 'admin/demo/response-messages',
+            controller: 'response-messagesController'
+        })
+        .when('/responsive-datatables', {
+            templateUrl: 'admin/demo/responsive-datatables',
+            controller: 'responsive-datatablesController'
+        })
+        .when('/responsive-tables', {
+            templateUrl: 'admin/demo/responsive-tables',
+            controller: 'responsive-tablesController'
+        })
+        .when('/scrollbars', {
+            templateUrl: 'admin/demo/scrollbars',
+            controller: 'scrollbarsController'
+        })
+        .when('/sliders', {
+            templateUrl: 'admin/demo/sliders',
+            controller: 'slidersController'
+        })
+        .when('/social-boxes', {
+            templateUrl: 'admin/demo/social-boxes',
+            controller: 'social-boxesController'
+        })
+        .when('/sortable-elements', {
+            templateUrl: 'admin/demo/sortable-elements',
+            controller: 'sortable-elementsController'
+        })
+        .when('/sparklines', {
+            templateUrl: 'admin/demo/sparklines',
+            controller: 'sparklinesController'
+        })
+        .when('/summernote', {
+            templateUrl: 'admin/demo/summernote',
+            controller: 'summernoteController'
+        })
+        .when('/tables', {
+            templateUrl: 'admin/demo/tables',
+            controller: 'tablesController'
+        })
+        .when('/tabs', {
+            templateUrl: 'admin/demo/tabs',
+            controller: 'tabsController'
+        })
+        .when('/tile-boxes', {
+            templateUrl: 'admin/demo/tile-boxes',
+            controller: 'tile-boxesController'
+        })
+        .when('/timeline', {
+            templateUrl: 'admin/demo/timeline',
+            controller: 'timelineController'
+        })
+        .when('/vector-maps', {
+            templateUrl: 'admin/demo/vector-maps',
+            controller: 'vector-mapsController'
+        })
+        .when('/xcharts', {
+            templateUrl: 'admin/demo/xcharts',
+            controller: 'xchartsController'
+        })
+        .when('/admin-blog', {
+            templateUrl: 'admin/demo/admin-blog',
+            controller: 'admin-blogController'
+        })
+        .when('/admin-pricing', {
+            templateUrl: 'admin/demo/admin-pricing',
+            controller: 'admin-pricingController'
+        })
+        .when('/auto-menu', {
+            templateUrl: 'admin/demo/auto-menu',
+            controller: 'auto-menuController'
+        })
+        .when('/faq-section', {
+            templateUrl: 'admin/demo/faq-section',
+            controller: 'faq-sectionController'
+        })
+        .when('/invoice', {
+            templateUrl: 'admin/demo/invoice',
+            controller: 'invoiceController'
+        })
+        .when('/portfolio-gallery', {
+            templateUrl: 'admin/demo/portfolio-gallery',
+            controller: 'portfolio-galleryController'
+        })
+        .when('/portfolio-masonry', {
+            templateUrl: 'admin/demo/portfolio-masonry',
+            controller: 'portfolio-masonryController'
+        })
+        .when('/slidebars', {
+            templateUrl: 'admin/demo/slidebars',
+            controller: 'slidebarsController'
+        })
+        .when('/view-profile', {
+            templateUrl: 'admin/demo/view-profile',
+            controller: 'view-profileController'
+        });
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
 });
 
 
 monarchApp.controller('indexController', function($scope) {
-    
+    $scope.subheading = "Muy Title";
 });
 
 monarchApp.controller('advanced-datatablesController', function($scope) {
@@ -392,7 +321,7 @@ monarchApp.controller('bs-carouselController', function($scope) {
 });
 
 monarchApp.controller('buttonsController', function($scope) {
-    
+    $scope.subheading = "Muy Title";
 });
 
 monarchApp.controller('calendarController', function($scope) {
