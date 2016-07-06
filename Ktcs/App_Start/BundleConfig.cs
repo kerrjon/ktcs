@@ -26,20 +26,19 @@ namespace Ktcs
       bundles.Add(new ScriptBundle("~/bundles/angular-animate", angularAnimateCdn).Include(
                   "~/Scripts/angular-animate.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angular-app-config").Include(
-                  "~/assets/angular/app.js"));
+      bundles.Add(new ScriptBundle("~/bundles/jqueryvalunobtrusive").Include(
+            "~/Scripts/jquery.validate.unobtrusive.js"));
 
-            // scripts required in the head
-            bundles.Add(new ScriptBundle("~/bundles/adminHeader").Include(
-              //"~/Scripts/jquery.validate.unobtrusive.js",
-              "~/Scripts/jquery.unobtrusive-ajax.js",
-              "~/assets/js-core/jquery-core.js",
-              "~/assets/js-core/jquery-ui-core.js",
-              "~/assets/js-core/jquery-ui-widget.js",
-              "~/assets/js-core/jquery-ui-mouse.js",
-              "~/assets/js-core/jquery-ui-position.js",
-              "~/assets/js-core/jquery-cookie.js"
-       ));
+      // scripts required in the head
+      bundles.Add(new ScriptBundle("~/bundles/adminHeader").Include(
+        "~/assets/js-core/jquery-core.js",
+        "~/assets/js-core/jquery-ui-core.js",
+        "~/assets/js-core/jquery-ui-widget.js",
+        "~/assets/js-core/jquery-ui-mouse.js",
+        "~/assets/js-core/jquery-ui-position.js",
+        "~/assets/js-core/jquery-cookie.js",
+        "~/Scripts/jquery.unobtrusive-ajax.js"
+ ));
 
       // scripts required at the bottom of the page
       bundles.Add(new ScriptBundle("~/bundles/admin").Include(
