@@ -5,6 +5,18 @@ namespace Ktcs.Areas.Admin.Controllers
 {
   public class DemoController : Controller
   {
+    public ActionResult Students() { return View(); }
+    public ActionResult Surveys() { return View(); }
+    public ActionResult Courses() { return View(); }
+    public ActionResult Topics() { return View(); }
+    public ActionResult Brands() { return View(); }
+    public ActionResult Vendors() { return View(); }
+    public ActionResult Payments() { return View(); }
+    public ActionResult Waitlist() { return View(); }
+    public ActionResult Classes() { return View(); }
+    public ActionResult Locations() { return View(); }
+
+
     public ActionResult AdminBlog() { return View(); }
     public ActionResult AdminPricing() { return View(); }
     public ActionResult AdvancedDataTables() { return View(); }

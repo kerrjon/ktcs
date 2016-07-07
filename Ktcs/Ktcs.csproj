@@ -294,6 +294,7 @@
     <Content Include="assets\image-resources\full-bg\full-bg-8.jpg" />
     <Content Include="assets\image-resources\full-bg\full-bg-9.jpg" />
     <Content Include="assets\image-resources\gravatar.jpg" />
+    <Content Include="assets\image-resources\gravatar.png" />
     <Content Include="assets\image-resources\logo-admin.png" />
     <Content Include="assets\image-resources\logo-alt.png" />
     <Content Include="assets\image-resources\logo.png" />
@@ -1093,6 +1094,16 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Admin\Views\Courses.cshtml" />
     <Content Include="Areas\Login\Views\Account\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Payments.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Students.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Courses.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Topics.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Surveys.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Classes.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Brands.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Vendors.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Waitlist.cshtml" />
+    <Content Include="Areas\Admin\Views\Demo\Locations.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
