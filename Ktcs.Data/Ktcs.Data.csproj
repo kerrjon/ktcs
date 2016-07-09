@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB8D9F8B-9695-4FF8-9B25-CCF66E91C592}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ktcs.Data</RootNamespace>
+    <AssemblyName>Ktcs.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Answer.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="area.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Authority.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BasePrice.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BrandCategory.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRequest.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComContact.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComContactNote.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="company.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="contact.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactNote.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseTypeDetail.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course_CourseTypeDetail.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enrollment.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expense.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Income.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insCategory.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insCertification.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insSkill.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="instructorCert.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorNote.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KtcsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KtcsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KtcsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KtcsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KtcsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="News.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoteType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReferredBy.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduledClass.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SectionType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="student.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDistribution.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentNote.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentNote2.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="subCategory.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Survey.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyQuestion.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Topic.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TopicCategory.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vendor.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendorType.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WaitList.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="KtcsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KtcsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="KtcsModel.edmx.diagram">
+      <DependentUpon>KtcsModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KtcsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KtcsModel.edmx</DependentUpon>
+      <LastGenOutput>KtcsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KtcsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KtcsModel.edmx</DependentUpon>
+      <LastGenOutput>KtcsModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

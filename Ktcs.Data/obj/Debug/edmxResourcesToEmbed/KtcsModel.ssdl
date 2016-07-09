@@ -1,0 +1,1352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KtcsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="adminemail" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="AdminInitials" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="AdminFName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="AdminLName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="AdminPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="AdminWebsite" Type="nvarchar" MaxLength="75" />
+    <Property Name="AdminFax" Type="nvarchar" MaxLength="20" />
+    <Property Name="AdminCompany" Type="nvarchar" MaxLength="75" />
+    <Property Name="SysAdmin" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="ReportDateRange" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnswerTxt" Type="ntext" />
+    <Property Name="AnswerNum" Type="decimal" Precision="2" Scale="0" />
+    <Property Name="SQID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="ScheduledClassID" Type="int" />
+  </EntityType>
+  <EntityType Name="area">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AType">
+    <Key>
+      <PropertyRef Name="ATypeID" />
+    </Key>
+    <Property Name="ATypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'KnowledgeTransferInc1.dbo.Authority' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Authority">
+    <Key>
+      <PropertyRef Name="AuthorityID" />
+      <PropertyRef Name="Authority" />
+    </Key>
+    <Property Name="AuthorityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Authority" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BasePrice">
+    <Key>
+      <PropertyRef Name="BasePriceID" />
+    </Key>
+    <Property Name="BasePriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BasePrice" Type="smallmoney" Nullable="false" />
+    <Property Name="BaseDescription" Type="varchar" MaxLength="75" />
+    <Property Name="membership" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brandId" />
+    </Key>
+    <Property Name="brand" Type="nvarchar" MaxLength="200" />
+    <Property Name="brandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BrandCategory">
+    <Key>
+      <PropertyRef Name="BrandCategoryID" />
+    </Key>
+    <Property Name="brandCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="BrandCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandId" Type="int" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClassRequest">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="ScheduledClassID" Type="int" Nullable="false" />
+    <Property Name="RequestDate" Type="smalldatetime" />
+    <Property Name="ApprovalSent" Type="smalldatetime" />
+    <Property Name="ApprovalReceived" Type="smalldatetime" />
+    <Property Name="Denied" Type="varchar" MaxLength="3" />
+    <Property Name="Withdrew" Type="varchar" MaxLength="3" />
+    <Property Name="Enrolled" Type="smalldatetime" />
+    <Property Name="WithdrawReason" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ComContact">
+    <Key>
+      <PropertyRef Name="ComContactID" />
+    </Key>
+    <Property Name="ComContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ComConTitle" Type="nvarchar" MaxLength="75" />
+    <Property Name="ComConFName" Type="varchar" MaxLength="30" />
+    <Property Name="ComConLName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="ComConAddress" Type="varchar" MaxLength="75" />
+    <Property Name="ComConAddress2" Type="varchar" MaxLength="75" />
+    <Property Name="ComConCity" Type="varchar" MaxLength="30" />
+    <Property Name="ComConState" Type="char" MaxLength="2" />
+    <Property Name="ComConZip" Type="varchar" MaxLength="12" />
+    <Property Name="ComConPhone" Type="varchar" MaxLength="20" />
+    <Property Name="ComConPhone2" Type="varchar" MaxLength="20" />
+    <Property Name="ComConEmail" Type="varchar" MaxLength="60" />
+    <Property Name="ComConEmail2" Type="varchar" MaxLength="60" />
+    <Property Name="ComConFax" Type="varchar" MaxLength="20" />
+    <Property Name="ComConCountry" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="ComContactNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComContactID" Type="int" Nullable="false" />
+    <Property Name="NoteDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="AdminInitials" Type="varchar" MaxLength="3" />
+    <Property Name="FollowUp" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FollowUpDate" Type="smalldatetime" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+    <Property Name="toDoFor" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="comName" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="comAddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="comAddress2" Type="nvarchar" MaxLength="75" />
+    <Property Name="comCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="comState" Type="nvarchar" MaxLength="2" />
+    <Property Name="comZip" Type="nvarchar" MaxLength="12" />
+    <Property Name="comcountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="comphone" Type="nvarchar" MaxLength="20" />
+    <Property Name="comfax" Type="nvarchar" MaxLength="20" />
+    <Property Name="comMapLink" Type="nvarchar" MaxLength="75" />
+    <Property Name="billname" Type="varchar" MaxLength="50" />
+    <Property Name="billaddress" Type="varchar" MaxLength="75" />
+    <Property Name="billaddress2" Type="varchar" MaxLength="75" />
+    <Property Name="billcity" Type="varchar" MaxLength="30" />
+    <Property Name="billstate" Type="varchar" MaxLength="2" />
+    <Property Name="billzip" Type="varchar" MaxLength="12" />
+    <Property Name="billphone" Type="varchar" MaxLength="20" />
+    <Property Name="billfax" Type="varchar" MaxLength="20" />
+    <Property Name="billcountry" Type="varchar" MaxLength="50" />
+    <Property Name="logo" Type="varchar" MaxLength="75" />
+    <Property Name="billemail" Type="varchar" MaxLength="75" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="contactID" />
+    </Key>
+    <Property Name="contactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vendorid" Type="int" Nullable="false" />
+    <Property Name="contitle" Type="nvarchar" MaxLength="75" />
+    <Property Name="conFName" Type="nvarchar" MaxLength="30" />
+    <Property Name="conLName" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="conaddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="concity" Type="nvarchar" MaxLength="30" />
+    <Property Name="constate" Type="nvarchar" MaxLength="2" />
+    <Property Name="conzip" Type="nvarchar" MaxLength="12" />
+    <Property Name="conphone" Type="nvarchar" MaxLength="20" />
+    <Property Name="conphone2" Type="nvarchar" MaxLength="20" />
+    <Property Name="conemail" Type="nvarchar" MaxLength="60" />
+    <Property Name="conemail2" Type="nvarchar" MaxLength="60" />
+    <Property Name="confax" Type="nvarchar" MaxLength="20" />
+    <Property Name="concountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="conext1" Type="varchar" MaxLength="15" />
+    <Property Name="conext2" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="ContactNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactID" Type="int" Nullable="false" />
+    <Property Name="NoteDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="AdminInitials" Type="nvarchar" MaxLength="3" />
+    <Property Name="Followup" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FollowupDate" Type="smalldatetime" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+    <Property Name="toDoFor" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="125" Nullable="false" />
+    <Property Name="description" Type="ntext" />
+    <Property Name="prereq" Type="nvarchar" MaxLength="4000" />
+    <Property Name="duration" Type="nvarchar" MaxLength="10" />
+    <Property Name="courseTypeDetailID" Type="int" />
+    <Property Name="comments" Type="nvarchar" MaxLength="1000" />
+    <Property Name="inscomments" Type="nvarchar" MaxLength="50" />
+    <Property Name="overview" Type="ntext" Nullable="false" />
+    <Property Name="basePriceID" Type="int" Nullable="false" />
+    <Property Name="courseware" Type="varchar" MaxLength="100" />
+    <Property Name="coursewarevendor" Type="varchar" MaxLength="100" />
+    <Property Name="coursewarecost" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="coursewarenotes" Type="varchar" MaxLength="4000" />
+    <Property Name="datecreated" Type="smalldatetime" />
+    <Property Name="lastupdate" Type="smalldatetime" />
+    <Property Name="instructorNotes" Type="varchar" MaxLength="4000" />
+    <Property Name="vendorwebsite" Type="varchar" MaxLength="250" />
+    <Property Name="isvisable" Type="int" />
+    <Property Name="visibleInFlyout" Type="int" />
+  </EntityType>
+  <EntityType Name="Course_CourseTypeDetail">
+    <Key>
+      <PropertyRef Name="coursenumber" />
+      <PropertyRef Name="coursetypedetailid" />
+    </Key>
+    <Property Name="coursenumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="coursetypedetailid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseBrandCategory">
+    <Key>
+      <PropertyRef Name="brandCategoryId" />
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="brandCategoryId" Type="int" Nullable="false" />
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseTopicCategory">
+    <Key>
+      <PropertyRef Name="topicCategoryId" />
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="topicCategoryId" Type="int" Nullable="false" />
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseType">
+    <Key>
+      <PropertyRef Name="courseTypeID" />
+    </Key>
+    <Property Name="courseTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="courseType" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="AreaID" Type="int" Nullable="false" />
+    <Property Name="pageNotes" Type="nvarchar" MaxLength="500" />
+    <Property Name="visibleInFlyout" Type="int" />
+    <Property Name="flyoutText" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CourseTypeDetail">
+    <Key>
+      <PropertyRef Name="CourseTypeDetailID" />
+    </Key>
+    <Property Name="CourseTypeDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseTypeID" Type="int" Nullable="false" />
+    <Property Name="CourseTypeDetail" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="pagenotes" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Enrollments">
+    <Key>
+      <PropertyRef Name="ConfirmationNum" />
+    </Key>
+    <Property Name="ConfirmationNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Enrolled" Type="smalldatetime" />
+    <Property Name="Confirmation" Type="smalldatetime" />
+    <Property Name="Reminder" Type="smalldatetime" />
+    <Property Name="Paid" Type="money" />
+    <Property Name="invoice" Type="nvarchar" MaxLength="10" />
+    <Property Name="Discount" Type="money" />
+    <Property Name="MTSfee" Type="money" />
+    <Property Name="statusID" Type="int" Nullable="false" />
+    <Property Name="Amountdue" Type="money" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="ScheduledClassID" Type="int" Nullable="false" />
+    <Property Name="cancellationNum" Type="nvarchar" MaxLength="10" />
+    <Property Name="cancellationDate" Type="smalldatetime" />
+    <Property Name="dateDue" Type="smalldatetime" />
+    <Property Name="mgrConfirmation" Type="varchar" MaxLength="3" />
+    <Property Name="conarchived" Type="varchar" MaxLength="3" />
+    <Property Name="DiscountDollars" Type="money" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorID" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="smallmoney" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="ExpenseTypeID" Type="int" />
+    <Property Name="ScheduledClassID" Type="int" />
+    <Property Name="VenInvoiceNum" Type="nvarchar" MaxLength="10" />
+    <Property Name="VenInvoiceDate" Type="smalldatetime" />
+    <Property Name="VenInvoicePaid" Type="varchar" MaxLength="3" />
+    <Property Name="Tax" Type="smallmoney" />
+    <Property Name="Shipping" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="ExpenseType">
+    <Key>
+      <PropertyRef Name="ExpenseTypeID" />
+    </Key>
+    <Property Name="ExpenseTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpenseType" Type="nvarchar" MaxLength="75" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Income">
+    <Key>
+      <PropertyRef Name="IncomeID" />
+    </Key>
+    <Property Name="IncomeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="smallmoney" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="IncomeTypeID" Type="int" />
+    <Property Name="ScheduledClassID" Type="int" />
+    <Property Name="VenInvoiceNum" Type="nvarchar" MaxLength="10" />
+    <Property Name="VenInvoiceDate" Type="smalldatetime" />
+    <Property Name="VenInvoicePaid" Type="varchar" MaxLength="3" />
+    <Property Name="Tax" Type="smallmoney" />
+    <Property Name="Shipping" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="IncomeType">
+    <Key>
+      <PropertyRef Name="IncomeTypeID" />
+    </Key>
+    <Property Name="IncomeTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IncomeType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="insCategory">
+    <Key>
+      <PropertyRef Name="insCategory" />
+    </Key>
+    <Property Name="insCategory" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="insCertification">
+    <Key>
+      <PropertyRef Name="insCertification" />
+    </Key>
+    <Property Name="insCertification" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="insSkill">
+    <Key>
+      <PropertyRef Name="insSkill" />
+    </Key>
+    <Property Name="insSkill" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Instructor">
+    <Key>
+      <PropertyRef Name="InstructorID" />
+    </Key>
+    <Property Name="InstructorID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="insfname" Type="nvarchar" MaxLength="30" />
+    <Property Name="inslname" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="insaddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="inscity" Type="nvarchar" MaxLength="30" />
+    <Property Name="insstate" Type="nvarchar" MaxLength="2" />
+    <Property Name="inszip" Type="nvarchar" MaxLength="12" />
+    <Property Name="insphone" Type="nvarchar" MaxLength="20" />
+    <Property Name="insphone2" Type="nvarchar" MaxLength="20" />
+    <Property Name="insemail" Type="nvarchar" MaxLength="60" />
+    <Property Name="insemail2" Type="nvarchar" MaxLength="60" />
+    <Property Name="insfax" Type="nvarchar" MaxLength="20" />
+    <Property Name="inscountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="VendorID" Type="int" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="10" />
+    <Property Name="insIndependent" Type="varchar" MaxLength="50" />
+    <Property Name="insReferredBy" Type="varchar" MaxLength="50" />
+    <Property Name="Keywords" Type="varchar" MaxLength="200" />
+    <Property Name="resumeText" Type="varchar" MaxLength="7000" />
+    <Property Name="Skill1" Type="varchar" MaxLength="50" />
+    <Property Name="Skill2" Type="varchar" MaxLength="50" />
+    <Property Name="Skill3" Type="varchar" MaxLength="50" />
+    <Property Name="Skill4" Type="varchar" MaxLength="50" />
+    <Property Name="Skill5" Type="varchar" MaxLength="50" />
+    <Property Name="Category1" Type="varchar" MaxLength="50" />
+    <Property Name="Category2" Type="varchar" MaxLength="50" />
+    <Property Name="Category3" Type="varchar" MaxLength="50" />
+    <Property Name="notes" Type="varchar" MaxLength="2000" />
+    <Property Name="coursewareNotes" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="instructorCert">
+    <Key>
+      <PropertyRef Name="insCertification" />
+      <PropertyRef Name="instructorID" />
+    </Key>
+    <Property Name="insCertification" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="instructorID" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstructorNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstructorID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NoteDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="7000" Nullable="false" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="AdminInitials" Type="varchar" MaxLength="3" />
+    <Property Name="FollowUp" Type="varchar" MaxLength="7000" />
+    <Property Name="FollowUpDate" Type="smalldatetime" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+    <Property Name="toDoFor" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="locaddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="loccity" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="locstate" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="loczip" Type="nvarchar" MaxLength="12" />
+    <Property Name="locnotes" Type="nvarchar" MaxLength="300" />
+    <Property Name="locName" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="locmapLink" Type="nvarchar" MaxLength="75" />
+    <Property Name="locphone" Type="nvarchar" MaxLength="20" />
+    <Property Name="loccountry" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ManagerID" />
+    </Key>
+    <Property Name="ManagerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mgrFName" Type="nvarchar" MaxLength="30" />
+    <Property Name="mgrLName" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="mgrPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="mgrEmail" Type="nvarchar" MaxLength="60" />
+    <Property Name="mgrFax" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="NewsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="Body" Type="ntext" Nullable="false" />
+    <Property Name="Visible" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="75" />
+    <Property Name="NewsDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="NoteType">
+    <Key>
+      <PropertyRef Name="NoteTypeID" />
+    </Key>
+    <Property Name="NoteTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoteType" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PayAmount" Type="money" Nullable="false" />
+    <Property Name="PayDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="ConfirmationNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QID" />
+    </Key>
+    <Property Name="QID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ATypeID" Type="int" Nullable="false" />
+    <Property Name="SectionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReferredBy">
+    <Key>
+      <PropertyRef Name="ReferredByID" />
+    </Key>
+    <Property Name="ReferredByID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferredBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScheduledClass">
+    <Key>
+      <PropertyRef Name="ScheduledClassID" />
+    </Key>
+    <Property Name="ScheduledClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="startDate" Type="datetime" />
+    <Property Name="endDate" Type="datetime" />
+    <Property Name="startTime" Type="varchar" MaxLength="50" />
+    <Property Name="endTime" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="smallmoney" />
+    <Property Name="MarketRate" Type="smallmoney" />
+    <Property Name="ispublic" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="KTCSRate" Type="smallmoney" />
+    <Property Name="KTCScourse" Type="varchar" MaxLength="3" />
+    <Property Name="startDateconfirmed" Type="varchar" MaxLength="3" />
+    <Property Name="bookOrderMade" Type="varchar" MaxLength="3" />
+    <Property Name="insTestReminder" Type="varchar" MaxLength="3" />
+    <Property Name="bookOrderRecieved" Type="varchar" MaxLength="3" />
+    <Property Name="insconfirmed" Type="varchar" MaxLength="3" />
+    <Property Name="locconfirmed" Type="varchar" MaxLength="3" />
+    <Property Name="MaxStudents" Type="smallint" />
+    <Property Name="locationID" Type="int" Nullable="false" />
+    <Property Name="InstructorID" Type="varchar" MaxLength="10" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="SurveyID" Type="int" Nullable="false" />
+    <Property Name="Mirrored" Type="varchar" MaxLength="50" />
+    <Property Name="MirroredWebsite" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SectionType">
+    <Key>
+      <PropertyRef Name="SectionID" />
+    </Key>
+    <Property Name="SectionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Settings">
+          <Property Name="ID" Type="tinyint" />
+          <Property Name="Admin_ID" Type="nvarchar" MaxLength="30" />
+          <Property Name="Admin_Pass" Type="nvarchar" MaxLength="30" />
+          <Property Name="Abbreviate_Days" Type="bit" />
+          <Property Name="Abbreviate_Months" Type="bit" />
+          <Property Name="Event_Display" Type="bit" />
+          <Property Name="American_Time" Type="bit" />
+          <Property Name="Page_Title" Type="nvarchar" MaxLength="30" />
+          <Property Name="Background_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Font_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Link_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Hover_Link_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Visited_Link_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Active_Link_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Weekday_Font" Type="nvarchar" MaxLength="30" />
+          <Property Name="Weekday_Font_Size" Type="nvarchar" MaxLength="30" />
+          <Property Name="Weekday_Font_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Weekday_Background_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Date_Font" Type="nvarchar" MaxLength="30" />
+          <Property Name="Date_Font_Size" Type="nvarchar" MaxLength="30" />
+          <Property Name="Date_Font_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Date_Background_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Event_Font" Type="nvarchar" MaxLength="30" />
+          <Property Name="Event_Font_Size" Type="nvarchar" MaxLength="30" />
+          <Property Name="Event_Font_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Cell_Background_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Cell_Width" Type="nvarchar" MaxLength="30" />
+          <Property Name="Cell_Height" Type="nvarchar" MaxLength="30" />
+          <Property Name="Border_Size" Type="nvarchar" MaxLength="30" />
+          <Property Name="Border_Color" Type="nvarchar" MaxLength="30" />
+          <Property Name="Header" Type="ntext" />
+          <Property Name="Footer" Type="ntext" />
+        </EntityType>-->
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BgColor" Type="nvarchar" MaxLength="6" />
+    <Property Name="FtColor" Type="nvarchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stuLName" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="stuFName" Type="nvarchar" MaxLength="30" />
+    <Property Name="stuEmail" Type="nvarchar" MaxLength="75" />
+    <Property Name="Password" Type="varchar" MaxLength="10" />
+    <Property Name="stuHomePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="stuInternationalCode" Type="varchar" MaxLength="2" />
+    <Property Name="stuProductArea" Type="nvarchar" MaxLength="70" />
+    <Property Name="ManagerID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="stupassword" Type="nvarchar" MaxLength="10" />
+    <Property Name="authorityID" Type="int" Nullable="false" />
+    <Property Name="stuWorkPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="stuCountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="stuJobTitle" Type="nvarchar" MaxLength="70" />
+    <Property Name="stuCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="stustate" Type="nvarchar" MaxLength="2" />
+    <Property Name="stuaddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="stuaddress2" Type="nvarchar" MaxLength="75" />
+    <Property Name="stuzip" Type="nvarchar" MaxLength="12" />
+    <Property Name="ReferredByID" Type="int" />
+    <Property Name="stufax" Type="nvarchar" MaxLength="20" />
+    <Property Name="CostCenter" Type="nvarchar" MaxLength="15" />
+    <Property Name="BillName" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillAddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillAddress2" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="BillState" Type="nvarchar" MaxLength="2" />
+    <Property Name="BillZip" Type="nvarchar" MaxLength="12" />
+    <Property Name="BillCountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="BillPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillFax" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillEmail" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillInternationalCode" Type="varchar" MaxLength="2" />
+    <Property Name="OtherCompany" Type="varchar" MaxLength="60" />
+    <Property Name="OtherReferredBy" Type="varchar" MaxLength="60" />
+    <Property Name="OtherManager" Type="varchar" MaxLength="60" />
+    <Property Name="OtherManagerPhone" Type="varchar" MaxLength="20" />
+    <Property Name="mailList" Type="varchar" MaxLength="3" />
+    <Property Name="UserID" Type="varchar" MaxLength="10" />
+    <Property Name="ClassesTaken" Type="tinyint" />
+    <Property Name="blockReminder" Type="varchar" MaxLength="3" />
+    <Property Name="other" Type="varchar" MaxLength="75" />
+    <Property Name="stuarchived" Type="varchar" MaxLength="3" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="StudentDistribution">
+    <Key>
+      <PropertyRef Name="StudentDistributionID" />
+    </Key>
+    <Property Name="StudentDistributionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="DistributionID" Type="int" Nullable="false" />
+    <Property Name="ExamStatus" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="startTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StudentNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="NoteDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="4000" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="followup" Type="nvarchar" MaxLength="4000" />
+    <Property Name="AdminInitials" Type="nvarchar" MaxLength="3" />
+    <Property Name="FollowUpDate" Type="smalldatetime" />
+    <Property Name="ToDoFor" Type="varchar" MaxLength="60" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="StudentNote2">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="NoteDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="4000" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="followup" Type="nvarchar" MaxLength="4000" />
+    <Property Name="AdminInitials" Type="nvarchar" MaxLength="3" />
+    <Property Name="FollowUpDate" Type="smalldatetime" />
+    <Property Name="ToDoFor" Type="varchar" MaxLength="60" />
+    <Property Name="Priority" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="subCategory">
+    <Key>
+      <PropertyRef Name="subCategoryID" />
+    </Key>
+    <Property Name="subCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subCategory" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Survey">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+    </Key>
+    <Property Name="SurveyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SurveyName" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="DateCreated" Type="smalldatetime" Nullable="false" />
+    <Property Name="Creator" Type="varchar" MaxLength="50" />
+    <Property Name="DefaultSurvey" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SurveyQuestion">
+    <Key>
+      <PropertyRef Name="SQID" />
+    </Key>
+    <Property Name="SQID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QID" Type="int" Nullable="false" />
+    <Property Name="SurveyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topic" Type="nvarchar" MaxLength="200" />
+    <Property Name="topicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicCategory">
+    <Key>
+      <PropertyRef Name="topicCategoryID" />
+    </Key>
+    <Property Name="topicCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="topicCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="topicId" Type="int" />
+  </EntityType>
+  <EntityType Name="vendor">
+    <Key>
+      <PropertyRef Name="vendorID" />
+    </Key>
+    <Property Name="vendorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="75" />
+    <Property Name="city" Type="nvarchar" MaxLength="30" />
+    <Property Name="state" Type="nvarchar" MaxLength="2" />
+    <Property Name="zip" Type="nvarchar" MaxLength="12" />
+    <Property Name="phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="country" Type="nvarchar" MaxLength="30" />
+    <Property Name="NegDiscount" Type="nvarchar" MaxLength="255" />
+    <Property Name="VendorTypeID" Type="int" Nullable="false" />
+    <Property Name="maplink" Type="nvarchar" MaxLength="75" />
+    <Property Name="notes" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="VendorType">
+    <Key>
+      <PropertyRef Name="VendorTypeID" />
+    </Key>
+    <Property Name="VendorTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WaitList">
+    <Key>
+      <PropertyRef Name="WaitListID" />
+    </Key>
+    <Property Name="WaitListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="CourseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TimeFrame" Type="nvarchar" MaxLength="20" />
+    <Property Name="Comments" Type="ntext" />
+    <Property Name="DateCreated" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BrandCategory_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="brandId" />
+      </Principal>
+      <Dependent Role="BrandCategory">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Course_BasePrice">
+    <End Role="BasePrice" Type="Self.BasePrice" Multiplicity="1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BasePrice">
+        <PropertyRef Name="BasePriceID" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="basePriceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Course_CourseTypeDetail">
+    <End Role="CourseTypeDetail" Type="Self.CourseTypeDetail" Multiplicity="0..1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseTypeDetail">
+        <PropertyRef Name="CourseTypeDetailID" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="courseTypeDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseBrandCategory_BrandCategory">
+    <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="1" />
+    <End Role="CourseBrandCategory" Type="Self.CourseBrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BrandCategory">
+        <PropertyRef Name="BrandCategoryID" />
+      </Principal>
+      <Dependent Role="CourseBrandCategory">
+        <PropertyRef Name="brandCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseBrandCategory_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="CourseBrandCategory" Type="Self.CourseBrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseNumber" />
+      </Principal>
+      <Dependent Role="CourseBrandCategory">
+        <PropertyRef Name="courseNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseTopicCategory_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="CourseTopicCategory" Type="Self.CourseTopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseNumber" />
+      </Principal>
+      <Dependent Role="CourseTopicCategory">
+        <PropertyRef Name="courseNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseTopicCategory_TopicCategory">
+    <End Role="TopicCategory" Type="Self.TopicCategory" Multiplicity="1" />
+    <End Role="CourseTopicCategory" Type="Self.CourseTopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopicCategory">
+        <PropertyRef Name="topicCategoryID" />
+      </Principal>
+      <Dependent Role="CourseTopicCategory">
+        <PropertyRef Name="topicCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseType_area">
+    <End Role="area" Type="Self.area" Multiplicity="1" />
+    <End Role="CourseType" Type="Self.CourseType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="area">
+        <PropertyRef Name="AreaID" />
+      </Principal>
+      <Dependent Role="CourseType">
+        <PropertyRef Name="AreaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseTypeDetail_CourseType">
+    <End Role="CourseType" Type="Self.CourseType" Multiplicity="1" />
+    <End Role="CourseTypeDetail" Type="Self.CourseTypeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseType">
+        <PropertyRef Name="courseTypeID" />
+      </Principal>
+      <Dependent Role="CourseTypeDetail">
+        <PropertyRef Name="CourseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollments_ScheduledClass">
+    <End Role="ScheduledClass" Type="Self.ScheduledClass" Multiplicity="1" />
+    <End Role="Enrollments" Type="Self.Enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScheduledClass">
+        <PropertyRef Name="ScheduledClassID" />
+      </Principal>
+      <Dependent Role="Enrollments">
+        <PropertyRef Name="ScheduledClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollments_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Enrollments" Type="Self.Enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Enrollments">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollments_student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="Enrollments" Type="Self.Enrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Enrollments">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expense_ExpenseType">
+    <End Role="ExpenseType" Type="Self.ExpenseType" Multiplicity="0..1" />
+    <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenseType">
+        <PropertyRef Name="ExpenseTypeID" />
+      </Principal>
+      <Dependent Role="Expense">
+        <PropertyRef Name="ExpenseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_vendor">
+    <End Role="vendor" Type="Self.vendor" Multiplicity="0..1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_AType">
+    <End Role="AType" Type="Self.AType" Multiplicity="1" />
+    <End Role="Question" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AType">
+        <PropertyRef Name="ATypeID" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="ATypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_SectionType">
+    <End Role="SectionType" Type="Self.SectionType" Multiplicity="1" />
+    <End Role="Question" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionType">
+        <PropertyRef Name="SectionID" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="SectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduledClass_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="ScheduledClass" Type="Self.ScheduledClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseNumber" />
+      </Principal>
+      <Dependent Role="ScheduledClass">
+        <PropertyRef Name="courseNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduledClass_Instructor">
+    <End Role="Instructor" Type="Self.Instructor" Multiplicity="0..1" />
+    <End Role="ScheduledClass" Type="Self.ScheduledClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instructor">
+        <PropertyRef Name="InstructorID" />
+      </Principal>
+      <Dependent Role="ScheduledClass">
+        <PropertyRef Name="InstructorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduledClass_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="1" />
+    <End Role="ScheduledClass" Type="Self.ScheduledClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="ScheduledClass">
+        <PropertyRef Name="locationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduledClass_Survey">
+    <End Role="Survey" Type="Self.Survey" Multiplicity="1" />
+    <End Role="ScheduledClass" Type="Self.ScheduledClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Survey">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="ScheduledClass">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyQuestion_Question">
+    <End Role="Question" Type="Self.Question" Multiplicity="1" />
+    <End Role="SurveyQuestion" Type="Self.SurveyQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="QID" />
+      </Principal>
+      <Dependent Role="SurveyQuestion">
+        <PropertyRef Name="QID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyQuestion_Survey">
+    <End Role="Survey" Type="Self.Survey" Multiplicity="1" />
+    <End Role="SurveyQuestion" Type="Self.SurveyQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Survey">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyQuestion">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicCategory_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="0..1" />
+    <End Role="TopicCategory" Type="Self.TopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="TopicCategory">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vendor_VendorType">
+    <End Role="VendorType" Type="Self.VendorType" Multiplicity="1" />
+    <End Role="vendor" Type="Self.vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorType">
+        <PropertyRef Name="VendorTypeID" />
+      </Principal>
+      <Dependent Role="vendor">
+        <PropertyRef Name="VendorTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WaitList_student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="WaitList" Type="Self.WaitList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="WaitList">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KtcsModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="area" EntityType="Self.area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AType" EntityType="Self.AType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BasePrice" EntityType="Self.BasePrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrandCategory" EntityType="Self.BrandCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClassRequest" EntityType="Self.ClassRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComContact" EntityType="Self.ComContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComContactNote" EntityType="Self.ComContactNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="company" EntityType="Self.company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactNote" EntityType="Self.ContactNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course_CourseTypeDetail" EntityType="Self.Course_CourseTypeDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseBrandCategory" EntityType="Self.CourseBrandCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseTopicCategory" EntityType="Self.CourseTopicCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseType" EntityType="Self.CourseType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseTypeDetail" EntityType="Self.CourseTypeDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Enrollments" EntityType="Self.Enrollments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenseType" EntityType="Self.ExpenseType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Income" EntityType="Self.Income" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncomeType" EntityType="Self.IncomeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="insCategory" EntityType="Self.insCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="insCertification" EntityType="Self.insCertification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="insSkill" EntityType="Self.insSkill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Instructor" EntityType="Self.Instructor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instructorCert" EntityType="Self.instructorCert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstructorNote" EntityType="Self.InstructorNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoteType" EntityType="Self.NoteType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferredBy" EntityType="Self.ReferredBy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScheduledClass" EntityType="Self.ScheduledClass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SectionType" EntityType="Self.SectionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentDistribution" EntityType="Self.StudentDistribution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentNote" EntityType="Self.StudentNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentNote2" EntityType="Self.StudentNote2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subCategory" EntityType="Self.subCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Survey" EntityType="Self.Survey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SurveyQuestion" EntityType="Self.SurveyQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Topic" EntityType="Self.Topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopicCategory" EntityType="Self.TopicCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vendor" EntityType="Self.vendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VendorType" EntityType="Self.VendorType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaitList" EntityType="Self.WaitList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Authority" EntityType="Self.Authority" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Authority].[AuthorityID] AS [AuthorityID], 
+    [Authority].[Authority] AS [Authority]
+    FROM [dbo].[Authority] AS [Authority]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_BrandCategory_Brand" Association="Self.FK_BrandCategory_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="BrandCategory" EntitySet="BrandCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Course_BasePrice" Association="Self.FK_Course_BasePrice">
+      <End Role="BasePrice" EntitySet="BasePrice" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Course_CourseTypeDetail" Association="Self.FK_Course_CourseTypeDetail">
+      <End Role="CourseTypeDetail" EntitySet="CourseTypeDetail" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseBrandCategory_BrandCategory" Association="Self.FK_CourseBrandCategory_BrandCategory">
+      <End Role="BrandCategory" EntitySet="BrandCategory" />
+      <End Role="CourseBrandCategory" EntitySet="CourseBrandCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseBrandCategory_Course" Association="Self.FK_CourseBrandCategory_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseBrandCategory" EntitySet="CourseBrandCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseTopicCategory_Course" Association="Self.FK_CourseTopicCategory_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseTopicCategory" EntitySet="CourseTopicCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseTopicCategory_TopicCategory" Association="Self.FK_CourseTopicCategory_TopicCategory">
+      <End Role="TopicCategory" EntitySet="TopicCategory" />
+      <End Role="CourseTopicCategory" EntitySet="CourseTopicCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseType_area" Association="Self.FK_CourseType_area">
+      <End Role="area" EntitySet="area" />
+      <End Role="CourseType" EntitySet="CourseType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseTypeDetail_CourseType" Association="Self.FK_CourseTypeDetail_CourseType">
+      <End Role="CourseType" EntitySet="CourseType" />
+      <End Role="CourseTypeDetail" EntitySet="CourseTypeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollments_ScheduledClass" Association="Self.FK_Enrollments_ScheduledClass">
+      <End Role="ScheduledClass" EntitySet="ScheduledClass" />
+      <End Role="Enrollments" EntitySet="Enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollments_Status" Association="Self.FK_Enrollments_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Enrollments" EntitySet="Enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollments_student" Association="Self.FK_Enrollments_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="Enrollments" EntitySet="Enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expense_ExpenseType" Association="Self.FK_Expense_ExpenseType">
+      <End Role="ExpenseType" EntitySet="ExpenseType" />
+      <End Role="Expense" EntitySet="Expense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_vendor" Association="Self.FK_Location_vendor">
+      <End Role="vendor" EntitySet="vendor" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_AType" Association="Self.FK_Question_AType">
+      <End Role="AType" EntitySet="AType" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_SectionType" Association="Self.FK_Question_SectionType">
+      <End Role="SectionType" EntitySet="SectionType" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduledClass_Course" Association="Self.FK_ScheduledClass_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="ScheduledClass" EntitySet="ScheduledClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduledClass_Instructor" Association="Self.FK_ScheduledClass_Instructor">
+      <End Role="Instructor" EntitySet="Instructor" />
+      <End Role="ScheduledClass" EntitySet="ScheduledClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduledClass_Location" Association="Self.FK_ScheduledClass_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="ScheduledClass" EntitySet="ScheduledClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduledClass_Survey" Association="Self.FK_ScheduledClass_Survey">
+      <End Role="Survey" EntitySet="Survey" />
+      <End Role="ScheduledClass" EntitySet="ScheduledClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_AspNetUsers" Association="Self.FK_student_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyQuestion_Question" Association="Self.FK_SurveyQuestion_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="SurveyQuestion" EntitySet="SurveyQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyQuestion_Survey" Association="Self.FK_SurveyQuestion_Survey">
+      <End Role="Survey" EntitySet="Survey" />
+      <End Role="SurveyQuestion" EntitySet="SurveyQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicCategory_Topic" Association="Self.FK_TopicCategory_Topic">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="TopicCategory" EntitySet="TopicCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vendor_VendorType" Association="Self.FK_vendor_VendorType">
+      <End Role="VendorType" EntitySet="VendorType" />
+      <End Role="vendor" EntitySet="vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WaitList_student" Association="Self.FK_WaitList_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="WaitList" EntitySet="WaitList" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

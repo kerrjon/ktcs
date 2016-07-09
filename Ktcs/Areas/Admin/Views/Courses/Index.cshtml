@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Ktcs.Data.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prereq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inscomments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.overview)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseware)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coursewarevendor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coursewarecost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coursewarenotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datecreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastupdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instructorNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vendorwebsite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isvisable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.visibleInFlyout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prereq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inscomments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.overview)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseware)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coursewarevendor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coursewarecost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coursewarenotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datecreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastupdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.instructorNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vendorwebsite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isvisable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.visibleInFlyout)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasePrice.BaseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseTypeDetail.CourseTypeDetail1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.courseNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.courseNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.courseNumber })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KtcsModelStoreContainer" CdmEntityContainer="KnowledgeTransferInc1Entities">
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="KtcsModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="brand1" ColumnName="brand" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrandCategories">
+      <EntityTypeMapping TypeName="KtcsModel.BrandCategory">
+        <MappingFragment StoreEntitySet="BrandCategory">
+          <ScalarProperty Name="brandCategory1" ColumnName="brandCategory" />
+          <ScalarProperty Name="BrandCategoryID" ColumnName="BrandCategoryID" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="KtcsModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="prereq" ColumnName="prereq" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="courseTypeDetailID" ColumnName="courseTypeDetailID" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="inscomments" ColumnName="inscomments" />
+          <ScalarProperty Name="overview" ColumnName="overview" />
+          <ScalarProperty Name="basePriceID" ColumnName="basePriceID" />
+          <ScalarProperty Name="courseware" ColumnName="courseware" />
+          <ScalarProperty Name="coursewarevendor" ColumnName="coursewarevendor" />
+          <ScalarProperty Name="coursewarecost" ColumnName="coursewarecost" />
+          <ScalarProperty Name="coursewarenotes" ColumnName="coursewarenotes" />
+          <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+          <ScalarProperty Name="lastupdate" ColumnName="lastupdate" />
+          <ScalarProperty Name="instructorNotes" ColumnName="instructorNotes" />
+          <ScalarProperty Name="vendorwebsite" ColumnName="vendorwebsite" />
+          <ScalarProperty Name="isvisable" ColumnName="isvisable" />
+          <ScalarProperty Name="visibleInFlyout" ColumnName="visibleInFlyout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="KtcsModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="topic1" ColumnName="topic" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicCategories">
+      <EntityTypeMapping TypeName="KtcsModel.TopicCategory">
+        <MappingFragment StoreEntitySet="TopicCategory">
+          <ScalarProperty Name="topicCategory1" ColumnName="topicCategory" />
+          <ScalarProperty Name="topicCategoryID" ColumnName="topicCategoryID" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CourseBrandCategory" TypeName="KtcsModel.CourseBrandCategory" StoreEntitySet="CourseBrandCategory">
+      <EndProperty Name="BrandCategory">
+        <ScalarProperty Name="BrandCategoryID" ColumnName="brandCategoryId" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseTopicCategory" TypeName="KtcsModel.CourseTopicCategory" StoreEntitySet="CourseTopicCategory">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+      </EndProperty>
+      <EndProperty Name="TopicCategory">
+        <ScalarProperty Name="topicCategoryID" ColumnName="topicCategoryId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="spBrandCategories" FunctionName="KtcsModel.Store.spBrandCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KtcsModel.spBrandCategories_Result">
+          <ScalarProperty Name="BrandCategoryID" ColumnName="BrandCategoryID" />
+          <ScalarProperty Name="BrandCategory" ColumnName="BrandCategory" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCoursesByBrand" FunctionName="KtcsModel.Store.spCoursesByBrand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KtcsModel.spCoursesByBrand_Result">
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="brandCategory" ColumnName="brandCategory" />
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCoursesByBrandCategory" FunctionName="KtcsModel.Store.spCoursesByBrandCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KtcsModel.spCoursesByBrandCategory_Result">
+          <ScalarProperty Name="brandCategory" ColumnName="brandCategory" />
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCoursesByTopic" FunctionName="KtcsModel.Store.spCoursesByTopic">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KtcsModel.spCoursesByTopic_Result">
+          <ScalarProperty Name="topic" ColumnName="topic" />
+          <ScalarProperty Name="topicCategory" ColumnName="topicCategory" />
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCoursesByTopicCategory" FunctionName="KtcsModel.Store.spCoursesByTopicCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KtcsModel.spCoursesByTopicCategory_Result">
+          <ScalarProperty Name="topicCategory" ColumnName="topicCategory" />
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spTopicCategories" FunctionName="KtcsModel.Store.spTopicCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KtcsModel.spTopicCategories_Result">
+          <ScalarProperty Name="TopicCategoryID" ColumnName="TopicCategoryID" />
+          <ScalarProperty Name="TopicCategory" ColumnName="TopicCategory" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="KtcsModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="stuarchived" ColumnName="stuarchived" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="blockReminder" ColumnName="blockReminder" />
+          <ScalarProperty Name="ClassesTaken" ColumnName="ClassesTaken" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="mailList" ColumnName="mailList" />
+          <ScalarProperty Name="OtherManagerPhone" ColumnName="OtherManagerPhone" />
+          <ScalarProperty Name="OtherManager" ColumnName="OtherManager" />
+          <ScalarProperty Name="OtherReferredBy" ColumnName="OtherReferredBy" />
+          <ScalarProperty Name="OtherCompany" ColumnName="OtherCompany" />
+          <ScalarProperty Name="BillInternationalCode" ColumnName="BillInternationalCode" />
+          <ScalarProperty Name="BillEmail" ColumnName="BillEmail" />
+          <ScalarProperty Name="BillFax" ColumnName="BillFax" />
+          <ScalarProperty Name="BillPhone" ColumnName="BillPhone" />
+          <ScalarProperty Name="BillCountry" ColumnName="BillCountry" />
+          <ScalarProperty Name="BillZip" ColumnName="BillZip" />
+          <ScalarProperty Name="BillState" ColumnName="BillState" />
+          <ScalarProperty Name="BillCity" ColumnName="BillCity" />
+          <ScalarProperty Name="BillAddress2" ColumnName="BillAddress2" />
+          <ScalarProperty Name="BillAddress" ColumnName="BillAddress" />
+          <ScalarProperty Name="BillName" ColumnName="BillName" />
+          <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+          <ScalarProperty Name="stufax" ColumnName="stufax" />
+          <ScalarProperty Name="ReferredByID" ColumnName="ReferredByID" />
+          <ScalarProperty Name="stuzip" ColumnName="stuzip" />
+          <ScalarProperty Name="stuaddress2" ColumnName="stuaddress2" />
+          <ScalarProperty Name="stuaddress" ColumnName="stuaddress" />
+          <ScalarProperty Name="stustate" ColumnName="stustate" />
+          <ScalarProperty Name="stuCity" ColumnName="stuCity" />
+          <ScalarProperty Name="stuJobTitle" ColumnName="stuJobTitle" />
+          <ScalarProperty Name="stuCountry" ColumnName="stuCountry" />
+          <ScalarProperty Name="stuWorkPhone" ColumnName="stuWorkPhone" />
+          <ScalarProperty Name="authorityID" ColumnName="authorityID" />
+          <ScalarProperty Name="stupassword" ColumnName="stupassword" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="stuProductArea" ColumnName="stuProductArea" />
+          <ScalarProperty Name="stuInternationalCode" ColumnName="stuInternationalCode" />
+          <ScalarProperty Name="stuHomePhone" ColumnName="stuHomePhone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="stuEmail" ColumnName="stuEmail" />
+          <ScalarProperty Name="stuFName" ColumnName="stuFName" />
+          <ScalarProperty Name="stuLName" ColumnName="stuLName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

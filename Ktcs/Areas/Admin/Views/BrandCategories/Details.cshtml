@@ -1,0 +1,34 @@
+﻿@model Ktcs.Data.BrandCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BrandCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.brandCategory1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brandCategory1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand.brand1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.brand1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BrandCategoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

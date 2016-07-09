@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KtcsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brandId" />
+    </Key>
+    <Property Name="brand1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="BrandCategories" Relationship="Self.FK_BrandCategory_Brand" FromRole="Brand" ToRole="BrandCategory" />
+  </EntityType>
+  <EntityType Name="BrandCategory">
+    <Key>
+      <PropertyRef Name="BrandCategoryID" />
+    </Key>
+    <Property Name="brandCategory1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BrandCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandId" Type="Int32" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK_BrandCategory_Brand" FromRole="BrandCategory" ToRole="Brand" />
+    <NavigationProperty Name="Courses" Relationship="Self.CourseBrandCategory" FromRole="BrandCategory" ToRole="Course" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="courseNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="125" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prereq" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="duration" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="courseTypeDetailID" Type="Int32" />
+    <Property Name="comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="inscomments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="overview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basePriceID" Type="Int32" Nullable="false" />
+    <Property Name="courseware" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="coursewarevendor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="coursewarecost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="coursewarenotes" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="datecreated" Type="DateTime" Precision="0" />
+    <Property Name="lastupdate" Type="DateTime" Precision="0" />
+    <Property Name="instructorNotes" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="vendorwebsite" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="isvisable" Type="Int32" />
+    <Property Name="visibleInFlyout" Type="Int32" />
+    <NavigationProperty Name="BrandCategories" Relationship="Self.CourseBrandCategory" FromRole="Course" ToRole="BrandCategory" />
+    <NavigationProperty Name="TopicCategories" Relationship="Self.CourseTopicCategory" FromRole="Course" ToRole="TopicCategory" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topic1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="topicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="TopicCategories" Relationship="Self.FK_TopicCategory_Topic" FromRole="Topic" ToRole="TopicCategory" />
+  </EntityType>
+  <EntityType Name="TopicCategory">
+    <Key>
+      <PropertyRef Name="topicCategoryID" />
+    </Key>
+    <Property Name="topicCategory1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="topicCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="topicId" Type="Int32" />
+    <NavigationProperty Name="Topic" Relationship="Self.FK_TopicCategory_Topic" FromRole="TopicCategory" ToRole="Topic" />
+    <NavigationProperty Name="Courses" Relationship="Self.CourseTopicCategory" FromRole="TopicCategory" ToRole="Course" />
+  </EntityType>
+  <Association Name="FK_BrandCategory_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="brandId" />
+      </Principal>
+      <Dependent Role="BrandCategory">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicCategory_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="0..1" />
+    <End Role="TopicCategory" Type="Self.TopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="TopicCategory">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseBrandCategory">
+    <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="*" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+  </Association>
+  <Association Name="CourseTopicCategory">
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <End Role="TopicCategory" Type="Self.TopicCategory" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="KnowledgeTransferInc1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="BrandCategories" EntityType="Self.BrandCategory" />
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Topics" EntityType="Self.Topic" />
+    <EntitySet Name="TopicCategories" EntityType="Self.TopicCategory" />
+    <AssociationSet Name="FK_BrandCategory_Brand" Association="Self.FK_BrandCategory_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="BrandCategory" EntitySet="BrandCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicCategory_Topic" Association="Self.FK_TopicCategory_Topic">
+      <End Role="Topic" EntitySet="Topics" />
+      <End Role="TopicCategory" EntitySet="TopicCategories" />
+    </AssociationSet>
+    <AssociationSet Name="CourseBrandCategory" Association="Self.CourseBrandCategory">
+      <End Role="BrandCategory" EntitySet="BrandCategories" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="CourseTopicCategory" Association="Self.CourseTopicCategory">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="TopicCategory" EntitySet="TopicCategories" />
+    </AssociationSet>
+    <FunctionImport Name="spBrandCategories" ReturnType="Collection(KtcsModel.spBrandCategories_Result)" />
+    <FunctionImport Name="spCoursesByBrand" ReturnType="Collection(KtcsModel.spCoursesByBrand_Result)">
+      <Parameter Name="brandId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCoursesByBrandCategory" ReturnType="Collection(KtcsModel.spCoursesByBrandCategory_Result)">
+      <Parameter Name="brandCategoryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCoursesByTopic" ReturnType="Collection(KtcsModel.spCoursesByTopic_Result)">
+      <Parameter Name="topicId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCoursesByTopicCategory" ReturnType="Collection(KtcsModel.spCoursesByTopicCategory_Result)">
+      <Parameter Name="topicCategoryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spTopicCategories" ReturnType="Collection(KtcsModel.spTopicCategories_Result)" />
+    <EntitySet Name="students" EntityType="KtcsModel.student" />
+  </EntityContainer>
+  <ComplexType Name="spBrandCategories_Result">
+    <Property Type="Int32" Name="BrandCategoryID" Nullable="false" />
+    <Property Type="String" Name="BrandCategory" Nullable="true" MaxLength="403" />
+  </ComplexType>
+  <ComplexType Name="spCoursesByBrand_Result">
+    <Property Type="String" Name="brand" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="brandCategory" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="courseNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="125" />
+  </ComplexType>
+  <ComplexType Name="spCoursesByBrandCategory_Result">
+    <Property Type="String" Name="brandCategory" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="courseNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="125" />
+  </ComplexType>
+  <ComplexType Name="spCoursesByTopic_Result">
+    <Property Type="String" Name="topic" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="topicCategory" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="courseNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="125" />
+  </ComplexType>
+  <ComplexType Name="spCoursesByTopicCategory_Result">
+    <Property Type="String" Name="topicCategory" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="courseNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="125" />
+  </ComplexType>
+  <ComplexType Name="spTopicCategories_Result">
+    <Property Type="Int32" Name="TopicCategoryID" Nullable="false" />
+    <Property Type="String" Name="TopicCategory" Nullable="true" MaxLength="403" />
+  </ComplexType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stuLName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="stuFName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="stuEmail" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="stuHomePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="stuInternationalCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="stuProductArea" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="ManagerID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="stupassword" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="authorityID" Type="Int32" Nullable="false" />
+    <Property Name="stuWorkPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="stuCountry" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="stuJobTitle" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="stuCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="stustate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="stuaddress" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="stuaddress2" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="stuzip" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ReferredByID" Type="Int32" />
+    <Property Name="stufax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CostCenter" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BillName" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="BillAddress" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="BillAddress2" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="BillCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="BillState" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="BillZip" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="BillCountry" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="BillPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillFax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillEmail" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="BillInternationalCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="OtherCompany" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="OtherReferredBy" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="OtherManager" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="OtherManagerPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="mailList" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ClassesTaken" Type="Byte" />
+    <Property Name="blockReminder" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="other" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="stuarchived" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

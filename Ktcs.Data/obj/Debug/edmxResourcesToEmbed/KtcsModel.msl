@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KtcsModelStoreContainer" CdmEntityContainer="KtcsEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="KtcsModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="adminemail" ColumnName="adminemail" />
+          <ScalarProperty Name="AdminInitials" ColumnName="AdminInitials" />
+          <ScalarProperty Name="AdminFName" ColumnName="AdminFName" />
+          <ScalarProperty Name="AdminLName" ColumnName="AdminLName" />
+          <ScalarProperty Name="AdminPhone" ColumnName="AdminPhone" />
+          <ScalarProperty Name="AdminWebsite" ColumnName="AdminWebsite" />
+          <ScalarProperty Name="AdminFax" ColumnName="AdminFax" />
+          <ScalarProperty Name="AdminCompany" ColumnName="AdminCompany" />
+          <ScalarProperty Name="SysAdmin" ColumnName="SysAdmin" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ReportDateRange" ColumnName="ReportDateRange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="KtcsModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+          <ScalarProperty Name="AnswerTxt" ColumnName="AnswerTxt" />
+          <ScalarProperty Name="AnswerNum" ColumnName="AnswerNum" />
+          <ScalarProperty Name="SQID" ColumnName="SQID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ScheduledClassID" ColumnName="ScheduledClassID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="areas">
+      <EntityTypeMapping TypeName="KtcsModel.area">
+        <MappingFragment StoreEntitySet="area">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="Area1" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="KtcsModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="KtcsModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="KtcsModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="KtcsModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ATypes">
+      <EntityTypeMapping TypeName="KtcsModel.AType">
+        <MappingFragment StoreEntitySet="AType">
+          <ScalarProperty Name="ATypeID" ColumnName="ATypeID" />
+          <ScalarProperty Name="AType1" ColumnName="AType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BasePrices">
+      <EntityTypeMapping TypeName="KtcsModel.BasePrice">
+        <MappingFragment StoreEntitySet="BasePrice">
+          <ScalarProperty Name="BasePriceID" ColumnName="BasePriceID" />
+          <ScalarProperty Name="BasePrice1" ColumnName="BasePrice" />
+          <ScalarProperty Name="BaseDescription" ColumnName="BaseDescription" />
+          <ScalarProperty Name="membership" ColumnName="membership" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="KtcsModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="brand1" ColumnName="brand" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrandCategories">
+      <EntityTypeMapping TypeName="KtcsModel.BrandCategory">
+        <MappingFragment StoreEntitySet="BrandCategory">
+          <ScalarProperty Name="brandCategory1" ColumnName="brandCategory" />
+          <ScalarProperty Name="BrandCategoryID" ColumnName="BrandCategoryID" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="KtcsModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Category1" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassRequests">
+      <EntityTypeMapping TypeName="KtcsModel.ClassRequest">
+        <MappingFragment StoreEntitySet="ClassRequest">
+          <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ScheduledClassID" ColumnName="ScheduledClassID" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="ApprovalSent" ColumnName="ApprovalSent" />
+          <ScalarProperty Name="ApprovalReceived" ColumnName="ApprovalReceived" />
+          <ScalarProperty Name="Denied" ColumnName="Denied" />
+          <ScalarProperty Name="Withdrew" ColumnName="Withdrew" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="WithdrawReason" ColumnName="WithdrawReason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComContacts">
+      <EntityTypeMapping TypeName="KtcsModel.ComContact">
+        <MappingFragment StoreEntitySet="ComContact">
+          <ScalarProperty Name="ComContactID" ColumnName="ComContactID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ComConTitle" ColumnName="ComConTitle" />
+          <ScalarProperty Name="ComConFName" ColumnName="ComConFName" />
+          <ScalarProperty Name="ComConLName" ColumnName="ComConLName" />
+          <ScalarProperty Name="ComConAddress" ColumnName="ComConAddress" />
+          <ScalarProperty Name="ComConAddress2" ColumnName="ComConAddress2" />
+          <ScalarProperty Name="ComConCity" ColumnName="ComConCity" />
+          <ScalarProperty Name="ComConState" ColumnName="ComConState" />
+          <ScalarProperty Name="ComConZip" ColumnName="ComConZip" />
+          <ScalarProperty Name="ComConPhone" ColumnName="ComConPhone" />
+          <ScalarProperty Name="ComConPhone2" ColumnName="ComConPhone2" />
+          <ScalarProperty Name="ComConEmail" ColumnName="ComConEmail" />
+          <ScalarProperty Name="ComConEmail2" ColumnName="ComConEmail2" />
+          <ScalarProperty Name="ComConFax" ColumnName="ComConFax" />
+          <ScalarProperty Name="ComConCountry" ColumnName="ComConCountry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComContactNotes">
+      <EntityTypeMapping TypeName="KtcsModel.ComContactNote">
+        <MappingFragment StoreEntitySet="ComContactNote">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="ComContactID" ColumnName="ComContactID" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="AdminInitials" ColumnName="AdminInitials" />
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="toDoFor" ColumnName="toDoFor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="companies">
+      <EntityTypeMapping TypeName="KtcsModel.company">
+        <MappingFragment StoreEntitySet="company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="comName" ColumnName="comName" />
+          <ScalarProperty Name="comAddress" ColumnName="comAddress" />
+          <ScalarProperty Name="comAddress2" ColumnName="comAddress2" />
+          <ScalarProperty Name="comCity" ColumnName="comCity" />
+          <ScalarProperty Name="comState" ColumnName="comState" />
+          <ScalarProperty Name="comZip" ColumnName="comZip" />
+          <ScalarProperty Name="comcountry" ColumnName="comcountry" />
+          <ScalarProperty Name="comphone" ColumnName="comphone" />
+          <ScalarProperty Name="comfax" ColumnName="comfax" />
+          <ScalarProperty Name="comMapLink" ColumnName="comMapLink" />
+          <ScalarProperty Name="billname" ColumnName="billname" />
+          <ScalarProperty Name="billaddress" ColumnName="billaddress" />
+          <ScalarProperty Name="billaddress2" ColumnName="billaddress2" />
+          <ScalarProperty Name="billcity" ColumnName="billcity" />
+          <ScalarProperty Name="billstate" ColumnName="billstate" />
+          <ScalarProperty Name="billzip" ColumnName="billzip" />
+          <ScalarProperty Name="billphone" ColumnName="billphone" />
+          <ScalarProperty Name="billfax" ColumnName="billfax" />
+          <ScalarProperty Name="billcountry" ColumnName="billcountry" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="billemail" ColumnName="billemail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="KtcsModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="contactID" ColumnName="contactID" />
+          <ScalarProperty Name="vendorid" ColumnName="vendorid" />
+          <ScalarProperty Name="contitle" ColumnName="contitle" />
+          <ScalarProperty Name="conFName" ColumnName="conFName" />
+          <ScalarProperty Name="conLName" ColumnName="conLName" />
+          <ScalarProperty Name="conaddress" ColumnName="conaddress" />
+          <ScalarProperty Name="concity" ColumnName="concity" />
+          <ScalarProperty Name="constate" ColumnName="constate" />
+          <ScalarProperty Name="conzip" ColumnName="conzip" />
+          <ScalarProperty Name="conphone" ColumnName="conphone" />
+          <ScalarProperty Name="conphone2" ColumnName="conphone2" />
+          <ScalarProperty Name="conemail" ColumnName="conemail" />
+          <ScalarProperty Name="conemail2" ColumnName="conemail2" />
+          <ScalarProperty Name="confax" ColumnName="confax" />
+          <ScalarProperty Name="concountry" ColumnName="concountry" />
+          <ScalarProperty Name="conext1" ColumnName="conext1" />
+          <ScalarProperty Name="conext2" ColumnName="conext2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactNotes">
+      <EntityTypeMapping TypeName="KtcsModel.ContactNote">
+        <MappingFragment StoreEntitySet="ContactNote">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="AdminInitials" ColumnName="AdminInitials" />
+          <ScalarProperty Name="Followup" ColumnName="Followup" />
+          <ScalarProperty Name="FollowupDate" ColumnName="FollowupDate" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="toDoFor" ColumnName="toDoFor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="KtcsModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="prereq" ColumnName="prereq" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="courseTypeDetailID" ColumnName="courseTypeDetailID" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="inscomments" ColumnName="inscomments" />
+          <ScalarProperty Name="overview" ColumnName="overview" />
+          <ScalarProperty Name="basePriceID" ColumnName="basePriceID" />
+          <ScalarProperty Name="courseware" ColumnName="courseware" />
+          <ScalarProperty Name="coursewarevendor" ColumnName="coursewarevendor" />
+          <ScalarProperty Name="coursewarecost" ColumnName="coursewarecost" />
+          <ScalarProperty Name="coursewarenotes" ColumnName="coursewarenotes" />
+          <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+          <ScalarProperty Name="lastupdate" ColumnName="lastupdate" />
+          <ScalarProperty Name="instructorNotes" ColumnName="instructorNotes" />
+          <ScalarProperty Name="vendorwebsite" ColumnName="vendorwebsite" />
+          <ScalarProperty Name="isvisable" ColumnName="isvisable" />
+          <ScalarProperty Name="visibleInFlyout" ColumnName="visibleInFlyout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course_CourseTypeDetail">
+      <EntityTypeMapping TypeName="KtcsModel.Course_CourseTypeDetail">
+        <MappingFragment StoreEntitySet="Course_CourseTypeDetail">
+          <ScalarProperty Name="coursenumber" ColumnName="coursenumber" />
+          <ScalarProperty Name="coursetypedetailid" ColumnName="coursetypedetailid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTypes">
+      <EntityTypeMapping TypeName="KtcsModel.CourseType">
+        <MappingFragment StoreEntitySet="CourseType">
+          <ScalarProperty Name="courseTypeID" ColumnName="courseTypeID" />
+          <ScalarProperty Name="courseType1" ColumnName="courseType" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="pageNotes" ColumnName="pageNotes" />
+          <ScalarProperty Name="visibleInFlyout" ColumnName="visibleInFlyout" />
+          <ScalarProperty Name="flyoutText" ColumnName="flyoutText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTypeDetails">
+      <EntityTypeMapping TypeName="KtcsModel.CourseTypeDetail">
+        <MappingFragment StoreEntitySet="CourseTypeDetail">
+          <ScalarProperty Name="CourseTypeDetailID" ColumnName="CourseTypeDetailID" />
+          <ScalarProperty Name="CourseTypeID" ColumnName="CourseTypeID" />
+          <ScalarProperty Name="CourseTypeDetail1" ColumnName="CourseTypeDetail" />
+          <ScalarProperty Name="pagenotes" ColumnName="pagenotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enrollments">
+      <EntityTypeMapping TypeName="KtcsModel.Enrollment">
+        <MappingFragment StoreEntitySet="Enrollments">
+          <ScalarProperty Name="ConfirmationNum" ColumnName="ConfirmationNum" />
+          <ScalarProperty Name="Enrolled" ColumnName="Enrolled" />
+          <ScalarProperty Name="Confirmation" ColumnName="Confirmation" />
+          <ScalarProperty Name="Reminder" ColumnName="Reminder" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="invoice" ColumnName="invoice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="MTSfee" ColumnName="MTSfee" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="Amountdue" ColumnName="Amountdue" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ScheduledClassID" ColumnName="ScheduledClassID" />
+          <ScalarProperty Name="cancellationNum" ColumnName="cancellationNum" />
+          <ScalarProperty Name="cancellationDate" ColumnName="cancellationDate" />
+          <ScalarProperty Name="dateDue" ColumnName="dateDue" />
+          <ScalarProperty Name="mgrConfirmation" ColumnName="mgrConfirmation" />
+          <ScalarProperty Name="conarchived" ColumnName="conarchived" />
+          <ScalarProperty Name="DiscountDollars" ColumnName="DiscountDollars" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="KtcsModel.Expense">
+        <MappingFragment StoreEntitySet="Expense">
+          <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ExpenseTypeID" ColumnName="ExpenseTypeID" />
+          <ScalarProperty Name="ScheduledClassID" ColumnName="ScheduledClassID" />
+          <ScalarProperty Name="VenInvoiceNum" ColumnName="VenInvoiceNum" />
+          <ScalarProperty Name="VenInvoiceDate" ColumnName="VenInvoiceDate" />
+          <ScalarProperty Name="VenInvoicePaid" ColumnName="VenInvoicePaid" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Shipping" ColumnName="Shipping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpenseTypes">
+      <EntityTypeMapping TypeName="KtcsModel.ExpenseType">
+        <MappingFragment StoreEntitySet="ExpenseType">
+          <ScalarProperty Name="ExpenseTypeID" ColumnName="ExpenseTypeID" />
+          <ScalarProperty Name="ExpenseType1" ColumnName="ExpenseType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incomes">
+      <EntityTypeMapping TypeName="KtcsModel.Income">
+        <MappingFragment StoreEntitySet="Income">
+          <ScalarProperty Name="IncomeID" ColumnName="IncomeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IncomeTypeID" ColumnName="IncomeTypeID" />
+          <ScalarProperty Name="ScheduledClassID" ColumnName="ScheduledClassID" />
+          <ScalarProperty Name="VenInvoiceNum" ColumnName="VenInvoiceNum" />
+          <ScalarProperty Name="VenInvoiceDate" ColumnName="VenInvoiceDate" />
+          <ScalarProperty Name="VenInvoicePaid" ColumnName="VenInvoicePaid" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Shipping" ColumnName="Shipping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomeTypes">
+      <EntityTypeMapping TypeName="KtcsModel.IncomeType">
+        <MappingFragment StoreEntitySet="IncomeType">
+          <ScalarProperty Name="IncomeTypeID" ColumnName="IncomeTypeID" />
+          <ScalarProperty Name="IncomeType1" ColumnName="IncomeType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="insCategories">
+      <EntityTypeMapping TypeName="KtcsModel.insCategory">
+        <MappingFragment StoreEntitySet="insCategory">
+          <ScalarProperty Name="insCategory1" ColumnName="insCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="insCertifications">
+      <EntityTypeMapping TypeName="KtcsModel.insCertification">
+        <MappingFragment StoreEntitySet="insCertification">
+          <ScalarProperty Name="insCertification1" ColumnName="insCertification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="insSkills">
+      <EntityTypeMapping TypeName="KtcsModel.insSkill">
+        <MappingFragment StoreEntitySet="insSkill">
+          <ScalarProperty Name="insSkill1" ColumnName="insSkill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instructors">
+      <EntityTypeMapping TypeName="KtcsModel.Instructor">
+        <MappingFragment StoreEntitySet="Instructor">
+          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+          <ScalarProperty Name="insfname" ColumnName="insfname" />
+          <ScalarProperty Name="inslname" ColumnName="inslname" />
+          <ScalarProperty Name="insaddress" ColumnName="insaddress" />
+          <ScalarProperty Name="inscity" ColumnName="inscity" />
+          <ScalarProperty Name="insstate" ColumnName="insstate" />
+          <ScalarProperty Name="inszip" ColumnName="inszip" />
+          <ScalarProperty Name="insphone" ColumnName="insphone" />
+          <ScalarProperty Name="insphone2" ColumnName="insphone2" />
+          <ScalarProperty Name="insemail" ColumnName="insemail" />
+          <ScalarProperty Name="insemail2" ColumnName="insemail2" />
+          <ScalarProperty Name="insfax" ColumnName="insfax" />
+          <ScalarProperty Name="inscountry" ColumnName="inscountry" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="insIndependent" ColumnName="insIndependent" />
+          <ScalarProperty Name="insReferredBy" ColumnName="insReferredBy" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="resumeText" ColumnName="resumeText" />
+          <ScalarProperty Name="Skill1" ColumnName="Skill1" />
+          <ScalarProperty Name="Skill2" ColumnName="Skill2" />
+          <ScalarProperty Name="Skill3" ColumnName="Skill3" />
+          <ScalarProperty Name="Skill4" ColumnName="Skill4" />
+          <ScalarProperty Name="Skill5" ColumnName="Skill5" />
+          <ScalarProperty Name="Category1" ColumnName="Category1" />
+          <ScalarProperty Name="Category2" ColumnName="Category2" />
+          <ScalarProperty Name="Category3" ColumnName="Category3" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="coursewareNotes" ColumnName="coursewareNotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instructorCerts">
+      <EntityTypeMapping TypeName="KtcsModel.instructorCert">
+        <MappingFragment StoreEntitySet="instructorCert">
+          <ScalarProperty Name="insCertification" ColumnName="insCertification" />
+          <ScalarProperty Name="instructorID" ColumnName="instructorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstructorNotes">
+      <EntityTypeMapping TypeName="KtcsModel.InstructorNote">
+        <MappingFragment StoreEntitySet="InstructorNote">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="AdminInitials" ColumnName="AdminInitials" />
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="toDoFor" ColumnName="toDoFor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="KtcsModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="locaddress" ColumnName="locaddress" />
+          <ScalarProperty Name="loccity" ColumnName="loccity" />
+          <ScalarProperty Name="locstate" ColumnName="locstate" />
+          <ScalarProperty Name="loczip" ColumnName="loczip" />
+          <ScalarProperty Name="locnotes" ColumnName="locnotes" />
+          <ScalarProperty Name="locName" ColumnName="locName" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="locmapLink" ColumnName="locmapLink" />
+          <ScalarProperty Name="locphone" ColumnName="locphone" />
+          <ScalarProperty Name="loccountry" ColumnName="loccountry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Managers">
+      <EntityTypeMapping TypeName="KtcsModel.Manager">
+        <MappingFragment StoreEntitySet="Manager">
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="mgrFName" ColumnName="mgrFName" />
+          <ScalarProperty Name="mgrLName" ColumnName="mgrLName" />
+          <ScalarProperty Name="mgrPhone" ColumnName="mgrPhone" />
+          <ScalarProperty Name="mgrEmail" ColumnName="mgrEmail" />
+          <ScalarProperty Name="mgrFax" ColumnName="mgrFax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="KtcsModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="NewsDate" ColumnName="NewsDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteTypes">
+      <EntityTypeMapping TypeName="KtcsModel.NoteType">
+        <MappingFragment StoreEntitySet="NoteType">
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="NoteType1" ColumnName="NoteType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="KtcsModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+          <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+          <ScalarProperty Name="ConfirmationNum" ColumnName="ConfirmationNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="KtcsModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="QID" ColumnName="QID" />
+          <ScalarProperty Name="Question1" ColumnName="Question" />
+          <ScalarProperty Name="ATypeID" ColumnName="ATypeID" />
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferredBies">
+      <EntityTypeMapping TypeName="KtcsModel.ReferredBy">
+        <MappingFragment StoreEntitySet="ReferredBy">
+          <ScalarProperty Name="ReferredByID" ColumnName="ReferredByID" />
+          <ScalarProperty Name="ReferredBy1" ColumnName="ReferredBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduledClasses">
+      <EntityTypeMapping TypeName="KtcsModel.ScheduledClass">
+        <MappingFragment StoreEntitySet="ScheduledClass">
+          <ScalarProperty Name="ScheduledClassID" ColumnName="ScheduledClassID" />
+          <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MarketRate" ColumnName="MarketRate" />
+          <ScalarProperty Name="ispublic" ColumnName="ispublic" />
+          <ScalarProperty Name="KTCSRate" ColumnName="KTCSRate" />
+          <ScalarProperty Name="KTCScourse" ColumnName="KTCScourse" />
+          <ScalarProperty Name="startDateconfirmed" ColumnName="startDateconfirmed" />
+          <ScalarProperty Name="bookOrderMade" ColumnName="bookOrderMade" />
+          <ScalarProperty Name="insTestReminder" ColumnName="insTestReminder" />
+          <ScalarProperty Name="bookOrderRecieved" ColumnName="bookOrderRecieved" />
+          <ScalarProperty Name="insconfirmed" ColumnName="insconfirmed" />
+          <ScalarProperty Name="locconfirmed" ColumnName="locconfirmed" />
+          <ScalarProperty Name="MaxStudents" ColumnName="MaxStudents" />
+          <ScalarProperty Name="locationID" ColumnName="locationID" />
+          <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="Mirrored" ColumnName="Mirrored" />
+          <ScalarProperty Name="MirroredWebsite" ColumnName="MirroredWebsite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SectionTypes">
+      <EntityTypeMapping TypeName="KtcsModel.SectionType">
+        <MappingFragment StoreEntitySet="SectionType">
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="KtcsModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Status1" ColumnName="Status" />
+          <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+          <ScalarProperty Name="FtColor" ColumnName="FtColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="KtcsModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="stuLName" ColumnName="stuLName" />
+          <ScalarProperty Name="stuFName" ColumnName="stuFName" />
+          <ScalarProperty Name="stuEmail" ColumnName="stuEmail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="stuHomePhone" ColumnName="stuHomePhone" />
+          <ScalarProperty Name="stuInternationalCode" ColumnName="stuInternationalCode" />
+          <ScalarProperty Name="stuProductArea" ColumnName="stuProductArea" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="stupassword" ColumnName="stupassword" />
+          <ScalarProperty Name="authorityID" ColumnName="authorityID" />
+          <ScalarProperty Name="stuWorkPhone" ColumnName="stuWorkPhone" />
+          <ScalarProperty Name="stuCountry" ColumnName="stuCountry" />
+          <ScalarProperty Name="stuJobTitle" ColumnName="stuJobTitle" />
+          <ScalarProperty Name="stuCity" ColumnName="stuCity" />
+          <ScalarProperty Name="stustate" ColumnName="stustate" />
+          <ScalarProperty Name="stuaddress" ColumnName="stuaddress" />
+          <ScalarProperty Name="stuaddress2" ColumnName="stuaddress2" />
+          <ScalarProperty Name="stuzip" ColumnName="stuzip" />
+          <ScalarProperty Name="ReferredByID" ColumnName="ReferredByID" />
+          <ScalarProperty Name="stufax" ColumnName="stufax" />
+          <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+          <ScalarProperty Name="BillName" ColumnName="BillName" />
+          <ScalarProperty Name="BillAddress" ColumnName="BillAddress" />
+          <ScalarProperty Name="BillAddress2" ColumnName="BillAddress2" />
+          <ScalarProperty Name="BillCity" ColumnName="BillCity" />
+          <ScalarProperty Name="BillState" ColumnName="BillState" />
+          <ScalarProperty Name="BillZip" ColumnName="BillZip" />
+          <ScalarProperty Name="BillCountry" ColumnName="BillCountry" />
+          <ScalarProperty Name="BillPhone" ColumnName="BillPhone" />
+          <ScalarProperty Name="BillFax" ColumnName="BillFax" />
+          <ScalarProperty Name="BillEmail" ColumnName="BillEmail" />
+          <ScalarProperty Name="BillInternationalCode" ColumnName="BillInternationalCode" />
+          <ScalarProperty Name="OtherCompany" ColumnName="OtherCompany" />
+          <ScalarProperty Name="OtherReferredBy" ColumnName="OtherReferredBy" />
+          <ScalarProperty Name="OtherManager" ColumnName="OtherManager" />
+          <ScalarProperty Name="OtherManagerPhone" ColumnName="OtherManagerPhone" />
+          <ScalarProperty Name="mailList" ColumnName="mailList" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ClassesTaken" ColumnName="ClassesTaken" />
+          <ScalarProperty Name="blockReminder" ColumnName="blockReminder" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="stuarchived" ColumnName="stuarchived" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentDistributions">
+      <EntityTypeMapping TypeName="KtcsModel.StudentDistribution">
+        <MappingFragment StoreEntitySet="StudentDistribution">
+          <ScalarProperty Name="StudentDistributionID" ColumnName="StudentDistributionID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="DistributionID" ColumnName="DistributionID" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentNotes">
+      <EntityTypeMapping TypeName="KtcsModel.StudentNote">
+        <MappingFragment StoreEntitySet="StudentNote">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="followup" ColumnName="followup" />
+          <ScalarProperty Name="AdminInitials" ColumnName="AdminInitials" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="ToDoFor" ColumnName="ToDoFor" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentNote2">
+      <EntityTypeMapping TypeName="KtcsModel.StudentNote2">
+        <MappingFragment StoreEntitySet="StudentNote2">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="followup" ColumnName="followup" />
+          <ScalarProperty Name="AdminInitials" ColumnName="AdminInitials" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="ToDoFor" ColumnName="ToDoFor" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subCategories">
+      <EntityTypeMapping TypeName="KtcsModel.subCategory">
+        <MappingFragment StoreEntitySet="subCategory">
+          <ScalarProperty Name="subCategoryID" ColumnName="subCategoryID" />
+          <ScalarProperty Name="subCategory1" ColumnName="subCategory" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surveys">
+      <EntityTypeMapping TypeName="KtcsModel.Survey">
+        <MappingFragment StoreEntitySet="Survey">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyName" ColumnName="SurveyName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Creator" ColumnName="Creator" />
+          <ScalarProperty Name="DefaultSurvey" ColumnName="DefaultSurvey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyQuestions">
+      <EntityTypeMapping TypeName="KtcsModel.SurveyQuestion">
+        <MappingFragment StoreEntitySet="SurveyQuestion">
+          <ScalarProperty Name="SQID" ColumnName="SQID" />
+          <ScalarProperty Name="QID" ColumnName="QID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="KtcsModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="KtcsModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="topic1" ColumnName="topic" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicCategories">
+      <EntityTypeMapping TypeName="KtcsModel.TopicCategory">
+        <MappingFragment StoreEntitySet="TopicCategory">
+          <ScalarProperty Name="topicCategory1" ColumnName="topicCategory" />
+          <ScalarProperty Name="topicCategoryID" ColumnName="topicCategoryID" />
+          <ScalarProperty Name="topicId" ColumnName="topicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendors">
+      <EntityTypeMapping TypeName="KtcsModel.vendor">
+        <MappingFragment StoreEntitySet="vendor">
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="NegDiscount" ColumnName="NegDiscount" />
+          <ScalarProperty Name="VendorTypeID" ColumnName="VendorTypeID" />
+          <ScalarProperty Name="maplink" ColumnName="maplink" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorTypes">
+      <EntityTypeMapping TypeName="KtcsModel.VendorType">
+        <MappingFragment StoreEntitySet="VendorType">
+          <ScalarProperty Name="VendorTypeID" ColumnName="VendorTypeID" />
+          <ScalarProperty Name="VendorType1" ColumnName="VendorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaitLists">
+      <EntityTypeMapping TypeName="KtcsModel.WaitList">
+        <MappingFragment StoreEntitySet="WaitList">
+          <ScalarProperty Name="WaitListID" ColumnName="WaitListID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="CourseNumber" ColumnName="CourseNumber" />
+          <ScalarProperty Name="TimeFrame" ColumnName="TimeFrame" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authorities">
+      <EntityTypeMapping TypeName="KtcsModel.Authority">
+        <MappingFragment StoreEntitySet="Authority">
+          <ScalarProperty Name="AuthorityID" ColumnName="AuthorityID" />
+          <ScalarProperty Name="Authority1" ColumnName="Authority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="KtcsModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseBrandCategory" TypeName="KtcsModel.CourseBrandCategory" StoreEntitySet="CourseBrandCategory">
+      <EndProperty Name="BrandCategory">
+        <ScalarProperty Name="BrandCategoryID" ColumnName="brandCategoryId" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseTopicCategory" TypeName="KtcsModel.CourseTopicCategory" StoreEntitySet="CourseTopicCategory">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
+      </EndProperty>
+      <EndProperty Name="TopicCategory">
+        <ScalarProperty Name="topicCategoryID" ColumnName="topicCategoryId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

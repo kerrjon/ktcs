@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ktcs", "Ktcs\Ktcs.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ktcs.Tests", "Ktcs.Tests\Ktcs.Tests.csproj", "{D072371C-4ABE-4DB5-B9E7-FB34BE8D45C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ktcs.Data", "Ktcs.Data\Ktcs.Data.csproj", "{EB8D9F8B-9695-4FF8-9B25-CCF66E91C592}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D072371C-4ABE-4DB5-B9E7-FB34BE8D45C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D072371C-4ABE-4DB5-B9E7-FB34BE8D45C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D072371C-4ABE-4DB5-B9E7-FB34BE8D45C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8D9F8B-9695-4FF8-9B25-CCF66E91C592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8D9F8B-9695-4FF8-9B25-CCF66E91C592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8D9F8B-9695-4FF8-9B25-CCF66E91C592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8D9F8B-9695-4FF8-9B25-CCF66E91C592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

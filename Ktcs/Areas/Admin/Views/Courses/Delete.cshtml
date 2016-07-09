@@ -1,0 +1,176 @@
+﻿@model Ktcs.Data.Course
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prereq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prereq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inscomments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inscomments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.overview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.overview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseware)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseware)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coursewarevendor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coursewarevendor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coursewarecost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coursewarecost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coursewarenotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coursewarenotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datecreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datecreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastupdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastupdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.instructorNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.instructorNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vendorwebsite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendorwebsite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isvisable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isvisable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.visibleInFlyout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.visibleInFlyout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasePrice.BaseDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

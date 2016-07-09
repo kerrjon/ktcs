@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KtcsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brandId" />
+    </Key>
+    <Property Name="brand" Type="nvarchar" MaxLength="200" />
+    <Property Name="brandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BrandCategory">
+    <Key>
+      <PropertyRef Name="BrandCategoryID" />
+    </Key>
+    <Property Name="brandCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="BrandCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandId" Type="int" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="125" Nullable="false" />
+    <Property Name="description" Type="ntext" />
+    <Property Name="prereq" Type="nvarchar" MaxLength="4000" />
+    <Property Name="duration" Type="nvarchar" MaxLength="10" />
+    <Property Name="courseTypeDetailID" Type="int" />
+    <Property Name="comments" Type="nvarchar" MaxLength="1000" />
+    <Property Name="inscomments" Type="nvarchar" MaxLength="50" />
+    <Property Name="overview" Type="ntext" Nullable="false" />
+    <Property Name="basePriceID" Type="int" Nullable="false" />
+    <Property Name="courseware" Type="varchar" MaxLength="100" />
+    <Property Name="coursewarevendor" Type="varchar" MaxLength="100" />
+    <Property Name="coursewarecost" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="coursewarenotes" Type="varchar" MaxLength="4000" />
+    <Property Name="datecreated" Type="smalldatetime" />
+    <Property Name="lastupdate" Type="smalldatetime" />
+    <Property Name="instructorNotes" Type="varchar" MaxLength="4000" />
+    <Property Name="vendorwebsite" Type="varchar" MaxLength="250" />
+    <Property Name="isvisable" Type="int" />
+    <Property Name="visibleInFlyout" Type="int" />
+  </EntityType>
+  <EntityType Name="CourseBrandCategory">
+    <Key>
+      <PropertyRef Name="brandCategoryId" />
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="brandCategoryId" Type="int" Nullable="false" />
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseTopicCategory">
+    <Key>
+      <PropertyRef Name="topicCategoryId" />
+      <PropertyRef Name="courseNumber" />
+    </Key>
+    <Property Name="topicCategoryId" Type="int" Nullable="false" />
+    <Property Name="courseNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stuLName" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="stuFName" Type="nvarchar" MaxLength="30" />
+    <Property Name="stuEmail" Type="nvarchar" MaxLength="75" />
+    <Property Name="Password" Type="varchar" MaxLength="10" />
+    <Property Name="stuHomePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="stuInternationalCode" Type="varchar" MaxLength="2" />
+    <Property Name="stuProductArea" Type="nvarchar" MaxLength="70" />
+    <Property Name="ManagerID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="stupassword" Type="nvarchar" MaxLength="10" />
+    <Property Name="authorityID" Type="int" Nullable="false" />
+    <Property Name="stuWorkPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="stuCountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="stuJobTitle" Type="nvarchar" MaxLength="70" />
+    <Property Name="stuCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="stustate" Type="nvarchar" MaxLength="2" />
+    <Property Name="stuaddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="stuaddress2" Type="nvarchar" MaxLength="75" />
+    <Property Name="stuzip" Type="nvarchar" MaxLength="12" />
+    <Property Name="ReferredByID" Type="int" />
+    <Property Name="stufax" Type="nvarchar" MaxLength="20" />
+    <Property Name="CostCenter" Type="nvarchar" MaxLength="15" />
+    <Property Name="BillName" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillAddress" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillAddress2" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="BillState" Type="nvarchar" MaxLength="2" />
+    <Property Name="BillZip" Type="nvarchar" MaxLength="12" />
+    <Property Name="BillCountry" Type="nvarchar" MaxLength="30" />
+    <Property Name="BillPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillFax" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillEmail" Type="nvarchar" MaxLength="75" />
+    <Property Name="BillInternationalCode" Type="varchar" MaxLength="2" />
+    <Property Name="OtherCompany" Type="varchar" MaxLength="60" />
+    <Property Name="OtherReferredBy" Type="varchar" MaxLength="60" />
+    <Property Name="OtherManager" Type="varchar" MaxLength="60" />
+    <Property Name="OtherManagerPhone" Type="varchar" MaxLength="20" />
+    <Property Name="mailList" Type="varchar" MaxLength="3" />
+    <Property Name="UserID" Type="varchar" MaxLength="10" />
+    <Property Name="ClassesTaken" Type="tinyint" />
+    <Property Name="blockReminder" Type="varchar" MaxLength="3" />
+    <Property Name="other" Type="varchar" MaxLength="75" />
+    <Property Name="stuarchived" Type="varchar" MaxLength="3" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="topicId" />
+    </Key>
+    <Property Name="topic" Type="nvarchar" MaxLength="200" />
+    <Property Name="topicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicCategory">
+    <Key>
+      <PropertyRef Name="topicCategoryID" />
+    </Key>
+    <Property Name="topicCategory" Type="nvarchar" MaxLength="200" />
+    <Property Name="topicCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="topicId" Type="int" />
+  </EntityType>
+  <Association Name="FK_BrandCategory_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="brandId" />
+      </Principal>
+      <Dependent Role="BrandCategory">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseBrandCategory_BrandCategory">
+    <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="1" />
+    <End Role="CourseBrandCategory" Type="Self.CourseBrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BrandCategory">
+        <PropertyRef Name="BrandCategoryID" />
+      </Principal>
+      <Dependent Role="CourseBrandCategory">
+        <PropertyRef Name="brandCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseBrandCategory_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="CourseBrandCategory" Type="Self.CourseBrandCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseNumber" />
+      </Principal>
+      <Dependent Role="CourseBrandCategory">
+        <PropertyRef Name="courseNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseTopicCategory_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="CourseTopicCategory" Type="Self.CourseTopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseNumber" />
+      </Principal>
+      <Dependent Role="CourseTopicCategory">
+        <PropertyRef Name="courseNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseTopicCategory_TopicCategory">
+    <End Role="TopicCategory" Type="Self.TopicCategory" Multiplicity="1" />
+    <End Role="CourseTopicCategory" Type="Self.CourseTopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopicCategory">
+        <PropertyRef Name="topicCategoryID" />
+      </Principal>
+      <Dependent Role="CourseTopicCategory">
+        <PropertyRef Name="topicCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicCategory_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="0..1" />
+    <End Role="TopicCategory" Type="Self.TopicCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="topicId" />
+      </Principal>
+      <Dependent Role="TopicCategory">
+        <PropertyRef Name="topicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spBrandCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spCoursesByBrand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="brandId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCoursesByBrandCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="brandCategoryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCoursesByTopic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="topicId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCoursesByTopicCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="topicCategoryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spTopicCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="KtcsModelStoreContainer">
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrandCategory" EntityType="Self.BrandCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseBrandCategory" EntityType="Self.CourseBrandCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseTopicCategory" EntityType="Self.CourseTopicCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Topic" EntityType="Self.Topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopicCategory" EntityType="Self.TopicCategory" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BrandCategory_Brand" Association="Self.FK_BrandCategory_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="BrandCategory" EntitySet="BrandCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseBrandCategory_BrandCategory" Association="Self.FK_CourseBrandCategory_BrandCategory">
+      <End Role="BrandCategory" EntitySet="BrandCategory" />
+      <End Role="CourseBrandCategory" EntitySet="CourseBrandCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseBrandCategory_Course" Association="Self.FK_CourseBrandCategory_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseBrandCategory" EntitySet="CourseBrandCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseTopicCategory_Course" Association="Self.FK_CourseTopicCategory_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseTopicCategory" EntitySet="CourseTopicCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseTopicCategory_TopicCategory" Association="Self.FK_CourseTopicCategory_TopicCategory">
+      <End Role="TopicCategory" EntitySet="TopicCategory" />
+      <End Role="CourseTopicCategory" EntitySet="CourseTopicCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicCategory_Topic" Association="Self.FK_TopicCategory_Topic">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="TopicCategory" EntitySet="TopicCategory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
