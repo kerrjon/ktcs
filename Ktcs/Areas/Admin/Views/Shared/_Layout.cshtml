@@ -19,9 +19,6 @@
 @Scripts.Render("~/bundles/jqueryval")
 @Scripts.Render("~/bundles/jqueryvalunobtrusive")
 
-
-
-
   <style>
     @Html.Partial("~/Views/Shared/_SpinnerCss.cshtml")
   </style>
@@ -143,7 +140,7 @@
             </div>
           </div>
         </div>*@
-        <div>@RenderBody()</div>
+        <div id="renderBody">@RenderBody()</div>
       </div>
     </div>
   </div>
