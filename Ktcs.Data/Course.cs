@@ -42,6 +42,8 @@ namespace Ktcs.Data
         public string vendorwebsite { get; set; }
         public Nullable<int> isvisable { get; set; }
         public Nullable<int> visibleInFlyout { get; set; }
+        public Nullable<int> DeliveryFormatId { get; set; }
+        public Nullable<bool> GuaranteedToRun { get; set; }
     
         public virtual BasePrice BasePrice { get; set; }
         public virtual CourseTypeDetail CourseTypeDetail { get; set; }
@@ -51,5 +53,6 @@ namespace Ktcs.Data
         public virtual ICollection<BrandCategory> BrandCategories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TopicCategory> TopicCategories { get; set; }
+        public virtual DeliveryFormat DeliveryFormat { get; set; }
     }
 }

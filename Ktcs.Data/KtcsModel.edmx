@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KtcsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KtcsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="UserID" />
@@ -279,6 +279,8 @@ warning 6002: The table/view 'KnowledgeTransferInc1.dbo.Authority' does not have
           <Property Name="vendorwebsite" Type="varchar" MaxLength="250" />
           <Property Name="isvisable" Type="int" />
           <Property Name="visibleInFlyout" Type="int" />
+          <Property Name="DeliveryFormatId" Type="int" />
+          <Property Name="GuaranteedToRun" Type="bit" />
         </EntityType>
         <EntityType Name="Course_CourseTypeDetail">
           <Key>
@@ -323,6 +325,13 @@ warning 6002: The table/view 'KnowledgeTransferInc1.dbo.Authority' does not have
           <Property Name="CourseTypeID" Type="int" Nullable="false" />
           <Property Name="CourseTypeDetail" Type="nvarchar" MaxLength="60" Nullable="false" />
           <Property Name="pagenotes" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="DeliveryFormat">
+          <Key>
+            <PropertyRef Name="DeliveryFormatId" />
+          </Key>
+          <Property Name="DeliveryFormatId" Type="int" Nullable="false" />
+          <Property Name="DeliveryFormat" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Enrollments">
           <Key>
@@ -576,42 +585,6 @@ warning 6002: The table/view 'KnowledgeTransferInc1.dbo.Authority' does not have
           <Property Name="SectionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SectionName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Settings">
-          <Property Name="ID" Type="tinyint" />
-          <Property Name="Admin_ID" Type="nvarchar" MaxLength="30" />
-          <Property Name="Admin_Pass" Type="nvarchar" MaxLength="30" />
-          <Property Name="Abbreviate_Days" Type="bit" />
-          <Property Name="Abbreviate_Months" Type="bit" />
-          <Property Name="Event_Display" Type="bit" />
-          <Property Name="American_Time" Type="bit" />
-          <Property Name="Page_Title" Type="nvarchar" MaxLength="30" />
-          <Property Name="Background_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Font_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Link_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Hover_Link_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Visited_Link_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Active_Link_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Weekday_Font" Type="nvarchar" MaxLength="30" />
-          <Property Name="Weekday_Font_Size" Type="nvarchar" MaxLength="30" />
-          <Property Name="Weekday_Font_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Weekday_Background_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Date_Font" Type="nvarchar" MaxLength="30" />
-          <Property Name="Date_Font_Size" Type="nvarchar" MaxLength="30" />
-          <Property Name="Date_Font_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Date_Background_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Event_Font" Type="nvarchar" MaxLength="30" />
-          <Property Name="Event_Font_Size" Type="nvarchar" MaxLength="30" />
-          <Property Name="Event_Font_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Cell_Background_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Cell_Width" Type="nvarchar" MaxLength="30" />
-          <Property Name="Cell_Height" Type="nvarchar" MaxLength="30" />
-          <Property Name="Border_Size" Type="nvarchar" MaxLength="30" />
-          <Property Name="Border_Color" Type="nvarchar" MaxLength="30" />
-          <Property Name="Header" Type="ntext" />
-          <Property Name="Footer" Type="ntext" />
-        </EntityType>-->
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="StatusID" />
@@ -799,6 +772,18 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
           <Property Name="Comments" Type="ntext" />
           <Property Name="DateCreated" Type="smalldatetime" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Course__Delivery__770B9E7A">
+          <End Role="DeliveryFormat" Type="Self.DeliveryFormat" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryFormat">
+              <PropertyRef Name="DeliveryFormatId" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="DeliveryFormatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_BrandCategory_Brand">
           <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
           <End Role="BrandCategory" Type="Self.BrandCategory" Multiplicity="*" />
@@ -1193,6 +1178,7 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
           <EntitySet Name="CourseTopicCategory" EntityType="Self.CourseTopicCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseType" EntityType="Self.CourseType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseTypeDetail" EntityType="Self.CourseTypeDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryFormat" EntityType="Self.DeliveryFormat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Enrollments" EntityType="Self.Enrollments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExpenseType" EntityType="Self.ExpenseType" Schema="dbo" store:Type="Tables" />
@@ -1233,6 +1219,10 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
     [Authority].[Authority] AS [Authority]
     FROM [dbo].[Authority] AS [Authority]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK__Course__Delivery__770B9E7A" Association="Self.FK__Course__Delivery__770B9E7A">
+            <End Role="DeliveryFormat" EntitySet="DeliveryFormat" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
           <AssociationSet Name="FK_BrandCategory_Brand" Association="Self.FK_BrandCategory_Brand">
             <End Role="Brand" EntitySet="Brand" />
             <End Role="BrandCategory" EntitySet="BrandCategory" />
@@ -1354,8 +1344,7 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
             <End Role="WaitList" EntitySet="WaitList" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KtcsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1633,6 +1622,9 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
           <NavigationProperty Name="ScheduledClasses" Relationship="Self.FK_ScheduledClass_Course" FromRole="Course" ToRole="ScheduledClass" />
           <NavigationProperty Name="BrandCategories" Relationship="Self.CourseBrandCategory" FromRole="Course" ToRole="BrandCategory" />
           <NavigationProperty Name="TopicCategories" Relationship="Self.CourseTopicCategory" FromRole="Course" ToRole="TopicCategory" />
+          <Property Name="DeliveryFormatId" Type="Int32" />
+          <Property Name="GuaranteedToRun" Type="Boolean" />
+          <NavigationProperty Name="DeliveryFormat" Relationship="KtcsModel.FK__Course__Delivery__770B9E7A" FromRole="Course" ToRole="DeliveryFormat" />
         </EntityType>
         <EntityType Name="Course_CourseTypeDetail">
           <Key>
@@ -2615,7 +2607,32 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
             <End Role="Course" EntitySet="Courses" />
             <End Role="TopicCategory" EntitySet="TopicCategories" />
           </AssociationSet>
+          <EntitySet Name="DeliveryFormats" EntityType="KtcsModel.DeliveryFormat" />
+          <AssociationSet Name="FK__Course__Delivery__770B9E7A" Association="KtcsModel.FK__Course__Delivery__770B9E7A">
+            <End Role="DeliveryFormat" EntitySet="DeliveryFormats" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="DeliveryFormat">
+          <Key>
+            <PropertyRef Name="DeliveryFormatId" />
+          </Key>
+          <Property Name="DeliveryFormatId" Type="Int32" Nullable="false" />
+          <Property Name="DeliveryFormat1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Courses" Relationship="KtcsModel.FK__Course__Delivery__770B9E7A" FromRole="DeliveryFormat" ToRole="Course" />
+        </EntityType>
+        <Association Name="FK__Course__Delivery__770B9E7A">
+          <End Type="KtcsModel.DeliveryFormat" Role="DeliveryFormat" Multiplicity="0..1" />
+          <End Type="KtcsModel.Course" Role="Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryFormat">
+              <PropertyRef Name="DeliveryFormatId" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="DeliveryFormatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2873,6 +2890,8 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="KtcsModel.Course">
               <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="GuaranteedToRun" ColumnName="GuaranteedToRun" />
+                <ScalarProperty Name="DeliveryFormatId" ColumnName="DeliveryFormatId" />
                 <ScalarProperty Name="courseNumber" ColumnName="courseNumber" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="description" ColumnName="description" />
@@ -3430,6 +3449,14 @@ warning 6013: The table/view 'KnowledgeTransferInc1.dbo.Settings' does not have 
               <ScalarProperty Name="topicCategoryID" ColumnName="topicCategoryId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="DeliveryFormats">
+            <EntityTypeMapping TypeName="KtcsModel.DeliveryFormat">
+              <MappingFragment StoreEntitySet="DeliveryFormat">
+                <ScalarProperty Name="DeliveryFormat1" ColumnName="DeliveryFormat" />
+                <ScalarProperty Name="DeliveryFormatId" ColumnName="DeliveryFormatId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

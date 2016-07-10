@@ -61,7 +61,7 @@
         <EntityTypeShape EntityType="KtcsModel.vendor" Width="1.5" PointX="1.5" PointY="48.875" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.VendorType" Width="1.5" PointX="1.5" PointY="54" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.WaitList" Width="1.5" PointX="8.25" PointY="60.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KtcsModel.Authority" Width="1.5" PointX="3.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KtcsModel.Authority" Width="1.5" PointX="4" PointY="20.875" IsExpanded="true" />
         <AssociationConnector Association="KtcsModel.FK_CourseType_area" ManuallyRouted="false" />
         <AssociationConnector Association="KtcsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="KtcsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
@@ -89,6 +89,8 @@
         <AssociationConnector Association="KtcsModel.AspNetUserRoles" ManuallyRouted="false" />
         <AssociationConnector Association="KtcsModel.CourseBrandCategory" ManuallyRouted="false" />
         <AssociationConnector Association="KtcsModel.CourseTopicCategory" ManuallyRouted="false" ></AssociationConnector>
+        <EntityTypeShape EntityType="KtcsModel.DeliveryFormat" Width="1.5" PointX="4" PointY="18.375" />
+        <AssociationConnector Association="KtcsModel.FK__Course__Delivery__770B9E7A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

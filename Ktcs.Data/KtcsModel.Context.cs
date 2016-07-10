@@ -82,5 +82,6 @@ namespace Ktcs.Data
         public virtual DbSet<VendorType> VendorTypes { get; set; }
         public virtual DbSet<WaitList> WaitLists { get; set; }
         public virtual DbSet<Authority> Authorities { get; set; }
+        public virtual DbSet<DeliveryFormat> DeliveryFormats { get; set; }
     }
 }

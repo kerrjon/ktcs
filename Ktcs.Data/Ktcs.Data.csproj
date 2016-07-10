@@ -120,6 +120,9 @@
     <Compile Include="Course_CourseTypeDetail.cs">
       <DependentUpon>KtcsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DeliveryFormat.cs">
+      <DependentUpon>KtcsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment.cs">
       <DependentUpon>KtcsModel.tt</DependentUpon>
     </Compile>
