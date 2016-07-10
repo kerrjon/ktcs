@@ -34,7 +34,7 @@ namespace Ktcs.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(topicCategory);
+            return PartialView(topicCategory);
         }
 
         // GET: Admin/TopicCategories/Create

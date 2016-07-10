@@ -1,39 +1,58 @@
 ﻿@model IEnumerable<Ktcs.Data.BrandCategory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BrandCategorys";
 }
 
-<h2>Index</h2>
+<div id="page-title">
+    <p>KTCS</p>
+    <h2>BrandCategorys</h2>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.brandCategory1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand.brand1)
-        </th>
-        <th></th>
-    </tr>
-
+<div class="panel">
+  <div class="panel-body">
+    <h3 class="title-hero">@Html.ActionLink("Create New", "Create")</h3>
+    <div class="example-box-wrapper">
+	    <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.brandCategory1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand.brand1)
+            </th>
+            <th></th>
+         </tr>
+	       <tbody>
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.brandCategory1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand.brand1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BrandCategoryID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BrandCategoryID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BrandCategoryID })
-        </td>
-    </tr>
+         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.brandCategory1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.brand1)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BrandCategoryID }) |
+                <a href="javascript:void(0)" class="openDetailInModal" data-url="@Url.Action("Details", new {id = item.BrandCategoryID})">Details</a> |
+				@Html.ActionLink("Delete", "Delete", new { id=item.BrandCategoryID })
+            </td>
+          </tr>
 }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-</table>
+<!-- Modal Wrapper -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+@Scripts.Render("~/bundles/datatables")
+

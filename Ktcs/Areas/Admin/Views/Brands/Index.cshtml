@@ -1,44 +1,39 @@
 ﻿@model IEnumerable<Ktcs.Data.Brand>
 
 @{
-  ViewBag.Title = "Brands";
+    ViewBag.Title = "Brands";
 }
+
 <div id="page-title">
-  <p>Courses</p>
-  <h2>Brands</h2>
+    <p>KTCS</p>
+    <h2>Brands</h2>
 </div>
 
 <div class="panel">
   <div class="panel-body">
-    <h3 class="title-hero">
-      @Html.ActionLink("Create New", "Create")
-    </h3>
+    <h3 class="title-hero">@Html.ActionLink("Create New Brand", "Create")</h3>
     <div class="example-box-wrapper">
-      <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
+	    <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
-            <th>Brand</th>
+            <th>
+                @Html.DisplayNameFor(model => model.brand1)
+            </th>
             <th></th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>Brand</th>
-            <th></th>
-          </tr>
-        </tfoot>
-        <tbody>
-          @foreach (var item in Model)
-          {
-            <tr>
-              <td>@Html.DisplayFor(modelItem => item.brand1)</td>
-              <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.brandId }) |
+         </tr>
+	       <tbody>
+@foreach (var item in Model) {
+         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand1)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.brandId }) |
                 <a href="javascript:void(0)" class="openDetailInModal" data-url="@Url.Action("Details", new {id = item.brandId})">Details</a> |
-                @Html.ActionLink("Delete", "Delete", new { id = item.brandId })
-              </td>
-            </tr>
-          }
+				@Html.ActionLink("Delete", "Delete", new { id=item.brandId })
+            </td>
+          </tr>
+}
         </tbody>
       </table>
     </div>
@@ -54,3 +49,4 @@
 </div>
 
 @Scripts.Render("~/bundles/datatables")
+

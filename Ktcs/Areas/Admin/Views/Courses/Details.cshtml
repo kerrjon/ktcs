@@ -4,11 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title">Course Details</h4>
+</div>
 
-<div>
-    <h4>Course</h4>
-    <hr />
+<div class="modal-body">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.title)
@@ -17,7 +18,6 @@
         <dd>
             @Html.DisplayFor(model => model.title)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.description)
         </dt>
@@ -25,7 +25,6 @@
         <dd>
             @Html.DisplayFor(model => model.description)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.prereq)
         </dt>
@@ -33,7 +32,6 @@
         <dd>
             @Html.DisplayFor(model => model.prereq)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.duration)
         </dt>
@@ -41,7 +39,6 @@
         <dd>
             @Html.DisplayFor(model => model.duration)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.comments)
         </dt>
@@ -49,7 +46,6 @@
         <dd>
             @Html.DisplayFor(model => model.comments)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.inscomments)
         </dt>
@@ -57,7 +53,6 @@
         <dd>
             @Html.DisplayFor(model => model.inscomments)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.overview)
         </dt>
@@ -65,7 +60,6 @@
         <dd>
             @Html.DisplayFor(model => model.overview)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.courseware)
         </dt>
@@ -73,7 +67,6 @@
         <dd>
             @Html.DisplayFor(model => model.courseware)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.coursewarevendor)
         </dt>
@@ -81,7 +74,6 @@
         <dd>
             @Html.DisplayFor(model => model.coursewarevendor)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.coursewarecost)
         </dt>
@@ -89,7 +81,6 @@
         <dd>
             @Html.DisplayFor(model => model.coursewarecost)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.coursewarenotes)
         </dt>
@@ -97,7 +88,6 @@
         <dd>
             @Html.DisplayFor(model => model.coursewarenotes)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.datecreated)
         </dt>
@@ -105,7 +95,6 @@
         <dd>
             @Html.DisplayFor(model => model.datecreated)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.lastupdate)
         </dt>
@@ -113,7 +102,6 @@
         <dd>
             @Html.DisplayFor(model => model.lastupdate)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.instructorNotes)
         </dt>
@@ -121,7 +109,6 @@
         <dd>
             @Html.DisplayFor(model => model.instructorNotes)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.vendorwebsite)
         </dt>
@@ -129,7 +116,6 @@
         <dd>
             @Html.DisplayFor(model => model.vendorwebsite)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.isvisable)
         </dt>
@@ -137,7 +123,6 @@
         <dd>
             @Html.DisplayFor(model => model.isvisable)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.visibleInFlyout)
         </dt>
@@ -145,7 +130,6 @@
         <dd>
             @Html.DisplayFor(model => model.visibleInFlyout)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
         </dt>
@@ -153,7 +137,6 @@
         <dd>
             @Html.DisplayFor(model => model.BasePrice.BaseDescription)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
         </dt>
@@ -161,10 +144,9 @@
         <dd>
             @Html.DisplayFor(model => model.CourseTypeDetail.CourseTypeDetail1)
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.courseNumber }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="modal-footer">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.courseNumber }, new {@class="btn btn-primary"}) 
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

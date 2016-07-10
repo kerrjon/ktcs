@@ -1,17 +1,22 @@
 ﻿@model Ktcs.Data.Brand
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Brand";
 }
 
-<h2>Create</h2>
+<div id="page-title">
+    <p>KTCS</p>
+    <h2>Create Brand</h2>
+</div>
 
+<div class="panel">
+<div class="panel-body">
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Brand</h4>
+        <h4>Enter Brand Details</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -24,12 +29,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <button type="submit" class="btn btn-primary">Create</button>
             </div>
         </div>
     </div>
 }
-
+</div>
+</div>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

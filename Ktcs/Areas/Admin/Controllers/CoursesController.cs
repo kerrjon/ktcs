@@ -34,7 +34,7 @@ namespace Ktcs.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(course);
+            return PartialView(course);
         }
 
         // GET: Admin/Courses/Create

@@ -1,16 +1,21 @@
 ﻿@model Ktcs.Data.Course
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Course";
 }
 
-<h2>Delete</h2>
+<div id="page-title">
+    <p>KTCS</p>
+    <h2>Delete Course</h2>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Course</h4>
+<div class="panel">
+<div class="panel-body">
+
+<h4>Are you sure you want to delete this Course?</h4>
     <hr />
     <dl class="dl-horizontal">
+	
         <dt>
             @Html.DisplayNameFor(model => model.title)
         </dt>
@@ -168,9 +173,14 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-primary">Delete</button>
+			</div>         
         </div>
     }
+
 </div>
+</div>
+@Html.ActionLink("Back to List", "Index")
+
