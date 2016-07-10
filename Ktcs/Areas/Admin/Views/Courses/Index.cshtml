@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Ktcs.Data.Course>
+﻿@model IEnumerable<Ktcs.Classes.Course>
 
 @{
     ViewBag.Title = "Courses";
@@ -16,6 +16,12 @@
 	    <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.title)
             </th>
@@ -67,17 +73,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.visibleInFlyout)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
-            </th>
             <th></th>
          </tr>
 	       <tbody>
 @foreach (var item in Model) {
          <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasePrice.BaseDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseTypeDetail.CourseTypeDetail1)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.title)
             </td>
@@ -128,12 +134,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.visibleInFlyout)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BasePrice.BaseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseTypeDetail.CourseTypeDetail1)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.courseNumber }) |

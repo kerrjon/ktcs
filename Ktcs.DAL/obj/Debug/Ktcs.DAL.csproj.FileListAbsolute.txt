@@ -1,0 +1,10 @@
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\Ktcs.DAL.dll.config
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\Ktcs.DAL.dll
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\Ktcs.DAL.pdb
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\EntityFramework.dll
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\EntityFramework.xml
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.csprojResolveAssemblyReference.cache
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.dll
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.pdb

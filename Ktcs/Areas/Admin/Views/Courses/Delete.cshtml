@@ -1,4 +1,4 @@
-﻿@model Ktcs.Data.Course
+﻿@model Ktcs.Classes.Course
 
 @{
     ViewBag.Title = "Delete Course";
@@ -16,6 +16,22 @@
     <hr />
     <dl class="dl-horizontal">
 	
+        <dt>
+            @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasePrice.BaseDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.title)
         </dt>
@@ -150,22 +166,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.visibleInFlyout)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BasePrice.BaseDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseTypeDetail.CourseTypeDetail1)
         </dd>
 
     </dl>

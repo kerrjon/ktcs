@@ -21,7 +21,7 @@ namespace Ktcs.Areas.Login.Models
   public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
   {
     public ApplicationDbContext()
-        : base("KtcsEntities", throwIfV1Schema: false)
+        : base("ApplicationDbContext", throwIfV1Schema: false)
     {
     }
 

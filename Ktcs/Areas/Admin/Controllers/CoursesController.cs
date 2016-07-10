@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Ktcs.Data;
+using Ktcs.Classes;
+using Ktcs.Datamodel;
 
 namespace Ktcs.Areas.Admin.Controllers
 {
     public class CoursesController : Controller
     {
-        private KtcsEntities db = new KtcsEntities();
+        private KtcsDbContext db = new KtcsDbContext();
 
         // GET: Admin/Courses
         public async Task<ActionResult> Index()

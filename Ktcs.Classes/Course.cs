@@ -4,7 +4,7 @@ namespace Ktcs.Classes
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    //
 
     [Table("Course")]
     public partial class Course
@@ -12,8 +12,7 @@ namespace Ktcs.Classes
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Course()
         {
-            BrandCategories = new HashSet<BrandCategory>();
-            TopicCategories = new HashSet<TopicCategory>();
+            ScheduledClasses = new HashSet<ScheduledClass>();
         }
 
         [Key]
@@ -74,10 +73,11 @@ namespace Ktcs.Classes
 
         public int? visibleInFlyout { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BrandCategory> BrandCategories { get; set; }
+        public virtual BasePrice BasePrice { get; set; }
+
+        public virtual CourseTypeDetail CourseTypeDetail { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TopicCategory> TopicCategories { get; set; }
+        public virtual ICollection<ScheduledClass> ScheduledClasses { get; set; }
     }
 }
