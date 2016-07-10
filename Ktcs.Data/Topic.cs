@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel;
-
 namespace Ktcs.Data
 {
     using System;
@@ -21,8 +19,7 @@ namespace Ktcs.Data
         {
             this.TopicCategories = new HashSet<TopicCategory>();
         }
-
-        [DisplayName("Topic Name")]
+    
         public string topic1 { get; set; }
         public int topicId { get; set; }
     

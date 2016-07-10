@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel;
-
 namespace Ktcs.Data
 {
     using System;
@@ -22,7 +20,6 @@ namespace Ktcs.Data
             this.BrandCategories = new HashSet<BrandCategory>();
         }
     
-        [DisplayName("Brand Name")]
         public string brand1 { get; set; }
         public int brandId { get; set; }
     

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b870254932ce44de9f4f48235542c20b" Name="Diagram1">
+      <Diagram DiagramId="b870254932ce44de9f4f48235542c20b" Name="Diagram1" ZoomLevel="97">
         <EntityTypeShape EntityType="KtcsModel.Admin" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.Answer" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.area" Width="1.5" PointX="1.5" PointY="33.5" IsExpanded="true" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="KtcsModel.BasePrice" Width="1.5" PointX="1.5" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.Brand" Width="1.5" PointX="1.5" PointY="23.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.BrandCategory" Width="1.5" PointX="1.5" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KtcsModel.Category" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KtcsModel.Category" Width="1.75" PointX="3.375" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.ClassRequest" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.ComContact" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.ComContactNote" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
@@ -24,7 +24,7 @@
         <EntityTypeShape EntityType="KtcsModel.contact" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.ContactNote" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.Course" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KtcsModel.Course_CourseTypeDetail" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KtcsModel.Course_CourseTypeDetail" Width="2.375" PointX="6.625" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.CourseType" Width="1.5" PointX="1.5" PointY="30" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.CourseTypeDetail" Width="1.5" PointX="1.5" PointY="26.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.Enrollment" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
@@ -57,7 +57,7 @@
         <EntityTypeShape EntityType="KtcsModel.SurveyQuestion" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.sysdiagram" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.Topic" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KtcsModel.TopicCategory" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KtcsModel.TopicCategory" Width="1.5" PointX="4" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.vendor" Width="1.5" PointX="1.5" PointY="48.875" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.VendorType" Width="1.5" PointX="1.5" PointY="54" IsExpanded="true" />
         <EntityTypeShape EntityType="KtcsModel.WaitList" Width="1.5" PointX="8.25" PointY="60.375" IsExpanded="true" />
@@ -88,7 +88,7 @@
         <AssociationConnector Association="KtcsModel.FK_vendor_VendorType" ManuallyRouted="false" />
         <AssociationConnector Association="KtcsModel.AspNetUserRoles" ManuallyRouted="false" />
         <AssociationConnector Association="KtcsModel.CourseBrandCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="KtcsModel.CourseTopicCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="KtcsModel.CourseTopicCategory" ManuallyRouted="false" ></AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

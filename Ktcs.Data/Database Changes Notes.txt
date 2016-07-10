@@ -1,0 +1,17 @@
+﻿Need to make a script
+Add new tables:
+DeliveryFormat
+Topic
+TopicCategory
+CourseTopicCategory
+Brand
+BrandCategory
+CourseBrandCategory
+
+Add new aspnet identity tables
+Update student table to include FK to Id (from aspnet users table)
+
+Update course to include "guaranteed to run" 
+Update course to have a FK for "deliverFormatId"
+
+Remove old aspmembership tables

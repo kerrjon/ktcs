@@ -256,6 +256,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database Changes Notes.txt" />
     <Content Include="KtcsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KtcsModel.edmx</DependentUpon>
