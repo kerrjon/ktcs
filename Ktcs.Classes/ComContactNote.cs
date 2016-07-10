@@ -4,7 +4,6 @@ namespace Ktcs.Classes
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    
 
     [Table("ComContactNote")]
     public partial class ComContactNote

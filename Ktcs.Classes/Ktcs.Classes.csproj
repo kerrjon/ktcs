@@ -50,16 +50,6 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Answer.cs" />
     <Compile Include="area.cs" />
-    <Compile Include="aspnet_Applications.cs" />
-    <Compile Include="aspnet_Membership.cs" />
-    <Compile Include="aspnet_Paths.cs" />
-    <Compile Include="aspnet_PersonalizationAllUsers.cs" />
-    <Compile Include="aspnet_PersonalizationPerUser.cs" />
-    <Compile Include="aspnet_Profile.cs" />
-    <Compile Include="aspnet_Roles.cs" />
-    <Compile Include="aspnet_SchemaVersions.cs" />
-    <Compile Include="aspnet_Users.cs" />
-    <Compile Include="aspnet_WebEvent_Events.cs" />
     <Compile Include="AType.cs" />
     <Compile Include="Authority.cs" />
     <Compile Include="BasePrice.cs" />
