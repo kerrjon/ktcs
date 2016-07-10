@@ -4,15 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<div id="page-title">
-    <p>Section</p>
-    <h2>Details</h2>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title">Topic Details</h4>
 </div>
 
-
-<div>
-    <h4>Topic</h4>
-    <hr />
+<div class="modal-body">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.topic1)
@@ -21,10 +18,9 @@
         <dd>
             @Html.DisplayFor(model => model.topic1)
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.topicId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="modal-footer">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.topicId }, new {@class="btn btn-primary"}) |
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

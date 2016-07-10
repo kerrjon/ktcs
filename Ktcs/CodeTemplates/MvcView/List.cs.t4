@@ -22,12 +22,10 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
 }
 
-
 <div id="page-title">
     <p>KTCS</p>
     <h2><#= ViewName#></h2>
 </div>
-
 
 <#
 } else {
@@ -49,18 +47,13 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
     PushIndent("    ");
 }
 #>
-
-
 <div class="panel">
-    <div class="panel-body">
-        <h3 class="title-hero">
-            @Html.ActionLink("Create New", "Create")
-        </h3>
-        <div class="example-box-wrapper">
-		 <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-
+  <div class="panel-body">
+    <h3 class="title-hero">@Html.ActionLink("Create New", "Create")</h3>
+    <div class="example-box-wrapper">
+	    <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
 <#
 IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
 foreach (PropertyMetadata property in properties) {
@@ -73,18 +66,18 @@ foreach (PropertyMetadata property in properties) {
             continue;
         }
 #>
-        <th>
-            @Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)
-        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)
+            </th>
 <#
     }
 }
 #>
-        <th></th>
-    </tr>
-	 <tbody>
+            <th></th>
+         </tr>
+	       <tbody>
 @foreach (var item in Model) {
-    <tr>
+         <tr>
 <#
 foreach (PropertyMetadata property in properties) {
     if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
@@ -96,9 +89,9 @@ foreach (PropertyMetadata property in properties) {
             continue;
         }
 #>
-        <td>
-            @Html.DisplayFor(modelItem => <#= "item." + GetValueExpression(property) #>)
-        </td>
+            <td>
+                @Html.DisplayFor(modelItem => <#= "item." + GetValueExpression(property) #>)
+            </td>
 <#
     }
 }
@@ -106,30 +99,39 @@ foreach (PropertyMetadata property in properties) {
 string pkName = GetPrimaryKeyName();
 if (pkName != null) {
 #>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }) |
-            @Html.ActionLink("Details", "Details", new { id=item.<#= pkName #> }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.<#= pkName #> })
-        </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }) |
+                <a href="javascript:void(0)" class="openDetailInModal" data-url="@Url.Action("Details", new {id = item.<#= pkName #>})">Details</a> |
+				@Html.ActionLink("Delete", "Delete", new { id=item.<#= pkName #> })
+            </td>
 <#
 } else {
 #>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+				<a href="javascript:void(0)" class="openDetailInModal" data-url="@Url.Action("Details", new {/* id = item.PrimaryKey */})">Details</a> |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
 <#
 }
 #>
-    </tr>
-	 
+          </tr>
 }
-</tbody>
-</table>
- </div>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
+
+<!-- Modal Wrapper -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+@Scripts.Render("~/bundles/datatables")
 
 <#
 // The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page

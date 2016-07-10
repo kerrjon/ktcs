@@ -29,18 +29,28 @@
         </tfoot>
         <tbody>
           @foreach (var item in Model)
-                    {
-                  <tr>
-                    <td>@Html.DisplayFor(modelItem => item.brand1)</td>
-                    <td>
-                      @Html.ActionLink("Edit", "Edit", new { id = item.brandId }) |
-                      @Html.ActionLink("Details", "Details", new { id = item.brandId }) |
-                      @Html.ActionLink("Delete", "Delete", new { id = item.brandId })
-                    </td>
-                  </tr>
-                    }
+          {
+            <tr>
+              <td>@Html.DisplayFor(modelItem => item.brand1)</td>
+              <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.brandId }) |
+                <a href="javascript:void(0)" class="openDetailInModal" data-url="@Url.Action("Details", new {id = item.brandId})">Details</a> |
+                @Html.ActionLink("Delete", "Delete", new { id = item.brandId })
+              </td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+<!-- Modal Wrapper -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+@Scripts.Render("~/bundles/datatables")

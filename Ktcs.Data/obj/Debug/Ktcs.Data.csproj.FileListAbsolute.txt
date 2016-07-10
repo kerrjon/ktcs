@@ -5,6 +5,6 @@ D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\bin\Debug\EntityFramework.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\bin\Debug\EntityFramework.xml
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\obj\Debug\Ktcs.Data.csprojResolveAssemblyReference.cache
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\obj\Debug\Ktcs.Data.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\obj\Debug\Ktcs.Data.pdb
-D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Data\obj\Debug\Ktcs.Data.csprojResolveAssemblyReference.cache

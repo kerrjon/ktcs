@@ -10,18 +10,26 @@ $(document).ready(function () {
     $('.DTTT_container a').addClass('btn btn-default btn-md');
 
     $('.dataTables_filter input').attr("placeholder", "Search...");
-});
 
-/* Datatables reorder */
-
-$(document).ready(function () {
+    /* Datatables reorder */
     $('#datatable-reorder').DataTable({
         dom: 'Rlfrtip'
     });
     $('#datatable-reorder_length').hide();
     $('#datatable-reorder_filter').hide();
-});
 
-$(document).ready(function () {
     $('.dataTables_filter input').attr("placeholder", "Search...");
+
+  //modal for details
+  $(".openDetailInModal").click(function (e) {
+        e.stopPropagation();
+        $.get($(this).data('url'), function (data) {
+          $('.modal-content').html(data);
+          $('#detailsModal').modal({
+            backdrop: true,
+            keyboard: false,
+            show: true
+          });
+        });
+      });
 });

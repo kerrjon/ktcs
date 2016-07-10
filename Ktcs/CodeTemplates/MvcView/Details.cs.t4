@@ -22,11 +22,10 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
 }
 
-<div id="page-title">
-    <p>Section</p>
-    <h2><#= ViewName#></h2>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title"><#= ViewDataTypeShortName #> Details</h4>
 </div>
-
 
 <#
 } else {
@@ -48,9 +47,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
     PushIndent("    ");
 }
 #>
-<div>
-    <h4><#= ViewDataTypeShortName #></h4>
-    <hr />
+<div class="modal-body">
     <dl class="dl-horizontal">
 <#
 foreach (PropertyMetadata property in ModelMetadata.Properties) {
@@ -70,29 +67,28 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
         <dd>
             @Html.DisplayFor(model => model.<#= GetValueExpression(property) #>)
         </dd>
-
 <#
     }
 }
 #>
     </dl>
 </div>
-<p>
+<div class="modal-footer">
 <#
 string pkName = GetPrimaryKeyName();
 if (pkName != null) {
 #>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.<#= pkName #> }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.<#= pkName #> }, new {@class="btn btn-primary"}) 
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 <#
 } else {
 #>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }, new {@class="btn btn-primary"})
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 <#
 }
 #>
-</p>
+</div>
 <#
 // The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
 #>

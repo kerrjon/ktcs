@@ -28,7 +28,7 @@ namespace Ktcs.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(brand);
+            return PartialView(brand);
         }
 
         // GET: Admin/Brands/Create

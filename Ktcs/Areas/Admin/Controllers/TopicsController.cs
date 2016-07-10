@@ -33,7 +33,7 @@ namespace Ktcs.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(topic);
+            return PartialView(topic);
         }
 
         // GET: Admin/Topics/Create
