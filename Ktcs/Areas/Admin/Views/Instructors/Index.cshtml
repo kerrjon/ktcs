@@ -1,0 +1,214 @@
+﻿@model IEnumerable<Ktcs.Data.Instructor>
+
+@{
+    ViewBag.Title = "Instructors";
+}
+
+<div id="page-title">
+    <p>KTCS</p>
+    <h2>Instructors</h2>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <h3 class="title-hero">@Html.ActionLink("Create New Instructor", "Create")</h3>
+    <div class="example-box-wrapper">
+	    <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.insfname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inslname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insaddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inscity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insstate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inszip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insphone2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insemail2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insfax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inscountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insIndependent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insReferredBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Keywords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resumeText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skill1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skill2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skill3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skill4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skill5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.coursewareNotes)
+            </th>
+            <th></th>
+         </tr>
+	       <tbody>
+@foreach (var item in Model) {
+         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.insfname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inslname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insaddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inscity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insstate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inszip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insphone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insphone2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insemail2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insfax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inscountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insIndependent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insReferredBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Keywords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resumeText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skill1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skill2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skill3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skill4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skill5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.coursewareNotes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.InstructorID }) |
+                <a href="javascript:void(0)" class="openDetailInModal" data-url="@Url.Action("Details", new {id = item.InstructorID})">Details</a> |
+				@Html.ActionLink("Delete", "Delete", new { id=item.InstructorID })
+            </td>
+          </tr>
+}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Wrapper -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+@Scripts.Render("~/bundles/datatables")
+

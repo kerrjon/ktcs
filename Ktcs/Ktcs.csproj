@@ -190,6 +190,7 @@
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CoursesController.cs" />
     <Compile Include="Areas\Admin\Controllers\DemoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstructorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicsController.cs" />
     <Compile Include="Areas\Login\Controllers\AccountController.cs" />
@@ -1142,11 +1143,6 @@
     <Content Include="Areas\Admin\Views\Courses\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Courses\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Courses\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\TopicCategories\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\TopicCategories\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\TopicCategories\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\TopicCategories\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\TopicCategories\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Brands\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Brands\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Brands\Details.cshtml" />
@@ -1157,6 +1153,16 @@
     <Content Include="Areas\Admin\Views\BrandCategories\Details.cshtml" />
     <Content Include="Areas\Admin\Views\BrandCategories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\BrandCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructors\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructors\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructors\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructors\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Instructors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TopicCategories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TopicCategories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TopicCategories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\TopicCategories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TopicCategories\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

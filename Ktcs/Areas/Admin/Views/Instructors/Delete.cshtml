@@ -1,0 +1,258 @@
+﻿@model Ktcs.Data.Instructor
+
+@{
+    ViewBag.Title = "Delete Instructor";
+}
+
+<div id="page-title">
+    <p>KTCS</p>
+    <h2>Delete Instructor</h2>
+</div>
+
+<div class="panel">
+<div class="panel-body">
+
+<h4>Are you sure you want to delete this Instructor?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+	
+        <dt>
+            @Html.DisplayNameFor(model => model.insfname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insfname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inslname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inslname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inscity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inscity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insstate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insstate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inszip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inszip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insphone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insphone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insphone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insphone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insemail2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insemail2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insfax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insfax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inscountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inscountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insIndependent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insIndependent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insReferredBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insReferredBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Keywords)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Keywords)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resumeText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resumeText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coursewareNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coursewareNotes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-primary">Delete</button>
+			</div>         
+        </div>
+    }
+
+</div>
+</div>
+@Html.ActionLink("Back to List", "Index")
+
