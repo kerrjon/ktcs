@@ -299,6 +299,11 @@ namespace Ktcs.Datamodel
                 .WithRequired(e => e.Course)
                 .WillCascadeOnDelete(false);
 
+            //modelBuilder.Entity<Course>()
+            //   .HasMany(e => e.TopicCategories)
+            //   .WithMany(e => e.Courses)
+            //   .Map(m => m.ToTable("CourseTopicCategory").MapLeftKey("courseNumber").MapRightKey("topicCategoryId"));
+
             modelBuilder.Entity<CourseType>()
                 .HasMany(e => e.CourseTypeDetails)
                 .WithRequired(e => e.CourseType)

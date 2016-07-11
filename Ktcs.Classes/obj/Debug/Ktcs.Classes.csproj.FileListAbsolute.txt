@@ -6,3 +6,4 @@ D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\bin\Debug\EntityFramework.SqlServer
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\bin\Debug\EntityFramework.xml
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.pdb
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.csprojResolveAssemblyReference.cache

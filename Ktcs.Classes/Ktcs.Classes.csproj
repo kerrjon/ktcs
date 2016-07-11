@@ -99,6 +99,8 @@
     <Compile Include="subCategory.cs" />
     <Compile Include="Survey.cs" />
     <Compile Include="SurveyQuestion.cs" />
+    <Compile Include="Topic.cs" />
+    <Compile Include="TopicCategory.cs" />
     <Compile Include="vendor.cs" />
     <Compile Include="VendorType.cs" />
     <Compile Include="WaitList.cs" />
