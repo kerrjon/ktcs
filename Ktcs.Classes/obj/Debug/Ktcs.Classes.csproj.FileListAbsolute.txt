@@ -7,3 +7,12 @@ D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\bin\Debug\EntityFramework.xml
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.pdb
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.csprojResolveAssemblyReference.cache
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\Ktcs.Classes.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\Ktcs.Classes.pdb
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\EntityFramework.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\EntityFramework.xml
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.csprojResolveAssemblyReference.cache
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.pdb

@@ -19,8 +19,9 @@ namespace Ktcs.Areas.Admin.Controllers
         // GET: Admin/Courses
         public async Task<ActionResult> Index()
         {
-            var courses = db.Courses.Include(c => c.BasePrice).Include(c => c.CourseTypeDetail);
-            return View(await courses.ToListAsync());
+      //var courses = db.Courses.Include(c => c.BasePrice).Include(c => c.CourseTypeDetail);
+      var courses = db.Courses;
+      return View(await courses.ToListAsync());
         }
 
         // GET: Admin/Courses/Details/5
@@ -41,8 +42,8 @@ namespace Ktcs.Areas.Admin.Controllers
         // GET: Admin/Courses/Create
         public ActionResult Create()
         {
-            ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription");
-            ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1");
+            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription");
+            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1");
             return View();
         }
 
@@ -60,8 +61,8 @@ namespace Ktcs.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
-            ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
+            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
+            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
             return View(course);
         }
 
@@ -77,8 +78,8 @@ namespace Ktcs.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
-            ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
+            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
+            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
             return View(course);
         }
 
@@ -95,8 +96,8 @@ namespace Ktcs.Areas.Admin.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
-            ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
+            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
+            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
             return View(course);
         }
 

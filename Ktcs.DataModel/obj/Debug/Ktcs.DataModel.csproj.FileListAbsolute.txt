@@ -12,3 +12,17 @@ D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.SqlServ
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.pdb
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.removingASPMembership.resources
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.fixForCourse_CourseTypeDetail.resources
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.removingASPMembership.resources
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.csproj.GenerateResource.Cache
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.pdb
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.DataModel.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.DataModel.pdb
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.Classes.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.Classes.pdb
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.xml
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.SqlServer.xml

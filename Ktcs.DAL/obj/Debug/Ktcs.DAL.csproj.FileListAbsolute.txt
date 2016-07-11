@@ -8,3 +8,13 @@ D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.csprojResolveAssemblyReference.cache
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.pdb
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\Ktcs.DAL.dll.config
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\Ktcs.DAL.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\Ktcs.DAL.pdb
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\EntityFramework.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\EntityFramework.xml
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.csprojResolveAssemblyReference.cache
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.dll
+C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DAL\obj\Debug\Ktcs.DAL.pdb

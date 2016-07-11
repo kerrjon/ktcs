@@ -32,8 +32,6 @@ namespace Ktcs.Classes
         [StringLength(10)]
         public string duration { get; set; }
 
-        public int? courseTypeDetailID { get; set; }
-
         [StringLength(1000)]
         public string comments { get; set; }
 
@@ -43,8 +41,6 @@ namespace Ktcs.Classes
         [Column(TypeName = "ntext")]
         [Required]
         public string overview { get; set; }
-
-        public int basePriceID { get; set; }
 
         [StringLength(100)]
         public string courseware { get; set; }
@@ -73,11 +69,14 @@ namespace Ktcs.Classes
 
         public int? visibleInFlyout { get; set; }
 
-        public virtual BasePrice BasePrice { get; set; }
-
-        public virtual CourseTypeDetail CourseTypeDetail { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ScheduledClass> ScheduledClasses { get; set; }
-    }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<BrandCategory> BrandCategories { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<TopicCategory> TopicCategories { get; set; }
+
+  }
 }
