@@ -51,14 +51,6 @@
   <ItemGroup>
     <Compile Include="CourseRepository.cs" />
     <Compile Include="KtcsDbContext.cs" />
-    <Compile Include="Migrations\201607102225203_fixForCourse_CourseTypeDetail.cs" />
-    <Compile Include="Migrations\201607102225203_fixForCourse_CourseTypeDetail.Designer.cs">
-      <DependentUpon>201607102225203_fixForCourse_CourseTypeDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607102301427_removingASPMembership.cs" />
-    <Compile Include="Migrations\201607102301427_removingASPMembership.Designer.cs">
-      <DependentUpon>201607102301427_removingASPMembership.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201607120448583_majorupdate.cs" />
     <Compile Include="Migrations\201607120448583_majorupdate.Designer.cs">
       <DependentUpon>201607120448583_majorupdate.cs</DependentUpon>
@@ -76,12 +68,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607102225203_fixForCourse_CourseTypeDetail.resx">
-      <DependentUpon>201607102225203_fixForCourse_CourseTypeDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607102301427_removingASPMembership.resx">
-      <DependentUpon>201607102301427_removingASPMembership.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607120448583_majorupdate.resx">
       <DependentUpon>201607120448583_majorupdate.cs</DependentUpon>
     </EmbeddedResource>

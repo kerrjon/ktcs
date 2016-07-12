@@ -15,3 +15,20 @@
 
 Ktcs/App_Data/aspnet-Ktcs-20160625105857.mdf
 Ktcs/App_Data/aspnet-Ktcs-20160625105857_log.ldf
+Ktcs.Classes/bin/Debug/Ktcs.Classes.dll
+Ktcs.Classes/bin/Debug/Ktcs.Classes.pdb
+Ktcs.Classes/obj/Debug/Ktcs.Classes.dll
+Ktcs.Classes/obj/Debug/Ktcs.Classes.pdb
+Ktcs.DataModel/bin/Debug/Ktcs.Classes.dll
+Ktcs.DataModel/bin/Debug/Ktcs.Classes.pdb
+Ktcs.DataModel/bin/Debug/Ktcs.DataModel.dll
+Ktcs.DataModel/bin/Debug/Ktcs.DataModel.pdb
+Ktcs.Tests/bin/Debug/Ktcs.Classes.dll
+Ktcs.Tests/bin/Debug/Ktcs.Classes.pdb
+Ktcs.Tests/bin/Debug/Ktcs.DataModel.dll
+Ktcs.Tests/bin/Debug/Ktcs.DataModel.pdb
+Ktcs.Tests/bin/Debug/Ktcs.dll
+Ktcs.Tests/bin/Debug/Ktcs.pdb
+Ktcs.Tests/bin/Debug/Ktcs.Tests.dll
+Ktcs.Tests/bin/Debug/Ktcs.Tests.pdb
+Ktcs.DataModel/obj/Debug/Ktcs.DataModel.pdb

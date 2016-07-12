@@ -54,8 +54,8 @@
     <Compile Include="ClassRequest.cs" />
     <Compile Include="ComContact.cs" />
     <Compile Include="ComContactNote.cs" />
-    <Compile Include="company.cs" />
-    <Compile Include="contact.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Contact.cs" />
     <Compile Include="ContactNote.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Enrollment.cs" />
@@ -63,9 +63,9 @@
     <Compile Include="ExpenseType.cs" />
     <Compile Include="Income.cs" />
     <Compile Include="IncomeType.cs" />
-    <Compile Include="insCategory.cs" />
-    <Compile Include="insCertification.cs" />
-    <Compile Include="insSkill.cs" />
+    <Compile Include="InsCategory.cs" />
+    <Compile Include="InsCertification.cs" />
+    <Compile Include="InsSkill.cs" />
     <Compile Include="Instructor.cs" />
     <Compile Include="instructorCert.cs" />
     <Compile Include="InstructorNote.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="ScheduledClass.cs" />
     <Compile Include="SectionType.cs" />
     <Compile Include="Status.cs" />
-    <Compile Include="student.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="StudentCertification.cs" />
     <Compile Include="StudentDistribution.cs" />
     <Compile Include="StudentNote.cs" />
@@ -88,7 +88,7 @@
     <Compile Include="SurveyQuestion.cs" />
     <Compile Include="Topic.cs" />
     <Compile Include="TopicCategory.cs" />
-    <Compile Include="vendor.cs" />
+    <Compile Include="Vendor.cs" />
     <Compile Include="VendorType.cs" />
     <Compile Include="WaitList.cs" />
   </ItemGroup>
