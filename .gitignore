@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -8,6 +8,10 @@
 /Ktcs.Tests/obj/Debug
 /Ktcs/bin
 /Ktcs/obj/Debug
+/Ktcs.DataModel/bin
+/Ktcs.DataModel/obj/Debug
+/Ktcs.Classes/bin
+/Ktcs.Classes/obj/Debug
 
 Ktcs/App_Data/aspnet-Ktcs-20160625105857.mdf
 Ktcs/App_Data/aspnet-Ktcs-20160625105857_log.ldf
