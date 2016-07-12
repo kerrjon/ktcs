@@ -1,22 +1,24 @@
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("SurveyQuestion")]
+  public partial class SurveyQuestion
+  {
+    [Key]
+    [DisplayName("Survey Question Id")]
+    public int Sqid { get; set; }
 
-    [Table("SurveyQuestion")]
-    public partial class SurveyQuestion
-    {
-        [Key]
-        public int SQID { get; set; }
+    [DisplayName("Question Id")]
+    public int Qid { get; set; }
 
-        public int QID { get; set; }
+    [DisplayName("Survey Id")]
+    public int SurveyId { get; set; }
 
-        public int SurveyID { get; set; }
+    public virtual Question Question { get; set; }
 
-        public virtual Question Question { get; set; }
-
-        public virtual Survey Survey { get; set; }
-    }
+    public virtual Survey Survey { get; set; }
+  }
 }

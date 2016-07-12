@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201607102301427_removingASPMembership.Designer.cs">
       <DependentUpon>201607102301427_removingASPMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607120448583_majorupdate.cs" />
+    <Compile Include="Migrations\201607120448583_majorupdate.Designer.cs">
+      <DependentUpon>201607120448583_majorupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607102301427_removingASPMembership.resx">
       <DependentUpon>201607102301427_removingASPMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607120448583_majorupdate.resx">
+      <DependentUpon>201607120448583_majorupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

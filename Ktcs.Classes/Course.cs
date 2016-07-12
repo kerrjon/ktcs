@@ -1,80 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    //
-
-    [Table("Course")]
-    public partial class Course
+  [Table("Course")]
+  public partial class Course
+  {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Course()
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Course()
-        {
-            ScheduledClasses = new HashSet<ScheduledClass>();
-        }
+      ScheduledClasses = new HashSet<ScheduledClass>();
+    }
 
-        [Key]
-        [StringLength(10)]
-        public string courseNumber { get; set; }
+    [Key]
+    [StringLength(10)]
+    [DisplayName("Course Number")]
+    public string CourseNumber { get; set; }
 
-        [Required]
-        [StringLength(125)]
-        public string title { get; set; }
+    [StringLength(15)]
+    [DisplayName("Official Course Number")]
+    public string OfficialCourseNumber { get; set; }
 
-        [Column(TypeName = "ntext")]
-        public string description { get; set; }
+    [Required]
+    [StringLength(125)]
+    public string Title { get; set; }
 
-        [StringLength(4000)]
-        public string prereq { get; set; }
+    [Column(TypeName = "ntext")]
+    public string Description { get; set; }
 
-        [StringLength(10)]
-        public string duration { get; set; }
+    [StringLength(4000)]
+    [DisplayName("Prerequisites")]
+    public string Prereq { get; set; }
 
-        [StringLength(1000)]
-        public string comments { get; set; }
+    [StringLength(10)]
+    public string Duration { get; set; }
 
-        [StringLength(50)]
-        public string inscomments { get; set; }
+    [StringLength(1000)]
+    public string Comments { get; set; }
 
-        [Column(TypeName = "ntext")]
-        [Required]
-        public string overview { get; set; }
+    [StringLength(50)]
+    [DisplayName("Instructor Comments")]
+    public string Inscomments { get; set; }
 
-        [StringLength(100)]
-        public string courseware { get; set; }
+    [Column(TypeName = "ntext")]
+    [Required]
+    public string Overview { get; set; }
 
-        [StringLength(100)]
-        public string coursewarevendor { get; set; }
+    [StringLength(100)]
+    public string Courseware { get; set; }
 
-        public decimal? coursewarecost { get; set; }
+    [StringLength(100)]
+    [DisplayName("Courseware vendor")]
+    public string Coursewarevendor { get; set; }
 
-        [StringLength(4000)]
-        public string coursewarenotes { get; set; }
+    [DisplayName("Courseware Cost")]
+    public decimal? Coursewarecost { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime? datecreated { get; set; }
+    [StringLength(4000)]
+    [DisplayName("Courseware Notes")]
+    public string Coursewarenotes { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime? lastupdate { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Created")]
+    public DateTime? Datecreated { get; set; }
 
-        [StringLength(4000)]
-        public string instructorNotes { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Last Modified")]
+    public DateTime? Lastupdate { get; set; }
 
-        [StringLength(250)]
-        public string vendorwebsite { get; set; }
+    [StringLength(4000)]
+    [DisplayName("Instructor Notes")]
+    public string InstructorNotes { get; set; }
 
-        public int? isvisable { get; set; }
+    [StringLength(250)]
+    [DisplayName("vendor Website")]
+    public string Vendorwebsite { get; set; }
 
-        public int? visibleInFlyout { get; set; }
+    [DisplayName("Show on Website")]
+    public int? Isvisable { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ScheduledClass> ScheduledClasses { get; set; }
+    [DisplayName("Show in Flyout")]
+    public int? VisibleInFlyout { get; set; }
 
+    [DisplayName("Scheduled Classes")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<ScheduledClass> ScheduledClasses { get; set; }
+
+    [DisplayName("Brand Categories")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
     public virtual ICollection<BrandCategory> BrandCategories { get; set; }
 
+    [DisplayName("Topic Categories")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
     public virtual ICollection<TopicCategory> TopicCategories { get; set; }
 

@@ -47,14 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
     <Compile Include="Answer.cs" />
     <Compile Include="AType.cs" />
-    <Compile Include="Authority.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="BrandCategory.cs" />
-    <Compile Include="CaseStudy.cs" />
-    <Compile Include="Category.cs" />
     <Compile Include="ClassRequest.cs" />
     <Compile Include="ComContact.cs" />
     <Compile Include="ComContactNote.cs" />
@@ -62,7 +58,6 @@
     <Compile Include="contact.cs" />
     <Compile Include="ContactNote.cs" />
     <Compile Include="Course.cs" />
-    <Compile Include="dtproperty.cs" />
     <Compile Include="Enrollment.cs" />
     <Compile Include="Expense.cs" />
     <Compile Include="ExpenseType.cs" />
@@ -76,7 +71,6 @@
     <Compile Include="InstructorNote.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="News.cs" />
     <Compile Include="NoteType.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,7 +84,6 @@
     <Compile Include="StudentDistribution.cs" />
     <Compile Include="StudentNote.cs" />
     <Compile Include="StudentNote2.cs" />
-    <Compile Include="subCategory.cs" />
     <Compile Include="Survey.cs" />
     <Compile Include="SurveyQuestion.cs" />
     <Compile Include="Topic.cs" />

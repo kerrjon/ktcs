@@ -1,16 +1,16 @@
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("insCategory")]
-    public partial class insCategory
-    {
-        [Key]
-        [Column("insCategory")]
-        [StringLength(50)]
-        public string insCategory1 { get; set; }
-    }
+  [Table("insCategory")]
+  public partial class InsCategory
+  {
+    [Key]
+    [Column("insCategory")]
+    [StringLength(50)]
+    [DisplayName("Instructor Category")]
+    public string InsCategory1 { get; set; }
+  }
 }

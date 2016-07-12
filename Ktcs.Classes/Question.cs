@@ -1,35 +1,43 @@
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    [Table("Question")]
-    public partial class Question
+  [Table("Question")]
+  public partial class Question
+  {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Question()
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Question()
-        {
-            SurveyQuestions = new HashSet<SurveyQuestion>();
-        }
-
-        [Key]
-        public int QID { get; set; }
-
-        [Column("Question")]
-        [Required]
-        [StringLength(255)]
-        public string Question1 { get; set; }
-
-        public int ATypeID { get; set; }
-
-        public int SectionID { get; set; }
-
-        public virtual AType AType { get; set; }
-
-        public virtual SectionType SectionType { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SurveyQuestion> SurveyQuestions { get; set; }
+      SurveyQuestions = new HashSet<SurveyQuestion>();
     }
+
+    [Key]
+    [DisplayName("Question Id")]
+    public int Qid { get; set; }
+
+    [Column("Question")]
+    [Required]
+    [StringLength(255)]
+    [DisplayName("Question")]
+    public string Question1 { get; set; }
+
+    [DisplayName("Answer Type Id")]
+    public int ATypeId { get; set; }
+
+    [DisplayName("Section Id")]
+    public int SectionId { get; set; }
+
+    [DisplayName("Answser Type")]
+    public virtual AType AType { get; set; }
+
+    [DisplayName("Section Type")]
+    public virtual SectionType SectionType { get; set; }
+
+    [DisplayName("Survey Questions")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<SurveyQuestion> SurveyQuestions { get; set; }
+  }
 }

@@ -1,19 +1,22 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  public partial class StudentCertification
+  {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    [DisplayName("student Id")]
+    public int StudentId { get; set; }
 
-    public partial class StudentCertification
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int StudentID { get; set; }
+    [DisplayName("Certification Id")]
+    public int CertificationId { get; set; }
 
-        public int CertificationID { get; set; }
-
-        [Column(TypeName = "smalldatetime")]
-        public DateTime ExpireDate { get; set; }
-    }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Expiration Date")]
+    public DateTime ExpireDate { get; set; }
+  }
 }

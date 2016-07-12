@@ -1,25 +1,31 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("StudentDistribution")]
+  public partial class StudentDistribution
+  {
+    [DisplayName("student Distribution Id")]
+    public int StudentDistributionId { get; set; }
 
-    [Table("StudentDistribution")]
-    public partial class StudentDistribution
-    {
-        public int StudentDistributionID { get; set; }
+    [DisplayName("student Id")]
+    public int StudentId { get; set; }
 
-        public int StudentID { get; set; }
+    [DisplayName("Distribution Id")]
+    public int DistributionId { get; set; }
 
-        public int DistributionID { get; set; }
+    [Required]
+    [StringLength(20)]
+    [DisplayName("Exam Status")]
+    public string ExamStatus { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public string ExamStatus { get; set; }
+    [DisplayName("Start Time")]
+    public DateTime? StartTime { get; set; }
 
-        public DateTime? startTime { get; set; }
-
-        public DateTime? EndTime { get; set; }
-    }
+    [DisplayName("End Time")]
+    public DateTime? EndTime { get; set; }
+  }
 }

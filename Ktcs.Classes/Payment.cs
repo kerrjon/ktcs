@@ -1,21 +1,24 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("Payment")]
+  public partial class Payment
+  {
+    [DisplayName("Payment Id")]
+    public int PaymentId { get; set; }
 
-    [Table("Payment")]
-    public partial class Payment
-    {
-        public int PaymentID { get; set; }
+    [Column(TypeName = "money")]
+    [DisplayName("Amount Paid")]
+    public decimal PayAmount { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal PayAmount { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Payment Date")]
+    public DateTime PayDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime PayDate { get; set; }
-
-        public int ConfirmationNum { get; set; }
-    }
+    [DisplayName("Confirmation Number")]
+    public int ConfirmationNum { get; set; }
+  }
 }

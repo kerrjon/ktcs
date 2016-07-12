@@ -1,29 +1,34 @@
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("Manager")]
+  public partial class Manager
+  {
+    [DisplayName("Manager Id")]
+    public int ManagerId { get; set; }
 
-    [Table("Manager")]
-    public partial class Manager
-    {
-        public int ManagerID { get; set; }
+    [StringLength(30)]
+    [DisplayName("First Name")]
+    public string MgrFName { get; set; }
 
-        [StringLength(30)]
-        public string mgrFName { get; set; }
+    [Required]
+    [StringLength(35)]
+    [DisplayName("Last Name")]
+    public string MgrLName { get; set; }
 
-        [Required]
-        [StringLength(35)]
-        public string mgrLName { get; set; }
+    [StringLength(20)]
+    [DisplayName("Phone")]
+    public string MgrPhone { get; set; }
 
-        [StringLength(20)]
-        public string mgrPhone { get; set; }
+    [StringLength(60)]
+    [DisplayName("Email")]
+    public string MgrEmail { get; set; }
 
-        [StringLength(60)]
-        public string mgrEmail { get; set; }
-
-        [StringLength(20)]
-        public string mgrFax { get; set; }
-    }
+    [StringLength(20)]
+    [DisplayName("Fax")]
+    public string MgrFax { get; set; }
+  }
 }

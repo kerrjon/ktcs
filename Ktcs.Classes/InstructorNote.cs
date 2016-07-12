@@ -1,42 +1,50 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("InstructorNote")]
+  public partial class InstructorNote
+  {
+    [Key]
+    [DisplayName("Note Id")]
+    public int NoteId { get; set; }
 
-    [Table("InstructorNote")]
-    public partial class InstructorNote
-    {
-        [Key]
-        public int NoteID { get; set; }
+    [Required]
+    [StringLength(50)]
+    [DisplayName("Instructor Id")]
+    public string InstructorId { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string InstructorID { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Note Date")]
+    public DateTime NoteDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime NoteDate { get; set; }
+    [Required]
+    [StringLength(7000)]
+    public string Notes { get; set; }
 
-        [Required]
-        [StringLength(7000)]
-        public string Notes { get; set; }
+    [DisplayName("Note Type Id")]
+    public int NoteTypeId { get; set; }
 
-        public int NoteTypeID { get; set; }
+    [StringLength(3)]
+    [DisplayName("Admin Initials")]
+    public string AdminInitials { get; set; }
 
-        [StringLength(3)]
-        public string AdminInitials { get; set; }
+    [StringLength(7000)]
+    [DisplayName("Follow Up")]
+    public string FollowUp { get; set; }
 
-        [StringLength(7000)]
-        public string FollowUp { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Follow Up Date")]
+    public DateTime? FollowUpDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime? FollowUpDate { get; set; }
+    [StringLength(10)]
+    public string Priority { get; set; }
 
-        [StringLength(10)]
-        public string Priority { get; set; }
-
-        [StringLength(60)]
-        public string toDoFor { get; set; }
-    }
+    [StringLength(60)]
+    [DisplayName("To Do For")]
+    public string ToDoFor { get; set; }
+  }
 }

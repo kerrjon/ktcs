@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ktcs.Classes
 {
@@ -20,10 +17,13 @@ namespace Ktcs.Classes
 
     [Column("brandCategory")]
     [StringLength(200)]
-    public string brandCategory1 { get; set; }
+    [DisplayName("Name")]
+    public string Name { get; set; }
 
-    public int BrandCategoryID { get; set; }
+    [DisplayName("Brand Category Id")]
+    public int BrandCategoryId { get; set; }
 
+    [DisplayName("Brand Id")]
     public int? BrandId { get; set; }
 
     public virtual Brand Brand { get; set; }

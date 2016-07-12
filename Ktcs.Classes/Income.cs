@@ -1,42 +1,50 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("Income")]
+  public partial class Income
+  {
+    [DisplayName("Income Id")]
+    public int IncomeId { get; set; }
 
-    [Table("Income")]
-    public partial class Income
-    {
-        public int IncomeID { get; set; }
+    [DisplayName("Company Id")]
+    public int CompanyId { get; set; }
 
-        public int CompanyID { get; set; }
+    [Column(TypeName = "smallmoney")]
+    public decimal? Cost { get; set; }
 
-        [Column(TypeName = "smallmoney")]
-        public decimal? Cost { get; set; }
+    [DisplayName("Quantity")]
+    public int? Qty { get; set; }
 
-        public int? Qty { get; set; }
+    [StringLength(300)]
+    public string Description { get; set; }
 
-        [StringLength(300)]
-        public string Description { get; set; }
+    [DisplayName("Income Type Id")]
+    public int? IncomeTypeId { get; set; }
 
-        public int? IncomeTypeID { get; set; }
+    [DisplayName("Schedule Class Id")]
+    public int? ScheduledClassId { get; set; }
 
-        public int? ScheduledClassID { get; set; }
+    [StringLength(10)]
+    [DisplayName("vendor Invoice Number")]
+    public string VenInvoiceNum { get; set; }
 
-        [StringLength(10)]
-        public string VenInvoiceNum { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("vendor Invoice Date")]
+    public DateTime? VenInvoiceDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime? VenInvoiceDate { get; set; }
+    [StringLength(3)]
+    [DisplayName("vendor Invoice Paid")]
+    public string VenInvoicePaid { get; set; }
 
-        [StringLength(3)]
-        public string VenInvoicePaid { get; set; }
+    [Column(TypeName = "smallmoney")]
+    public decimal? Tax { get; set; }
 
-        [Column(TypeName = "smallmoney")]
-        public decimal? Tax { get; set; }
-
-        [Column(TypeName = "smallmoney")]
-        public decimal? Shipping { get; set; }
-    }
+    [Column(TypeName = "smallmoney")]
+    public decimal? Shipping { get; set; }
+  }
 }

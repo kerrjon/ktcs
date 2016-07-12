@@ -1,39 +1,48 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  public partial class StudentNote2
+  {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    [DisplayName("Note Id")]
+    public int NoteId { get; set; }
 
-    public partial class StudentNote2
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int NoteID { get; set; }
+    [DisplayName("student Id")]
+    public int StudentId { get; set; }
 
-        public int StudentID { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Note Date")]
+    public DateTime NoteDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime NoteDate { get; set; }
+    [StringLength(4000)]
+    [DisplayName("Notes")]
+    public string Notes { get; set; }
 
-        [StringLength(4000)]
-        public string Notes { get; set; }
+    [DisplayName("Note Type Id")]
+    public int NoteTypeId { get; set; }
 
-        public int NoteTypeID { get; set; }
+    [StringLength(4000)]
+    [DisplayName("Follow Up")]
+    public string Followup { get; set; }
 
-        [StringLength(4000)]
-        public string followup { get; set; }
+    [StringLength(3)]
+    [DisplayName("Admin Initials")]
+    public string AdminInitials { get; set; }
 
-        [StringLength(3)]
-        public string AdminInitials { get; set; }
+    [Column(TypeName = "smalldatetime")]
+    [DisplayName("Follow Up Date")]
+    public DateTime? FollowUpDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime? FollowUpDate { get; set; }
+    [StringLength(60)]
+    [DisplayName("To Do For")]
+    public string ToDoFor { get; set; }
 
-        [StringLength(60)]
-        public string ToDoFor { get; set; }
-
-        [StringLength(10)]
-        public string Priority { get; set; }
-    }
+    [StringLength(10)]
+    public string Priority { get; set; }
+  }
 }

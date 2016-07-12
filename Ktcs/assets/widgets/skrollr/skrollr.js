@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * skrollr core
  *
  * Alexander Prinzhorn - https://github.com/Prinzhorn/skrollr
@@ -89,7 +89,7 @@
     //Finds all gradients.
     var rxGradient = /[a-z\-]+-gradient/g;
 
-    //Vendor prefix. Will be set once skrollr gets initialized.
+    //vendor prefix. Will be set once skrollr gets initialized.
     var theCSSPrefix = '';
     var theDashedCSSPrefix = '';
 

@@ -1,77 +1,98 @@
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Ktcs.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+  [Table("Company")]
+  public partial class Company
+  {
+    [DisplayName("Company Id")]
+    public int CompanyId { get; set; }
 
-    [Table("company")]
-    public partial class company
-    {
-        public int CompanyID { get; set; }
+    [Required]
+    [StringLength(75)]
+    [DisplayName("Company Name")]
+    public string ComName { get; set; }
 
-        [Required]
-        [StringLength(75)]
-        public string comName { get; set; }
+    [StringLength(75)]
+    [DisplayName("Address")]
+    public string ComAddress { get; set; }
 
-        [StringLength(75)]
-        public string comAddress { get; set; }
+    [StringLength(75)]
+    [DisplayName("Address 2")]
+    public string ComAddress2 { get; set; }
 
-        [StringLength(75)]
-        public string comAddress2 { get; set; }
+    [StringLength(30)]
+    [DisplayName("City")]
+    public string ComCity { get; set; }
 
-        [StringLength(30)]
-        public string comCity { get; set; }
+    [StringLength(2)]
+    [DisplayName("State")]
+    public string ComState { get; set; }
 
-        [StringLength(2)]
-        public string comState { get; set; }
+    [StringLength(12)]
+    [DisplayName("Zip")]
+    public string ComZip { get; set; }
 
-        [StringLength(12)]
-        public string comZip { get; set; }
+    [StringLength(30)]
+    [DisplayName("Country")]
+    public string Comcountry { get; set; }
 
-        [StringLength(30)]
-        public string comcountry { get; set; }
+    [StringLength(20)]
+    [DisplayName("Phone")]
+    public string Comphone { get; set; }
 
-        [StringLength(20)]
-        public string comphone { get; set; }
+    [StringLength(20)]
+    [DisplayName("Fax")]
+    public string Comfax { get; set; }
 
-        [StringLength(20)]
-        public string comfax { get; set; }
+    [StringLength(75)]
+    [DisplayName("Map Link")]
+    public string ComMapLink { get; set; }
 
-        [StringLength(75)]
-        public string comMapLink { get; set; }
+    [StringLength(50)]
+    [DisplayName("Billing Name")]
+    public string Billname { get; set; }
 
-        [StringLength(50)]
-        public string billname { get; set; }
+    [StringLength(75)]
+    [DisplayName("Billing Address")]
+    public string Billaddress { get; set; }
 
-        [StringLength(75)]
-        public string billaddress { get; set; }
+    [StringLength(75)]
+    [DisplayName("Billing Address 2")]
+    public string Billaddress2 { get; set; }
 
-        [StringLength(75)]
-        public string billaddress2 { get; set; }
+    [StringLength(30)]
+    [DisplayName("Billing City")]
+    public string Billcity { get; set; }
 
-        [StringLength(30)]
-        public string billcity { get; set; }
+    [StringLength(2)]
+    [DisplayName("Billing State")]
+    public string Billstate { get; set; }
 
-        [StringLength(2)]
-        public string billstate { get; set; }
+    [StringLength(12)]
+    [DisplayName("Billing Zip")]
+    public string Billzip { get; set; }
 
-        [StringLength(12)]
-        public string billzip { get; set; }
+    [StringLength(20)]
+    [DisplayName("Billing Phone")]
+    public string Billphone { get; set; }
 
-        [StringLength(20)]
-        public string billphone { get; set; }
+    [StringLength(20)]
+    [DisplayName("Billing Fax")]
+    public string Billfax { get; set; }
 
-        [StringLength(20)]
-        public string billfax { get; set; }
+    [StringLength(50)]
+    [DisplayName("Billing Country")]
+    public string Billcountry { get; set; }
 
-        [StringLength(50)]
-        public string billcountry { get; set; }
+    [StringLength(75)]
+    [DisplayName("Billing Email")]
+    public string Billemail { get; set; }
 
-        [StringLength(75)]
-        public string logo { get; set; }
-
-        [StringLength(75)]
-        public string billemail { get; set; }
-    }
+    [StringLength(75)]
+    [DisplayName("Logo")]
+    public string Logo { get; set; }
+  }
 }

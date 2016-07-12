@@ -26,3 +26,4 @@ C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.Classes.dll
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.Classes.pdb
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.xml
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.majorupdate.resources

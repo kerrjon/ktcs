@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ktcs.Classes
 {
 
-    [Table("Brand")]
+  [Table("Brand")]
   public partial class Brand
   {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,10 +17,13 @@ namespace Ktcs.Classes
 
     [Column("brand")]
     [StringLength(200)]
-    public string brand1 { get; set; }
+    [DisplayName("Name")]
+    public string Name { get; set; }
 
-    public int brandId { get; set; }
+    [DisplayName("Brand Id")]
+    public int BrandId { get; set; }
 
+    [DisplayName("Brand Categories")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
     public virtual ICollection<BrandCategory> BrandCategories { get; set; }
   }

@@ -11,35 +11,30 @@ namespace Ktcs.Datamodel
     {
     }
 
-    public virtual DbSet<Admin> Admins { get; set; }
     public virtual DbSet<Answer> Answers { get; set; }
     public virtual DbSet<AType> ATypes { get; set; }
     public virtual DbSet<Brand> Brands { get; set; }
     public virtual DbSet<BrandCategory> BrandCategories { get; set; }
-    public virtual DbSet<CaseStudy> CaseStudies { get; set; }
-    public virtual DbSet<Category> Categories { get; set; }
     public virtual DbSet<ClassRequest> ClassRequests { get; set; }
     public virtual DbSet<ComContact> ComContacts { get; set; }
     public virtual DbSet<ComContactNote> ComContactNotes { get; set; }
-    public virtual DbSet<company> companies { get; set; }
-    public virtual DbSet<contact> contacts { get; set; }
+    public virtual DbSet<Company> Companies { get; set; }
+    public virtual DbSet<Contact> Contacts { get; set; }
     public virtual DbSet<ContactNote> ContactNotes { get; set; }
     public virtual DbSet<Course> Courses { get; set; }
-    public virtual DbSet<dtproperty> dtproperties { get; set; }
     public virtual DbSet<Enrollment> Enrollments { get; set; }
     public virtual DbSet<Expense> Expenses { get; set; }
     public virtual DbSet<ExpenseType> ExpenseTypes { get; set; }
     public virtual DbSet<Income> Incomes { get; set; }
     public virtual DbSet<IncomeType> IncomeTypes { get; set; }
-    public virtual DbSet<insCategory> insCategories { get; set; }
-    public virtual DbSet<insCertification> insCertifications { get; set; }
-    public virtual DbSet<insSkill> insSkills { get; set; }
+    public virtual DbSet<InsCategory> InsCategories { get; set; }
+    public virtual DbSet<InsCertification> InsCertifications { get; set; }
+    public virtual DbSet<InsSkill> InsSkills { get; set; }
     public virtual DbSet<Instructor> Instructors { get; set; }
-    public virtual DbSet<instructorCert> instructorCerts { get; set; }
+    public virtual DbSet<InstructorCert> InstructorCerts { get; set; }
     public virtual DbSet<InstructorNote> InstructorNotes { get; set; }
     public virtual DbSet<Location> Locations { get; set; }
     public virtual DbSet<Manager> Managers { get; set; }
-    public virtual DbSet<News> News { get; set; }
     public virtual DbSet<NoteType> NoteTypes { get; set; }
     public virtual DbSet<Payment> Payments { get; set; }
     public virtual DbSet<Question> Questions { get; set; }
@@ -47,26 +42,21 @@ namespace Ktcs.Datamodel
     public virtual DbSet<ScheduledClass> ScheduledClasses { get; set; }
     public virtual DbSet<SectionType> SectionTypes { get; set; }
     public virtual DbSet<Status> Status { get; set; }
-    public virtual DbSet<student> students { get; set; }
+    public virtual DbSet<Student> Students { get; set; }
     public virtual DbSet<StudentCertification> StudentCertifications { get; set; }
     public virtual DbSet<StudentDistribution> StudentDistributions { get; set; }
     public virtual DbSet<StudentNote> StudentNotes { get; set; }
     public virtual DbSet<StudentNote2> StudentNote2 { get; set; }
-    public virtual DbSet<subCategory> subCategories { get; set; }
     public virtual DbSet<Survey> Surveys { get; set; }
     public virtual DbSet<SurveyQuestion> SurveyQuestions { get; set; }
     public virtual DbSet<Topic> Topics { get; set; }
     public virtual DbSet<TopicCategory> TopicCategories { get; set; }
-    public virtual DbSet<vendor> vendors { get; set; }
+    public virtual DbSet<Vendor> Vendors { get; set; }
     public virtual DbSet<VendorType> VendorTypes { get; set; }
     public virtual DbSet<WaitList> WaitLists { get; set; }
-    public virtual DbSet<Authority> Authorities { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
-      modelBuilder.Entity<Admin>()
-          .Property(e => e.SysAdmin)
-          .IsUnicode(false);
 
       modelBuilder.Entity<Answer>()
           .Property(e => e.AnswerNum)
@@ -81,39 +71,16 @@ namespace Ktcs.Datamodel
           .WithRequired(e => e.AType)
           .WillCascadeOnDelete(false);
 
-      modelBuilder.Entity<CaseStudy>()
-          .Property(e => e.CaseStudyTitle)
-          .IsFixedLength()
-          .IsUnicode(false);
-
-      modelBuilder.Entity<CaseStudy>()
-          .Property(e => e.CaseStudyText)
-          .IsUnicode(false);
-
-      modelBuilder.Entity<CaseStudy>()
-          .Property(e => e.visible)
-          .IsUnicode(false);
-
-      modelBuilder.Entity<CaseStudy>()
-          .Property(e => e.CaseSummary)
-          .IsUnicode(false);
 
       modelBuilder.Entity<BrandCategory>()
           .HasMany(e => e.Courses)
           .WithMany(e => e.BrandCategories)
           .Map(m => m.ToTable("CourseBrandCategory").MapLeftKey("brandCategoryId").MapRightKey("courseNumber"));
 
-      modelBuilder.Entity<Category>()
-                .Property(e => e.Category1)
-                .IsUnicode(false);
 
-      modelBuilder.Entity<ClassRequest>()
-          .Property(e => e.Denied)
-          .IsUnicode(false);
-
-      modelBuilder.Entity<ClassRequest>()
-          .Property(e => e.Withdrew)
-          .IsUnicode(false);
+      //modelBuilder.Entity<ClassRequest>()
+      //    .Property(e => e.Withdrew)
+      //    .IsUnicode(false);
 
       modelBuilder.Entity<ComContact>()
           .Property(e => e.ComConFName)
@@ -181,59 +148,59 @@ namespace Ktcs.Datamodel
           .IsUnicode(false);
 
       modelBuilder.Entity<ComContactNote>()
-          .Property(e => e.toDoFor)
+          .Property(e => e.ToDoFor)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billname)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billname)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billaddress)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billaddress)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billaddress2)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billaddress2)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billcity)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billcity)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billstate)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billstate)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billzip)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billzip)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billphone)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billphone)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billfax)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billfax)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billcountry)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billcountry)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.logo)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Logo)
           .IsUnicode(false);
 
-      modelBuilder.Entity<company>()
-          .Property(e => e.billemail)
+      modelBuilder.Entity<Company>()
+          .Property(e => e.Billemail)
           .IsUnicode(false);
 
-      modelBuilder.Entity<contact>()
-          .Property(e => e.conext1)
+      modelBuilder.Entity<Contact>()
+          .Property(e => e.Conext1)
           .IsUnicode(false);
 
-      modelBuilder.Entity<contact>()
-          .Property(e => e.conext2)
+      modelBuilder.Entity<Contact>()
+          .Property(e => e.Conext2)
           .IsUnicode(false);
 
       modelBuilder.Entity<ContactNote>()
@@ -245,31 +212,31 @@ namespace Ktcs.Datamodel
           .IsUnicode(false);
 
       modelBuilder.Entity<ContactNote>()
-          .Property(e => e.toDoFor)
+          .Property(e => e.ToDoFor)
           .IsUnicode(false);
 
       modelBuilder.Entity<Course>()
-          .Property(e => e.courseware)
+          .Property(e => e.Courseware)
           .IsUnicode(false);
 
       modelBuilder.Entity<Course>()
-          .Property(e => e.coursewarevendor)
+          .Property(e => e.Coursewarevendor)
           .IsUnicode(false);
 
       modelBuilder.Entity<Course>()
-          .Property(e => e.coursewarecost)
+          .Property(e => e.Coursewarecost)
           .HasPrecision(9, 2);
 
       modelBuilder.Entity<Course>()
-          .Property(e => e.coursewarenotes)
+          .Property(e => e.Coursewarenotes)
           .IsUnicode(false);
 
       modelBuilder.Entity<Course>()
-          .Property(e => e.instructorNotes)
+          .Property(e => e.InstructorNotes)
           .IsUnicode(false);
 
       modelBuilder.Entity<Course>()
-          .Property(e => e.vendorwebsite)
+          .Property(e => e.Vendorwebsite)
           .IsUnicode(false);
 
       modelBuilder.Entity<Course>()
@@ -282,14 +249,6 @@ namespace Ktcs.Datamodel
           .WithMany(e => e.Courses)
           .Map(m => m.ToTable("CourseTopicCategory").MapLeftKey("courseNumber").MapRightKey("topicCategoryId"));
 
-      modelBuilder.Entity<dtproperty>()
-                .Property(e => e.property)
-                .IsUnicode(false);
-
-      modelBuilder.Entity<dtproperty>()
-          .Property(e => e.value)
-          .IsUnicode(false);
-
       modelBuilder.Entity<Enrollment>()
           .Property(e => e.Paid)
           .HasPrecision(19, 4);
@@ -299,7 +258,7 @@ namespace Ktcs.Datamodel
           .HasPrecision(19, 4);
 
       modelBuilder.Entity<Enrollment>()
-          .Property(e => e.MTSfee)
+          .Property(e => e.MtSfee)
           .HasPrecision(19, 4);
 
       modelBuilder.Entity<Enrollment>()
@@ -307,11 +266,11 @@ namespace Ktcs.Datamodel
           .HasPrecision(19, 4);
 
       modelBuilder.Entity<Enrollment>()
-          .Property(e => e.mgrConfirmation)
+          .Property(e => e.MgrConfirmation)
           .IsUnicode(false);
 
       modelBuilder.Entity<Enrollment>()
-          .Property(e => e.conarchived)
+          .Property(e => e.Conarchived)
           .IsUnicode(false);
 
       modelBuilder.Entity<Enrollment>()
@@ -354,32 +313,32 @@ namespace Ktcs.Datamodel
           .Property(e => e.IncomeType1)
           .IsUnicode(false);
 
-      modelBuilder.Entity<insCategory>()
-          .Property(e => e.insCategory1)
+      modelBuilder.Entity<InsCategory>()
+          .Property(e => e.InsCategory1)
           .IsUnicode(false);
 
-      modelBuilder.Entity<insCertification>()
-          .Property(e => e.insCertification1)
+      modelBuilder.Entity<InsCertification>()
+          .Property(e => e.InsCertification1)
           .IsUnicode(false);
 
-      modelBuilder.Entity<insSkill>()
-          .Property(e => e.insSkill1)
-          .IsUnicode(false);
-
-      modelBuilder.Entity<Instructor>()
-          .Property(e => e.InstructorID)
+      modelBuilder.Entity<InsSkill>()
+          .Property(e => e.InsSkill1)
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
-          .Property(e => e.password)
+          .Property(e => e.InstructorId)
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
-          .Property(e => e.insIndependent)
+          .Property(e => e.Password)
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
-          .Property(e => e.insReferredBy)
+          .Property(e => e.InsIndependent)
+          .IsUnicode(false);
+
+      modelBuilder.Entity<Instructor>()
+          .Property(e => e.InsReferredBy)
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
@@ -387,7 +346,7 @@ namespace Ktcs.Datamodel
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
-          .Property(e => e.resumeText)
+          .Property(e => e.ResumeText)
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
@@ -423,23 +382,23 @@ namespace Ktcs.Datamodel
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
-          .Property(e => e.notes)
+          .Property(e => e.Notes)
           .IsUnicode(false);
 
       modelBuilder.Entity<Instructor>()
-          .Property(e => e.coursewareNotes)
+          .Property(e => e.CoursewareNotes)
           .IsUnicode(false);
 
-      modelBuilder.Entity<instructorCert>()
-          .Property(e => e.insCertification)
+      modelBuilder.Entity<InstructorCert>()
+          .Property(e => e.InsCertification)
           .IsUnicode(false);
 
-      modelBuilder.Entity<instructorCert>()
-          .Property(e => e.instructorID)
+      modelBuilder.Entity<InstructorCert>()
+          .Property(e => e.InstructorId)
           .IsUnicode(false);
 
       modelBuilder.Entity<InstructorNote>()
-          .Property(e => e.InstructorID)
+          .Property(e => e.InstructorId)
           .IsUnicode(false);
 
       modelBuilder.Entity<InstructorNote>()
@@ -459,7 +418,7 @@ namespace Ktcs.Datamodel
           .IsUnicode(false);
 
       modelBuilder.Entity<InstructorNote>()
-          .Property(e => e.toDoFor)
+          .Property(e => e.ToDoFor)
           .IsUnicode(false);
 
       modelBuilder.Entity<Location>()
@@ -481,11 +440,11 @@ namespace Ktcs.Datamodel
           .WillCascadeOnDelete(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.startTime)
+          .Property(e => e.StartTime)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.endTime)
+          .Property(e => e.EndTime)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
@@ -497,43 +456,43 @@ namespace Ktcs.Datamodel
           .HasPrecision(10, 4);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.ispublic)
+          .Property(e => e.Ispublic)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.KTCSRate)
+          .Property(e => e.KtcsRate)
           .HasPrecision(10, 4);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.KTCScourse)
+          .Property(e => e.KtcScourse)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.startDateconfirmed)
+          .Property(e => e.StartDateconfirmed)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.bookOrderMade)
+          .Property(e => e.BookOrderMade)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.insTestReminder)
+          .Property(e => e.InsTestReminder)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.bookOrderRecieved)
+          .Property(e => e.BookOrderRecieved)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.insconfirmed)
+          .Property(e => e.Insconfirmed)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.locconfirmed)
+          .Property(e => e.Locconfirmed)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
-          .Property(e => e.InstructorID)
+          .Property(e => e.InstructorId)
           .IsUnicode(false);
 
       modelBuilder.Entity<ScheduledClass>()
@@ -563,62 +522,62 @@ namespace Ktcs.Datamodel
           .WithRequired(e => e.Status)
           .WillCascadeOnDelete(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .Property(e => e.Password)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
-          .Property(e => e.stuInternationalCode)
+      modelBuilder.Entity<Student>()
+          .Property(e => e.StuInternationalCode)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .Property(e => e.BillInternationalCode)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .Property(e => e.OtherCompany)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .Property(e => e.OtherReferredBy)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .Property(e => e.OtherManager)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .Property(e => e.OtherManagerPhone)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
-          .Property(e => e.mailList)
+      modelBuilder.Entity<Student>()
+          .Property(e => e.MailList)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
-          .Property(e => e.UserID)
+      modelBuilder.Entity<Student>()
+          .Property(e => e.UserId)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
-          .Property(e => e.blockReminder)
+      modelBuilder.Entity<Student>()
+          .Property(e => e.BlockReminder)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
-          .Property(e => e.other)
+      modelBuilder.Entity<Student>()
+          .Property(e => e.Other)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
-          .Property(e => e.stuarchived)
+      modelBuilder.Entity<Student>()
+          .Property(e => e.Stuarchived)
           .IsUnicode(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .HasMany(e => e.Enrollments)
-          .WithRequired(e => e.student)
+          .WithRequired(e => e.Student)
           .WillCascadeOnDelete(false);
 
-      modelBuilder.Entity<student>()
+      modelBuilder.Entity<Student>()
           .HasMany(e => e.WaitLists)
-          .WithRequired(e => e.student)
+          .WithRequired(e => e.Student)
           .WillCascadeOnDelete(false);
 
       modelBuilder.Entity<StudentDistribution>()
@@ -641,9 +600,6 @@ namespace Ktcs.Datamodel
           .Property(e => e.Priority)
           .IsUnicode(false);
 
-      modelBuilder.Entity<subCategory>()
-          .Property(e => e.subCategory1)
-          .IsUnicode(false);
 
       modelBuilder.Entity<Survey>()
           .Property(e => e.SurveyName)
@@ -668,7 +624,7 @@ namespace Ktcs.Datamodel
           .WillCascadeOnDelete(false);
 
       modelBuilder.Entity<VendorType>()
-          .HasMany(e => e.vendors)
+          .HasMany(e => e.Vendors)
           .WithRequired(e => e.VendorType)
           .WillCascadeOnDelete(false);
     }

@@ -10,7 +10,7 @@ namespace Ktcs.DataModel
         {
             using (var context = new KtcsDbContext())
             {
-                return context.Courses.AsNoTracking().FirstOrDefault(n => n.courseNumber == courseNumber);
+                return context.Courses.AsNoTracking().FirstOrDefault(n => n.CourseNumber == courseNumber);
             }
         }
     }
