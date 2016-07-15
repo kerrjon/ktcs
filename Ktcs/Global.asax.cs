@@ -15,7 +15,6 @@ namespace Ktcs
 
     protected void Application_Start()
     {
-      log4net.ThreadContext.Properties["IpAddress"] = LocalIPAddress().ToString();
       _logger.Info("Application Started");
       AreaRegistration.RegisterAllAreas();
       FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -24,18 +23,6 @@ namespace Ktcs
       Database.SetInitializer(new NullDatabaseInitializer<KtcsDbContext>());
     }
 
-    private IPAddress LocalIPAddress()
-    {
-      if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
-      {
-        return null;
-      }
-
-      IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-
-      return host
-          .AddressList
-          .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
-    }
+    
   }
 }

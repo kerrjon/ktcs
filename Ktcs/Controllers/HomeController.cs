@@ -9,7 +9,7 @@ namespace Ktcs.Controllers
 
     public ActionResult Index()
     {
-         _logger.Error("test");
+         
             return View();
         }
 

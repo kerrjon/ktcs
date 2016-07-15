@@ -17,7 +17,7 @@ namespace Ktcs.Areas.Admin.Controllers
         // GET: Admin/Courses
         public async Task<ActionResult> Index()
         {
-      _logger.Warn("This Is a warning");
+
       var test = new CourseRepository();
           test.GetCourseById("323");
             return View(await db.Courses.ToListAsync());

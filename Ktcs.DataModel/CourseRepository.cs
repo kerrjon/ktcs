@@ -10,7 +10,7 @@ namespace Ktcs.DataModel
 
     public Course GetCourseById(string courseNumber)
         {
-      _logger.Info("try query");
+      
             using (var context = new KtcsDbContext())
             {
                 return context.Courses.AsNoTracking().FirstOrDefault(n => n.CourseNumber == courseNumber);
