@@ -1,13 +1,14 @@
 ﻿using Ktcs.Classes;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Ktcs.Datamodel
 {
   using System.Data.Entity;
 
-  public partial class KtcsDbContext : DbContext
+  public partial class KtcsDbContext : ApplicationDbContext
   {
     public KtcsDbContext()
-        : base("name=KtcsDbContext")
+        : base("name=DefaultConnection")
     {
     }
 
@@ -62,6 +63,11 @@ namespace Ktcs.Datamodel
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
+      // Configure Asp Net Identity Tables
+      modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id).Property(p => p.Name).IsRequired();
+      modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
+      modelBuilder.Entity<IdentityUserLogin>().HasKey(u => new { u.UserId, u.LoginProvider, u.ProviderKey });
+
       modelBuilder.Entity<AspNetRole>()
           .HasMany(e => e.AspNetUsers)
           .WithMany(e => e.AspNetRoles)

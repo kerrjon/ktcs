@@ -164,6 +164,8 @@ namespace Ktcs.DataModel.Migrations
         //Log.Error("error trying to add seed data", exception);
       }
 
+    
+
     }
   }
 }

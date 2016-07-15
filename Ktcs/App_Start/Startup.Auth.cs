@@ -1,4 +1,5 @@
 ﻿using System;
+using Ktcs.Classes;
 using Ktcs.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
