@@ -16,3 +16,6 @@ C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\bin\Debug\EntityFramework.xml
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.csprojResolveAssemblyReference.cache
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.dll
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.Classes\obj\Debug\Ktcs.Classes.pdb
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\bin\Debug\Ktcs.Classes.dll.config
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\bin\Debug\log4net.dll
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.Classes\bin\Debug\log4net.xml

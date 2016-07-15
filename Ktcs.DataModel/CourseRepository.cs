@@ -6,8 +6,11 @@ namespace Ktcs.DataModel
 {
     public class CourseRepository
     {
-        public Course GetCourseById(string courseNumber)
+    readonly log4net.ILog _logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+    public Course GetCourseById(string courseNumber)
         {
+      _logger.Info("try query");
             using (var context = new KtcsDbContext())
             {
                 return context.Courses.AsNoTracking().FirstOrDefault(n => n.CourseNumber == courseNumber);

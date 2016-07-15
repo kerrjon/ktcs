@@ -25,3 +25,6 @@ C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\Ktcs.Classes.pdb
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.xml
 C:\Users\jkerr\Source\Repos\Ktcs\Ktcs.DataModel\bin\Debug\EntityFramework.SqlServer.xml
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.majorupdate.resources
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\bin\Debug\log4net.dll
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\bin\Debug\log4net.xml
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.AddingLogTable.resources

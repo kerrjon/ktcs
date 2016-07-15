@@ -1,27 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Ktcs.Classes;
 using Ktcs.Datamodel;
+using Ktcs.DataModel;
 
 namespace Ktcs.Areas.Admin.Controllers
 {
     public class CoursesController : Controller
     {
-        private KtcsDbContext db = new KtcsDbContext();
+    readonly log4net.ILog _logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+    private KtcsDbContext db = new KtcsDbContext();
 
         // GET: Admin/Courses
         public async Task<ActionResult> Index()
         {
-      //var courses = db.Courses.Include(c => c.BasePrice).Include(c => c.CourseTypeDetail);
-      var courses = db.Courses;
-      return View(await courses.ToListAsync());
+      _logger.Warn("This Is a warning");
+      var test = new CourseRepository();
+          test.GetCourseById("323");
+            return View(await db.Courses.ToListAsync());
         }
 
         // GET: Admin/Courses/Details/5
@@ -42,8 +41,6 @@ namespace Ktcs.Areas.Admin.Controllers
         // GET: Admin/Courses/Create
         public ActionResult Create()
         {
-            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription");
-            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1");
             return View();
         }
 
@@ -52,7 +49,7 @@ namespace Ktcs.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "courseNumber,title,description,prereq,duration,courseTypeDetailID,comments,inscomments,overview,basePriceID,courseware,coursewarevendor,coursewarecost,coursewarenotes,datecreated,lastupdate,instructorNotes,vendorwebsite,isvisable,visibleInFlyout")] Course course)
+        public async Task<ActionResult> Create([Bind(Include = "CourseNumber,OfficialCourseNumber,Title,Description,Prereq,Duration,Comments,Inscomments,Overview,Courseware,Coursewarevendor,Coursewarecost,Coursewarenotes,Datecreated,Lastupdate,InstructorNotes,Vendorwebsite,Isvisable,VisibleInFlyout")] Course course)
         {
             if (ModelState.IsValid)
             {
@@ -61,8 +58,6 @@ namespace Ktcs.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
-            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
             return View(course);
         }
 
@@ -78,8 +73,6 @@ namespace Ktcs.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
-            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
             return View(course);
         }
 
@@ -88,7 +81,7 @@ namespace Ktcs.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "courseNumber,title,description,prereq,duration,courseTypeDetailID,comments,inscomments,overview,basePriceID,courseware,coursewarevendor,coursewarecost,coursewarenotes,datecreated,lastupdate,instructorNotes,vendorwebsite,isvisable,visibleInFlyout")] Course course)
+        public async Task<ActionResult> Edit([Bind(Include = "CourseNumber,OfficialCourseNumber,Title,Description,Prereq,Duration,Comments,Inscomments,Overview,Courseware,Coursewarevendor,Coursewarecost,Coursewarenotes,Datecreated,Lastupdate,InstructorNotes,Vendorwebsite,Isvisable,VisibleInFlyout")] Course course)
         {
             if (ModelState.IsValid)
             {
@@ -96,8 +89,6 @@ namespace Ktcs.Areas.Admin.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            //ViewBag.basePriceID = new SelectList(db.BasePrices, "BasePriceID", "BaseDescription", course.basePriceID);
-            //ViewBag.courseTypeDetailID = new SelectList(db.CourseTypeDetails, "CourseTypeDetailID", "CourseTypeDetail1", course.courseTypeDetailID);
             return View(course);
         }
 

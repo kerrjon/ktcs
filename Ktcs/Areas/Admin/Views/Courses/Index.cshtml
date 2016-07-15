@@ -17,10 +17,7 @@
         <thead>
           <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BasePrice.BaseDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseTypeDetail.CourseTypeDetail1)
+                @Html.DisplayNameFor(model => model.OfficialCourseNumber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
@@ -79,10 +76,7 @@
 @foreach (var item in Model) {
          <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BasePrice.BaseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseTypeDetail.CourseTypeDetail1)
+                @Html.DisplayFor(modelItem => item.OfficialCourseNumber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)

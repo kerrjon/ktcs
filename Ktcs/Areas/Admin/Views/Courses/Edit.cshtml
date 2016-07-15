@@ -22,6 +22,14 @@
         @Html.HiddenFor(model => model.CourseNumber)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.OfficialCourseNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OfficialCourseNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OfficialCourseNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
@@ -54,14 +62,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.courseTypeDetailID, "courseTypeDetailID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("courseTypeDetailID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.courseTypeDetailID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Comments, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
@@ -82,14 +82,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Overview, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Overview, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.basePriceID, "basePriceID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("basePriceID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.basePriceID, "", new { @class = "text-danger" })
             </div>
         </div>
 

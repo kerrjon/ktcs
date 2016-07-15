@@ -34,6 +34,7 @@ namespace Ktcs.Datamodel
     public virtual DbSet<InstructorCert> InstructorCerts { get; set; }
     public virtual DbSet<InstructorNote> InstructorNotes { get; set; }
     public virtual DbSet<Location> Locations { get; set; }
+    public virtual DbSet<Log> Logs { get; set; }
     public virtual DbSet<Manager> Managers { get; set; }
     public virtual DbSet<NoteType> NoteTypes { get; set; }
     public virtual DbSet<Payment> Payments { get; set; }
@@ -78,9 +79,9 @@ namespace Ktcs.Datamodel
           .Map(m => m.ToTable("CourseBrandCategory").MapLeftKey("brandCategoryId").MapRightKey("courseNumber"));
 
 
-      //modelBuilder.Entity<ClassRequest>()
-      //    .Property(e => e.Withdrew)
-      //    .IsUnicode(false);
+      modelBuilder.Entity<ClassRequest>()
+          .Property(e => e.Withdrew)
+          .IsUnicode(false);
 
       modelBuilder.Entity<ComContact>()
           .Property(e => e.ComConFName)
