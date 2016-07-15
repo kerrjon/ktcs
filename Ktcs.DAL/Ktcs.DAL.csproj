@@ -89,6 +89,7 @@
     <Compile Include="Manager.cs" />
     <Compile Include="KtcsDbContext.cs" />
     <Compile Include="Model1.cs" />
+    <Compile Include="Model2.cs" />
     <Compile Include="News.cs" />
     <Compile Include="NoteType.cs" />
     <Compile Include="Payment.cs" />

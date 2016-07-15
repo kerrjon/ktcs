@@ -28,3 +28,4 @@ D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migratio
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\bin\Debug\log4net.dll
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\bin\Debug\log4net.xml
 D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.AddingLogTable.resources
+D:\Users\Kerr\Source\Repos\ktcs\Ktcs.DataModel\obj\Debug\Ktcs.DataModel.Migrations.addingAspnetIdentity.resources

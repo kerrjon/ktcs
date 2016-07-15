@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201607150417534_AddingLogTable.Designer.cs">
       <DependentUpon>201607150417534_AddingLogTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607150604069_addingAspnetIdentity.cs" />
+    <Compile Include="Migrations\201607150604069_addingAspnetIdentity.Designer.cs">
+      <DependentUpon>201607150604069_addingAspnetIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607150417534_AddingLogTable.resx">
       <DependentUpon>201607150417534_AddingLogTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607150604069_addingAspnetIdentity.resx">
+      <DependentUpon>201607150604069_addingAspnetIdentity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

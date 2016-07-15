@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Ktcs.Areas.Login.Models
+namespace Ktcs.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

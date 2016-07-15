@@ -41,8 +41,8 @@
               <span>
                 @if (Request.IsAuthenticated)
                 {
-                  @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", new { area = "Login" }, htmlAttributes: new { title = "manage your profile" })
-                  <i>Administrator</i>
+                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", new { area = "Login" }, htmlAttributes: new { title = "manage your profile" })
+                    <i>Administrator</i>
                 }
               </span>
               <a href="@Url.Action("Index","Manage", new {area="Login"})" title="Edit profile">Edit profile</a>

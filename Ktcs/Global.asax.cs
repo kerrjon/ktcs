@@ -21,6 +21,8 @@ namespace Ktcs
       RouteConfig.RegisterRoutes(RouteTable.Routes);
       BundleConfig.RegisterBundles(BundleTable.Bundles);
       Database.SetInitializer(new NullDatabaseInitializer<KtcsDbContext>());
+
+
     }
 
     

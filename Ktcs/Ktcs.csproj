@@ -192,14 +192,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CoursesController.cs" />
     <Compile Include="Areas\Admin\Controllers\DemoController.cs" />
-    <Compile Include="Areas\Login\Controllers\AccountController.cs" />
-    <Compile Include="Areas\Login\Controllers\ManageController.cs" />
-    <Compile Include="Areas\Login\LoginAreaRegistration.cs" />
-    <Compile Include="Areas\Login\Models\AccountViewModels.cs" />
-    <Compile Include="Areas\Login\Models\IdentityModels.cs" />
-    <Compile Include="Areas\Login\Models\ManageViewModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -992,28 +991,8 @@
     <Content Include="assets\widgets\ckeditor\skins\bootstrapck\readme.md" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Login\Views\web.config" />
-    <Content Include="Areas\Login\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Login\Views\Shared\Lockout.cshtml" />
-    <Content Include="Areas\Login\Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Areas\Login\Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Areas\Login\Views\Manage\Index.cshtml" />
-    <Content Include="Areas\Login\Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Areas\Login\Views\Manage\SetPassword.cshtml" />
-    <Content Include="Areas\Login\Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Login\Views\Account\Login.cshtml" />
-    <Content Include="Areas\Login\Views\Account\Register.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ResetPassword.cshtml" />
-    <Content Include="Areas\Login\Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Login\Views\Account\SendCode.cshtml" />
-    <Content Include="Areas\Login\Views\Account\VerifyCode.cshtml" />
-    <Content Include="Areas\Login\Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Areas\Login\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Slidebars.cshml" />
     <Content Include="Areas\Admin\Views\Shared\_Header.cshtml" />
@@ -1110,7 +1089,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Areas\Login\Views\Account\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Demo\Payments.cshtml" />
     <Content Include="Areas\Admin\Views\Demo\Students.cshtml" />
     <Content Include="Areas\Admin\Views\Demo\Courses.cshtml" />
@@ -1169,6 +1147,25 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
     <Content Include="Views\Shared\_SpinnerCss.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
